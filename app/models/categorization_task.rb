@@ -1,0 +1,2 @@
+class CategorizationTask < Task
+end
