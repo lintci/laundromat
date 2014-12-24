@@ -1,5 +1,7 @@
 # Wraps a paylaod from Github
 class Payload
+  attr_accessor :data
+
   def initialize(data)
     @data = data
   end
@@ -15,8 +17,4 @@ class Payload
   def full_name
     data['repository']['full_name']
   end
-
-protected
-
-  attr_reader :data
 end

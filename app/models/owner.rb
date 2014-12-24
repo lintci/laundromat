@@ -1,5 +1,5 @@
 class Owner < ActiveRecord::Base
-  belongs_to :plan
+  has_many :plans
   has_many :repositories
   has_many :builds, through: :repositories
   has_many :tasks, through: :builds

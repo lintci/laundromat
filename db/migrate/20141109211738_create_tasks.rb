@@ -3,10 +3,11 @@ class CreateTasks < ActiveRecord::Migration
     create_table :tasks do |t|
       t.string :language
       t.string :linter
-      t.string :status
-      t.string :type
-      t.references :build, index: true
-
+      t.string :status, null: false
+      t.string :type, null: false
+      t.references :build, index: true, null: false
+      t.datetime :started_at
+      t.datetime :finished_at
       t.timestamps
     end
   end

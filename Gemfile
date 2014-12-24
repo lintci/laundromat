@@ -2,11 +2,12 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.6'
+gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'sidekiq'
 gem 'aasm'
+gem 'octokit'
 
 gem 'rails_12factor', group: :production
 gem 'foreman'
