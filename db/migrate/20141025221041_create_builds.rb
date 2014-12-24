@@ -1,10 +1,9 @@
 class CreateBuilds < ActiveRecord::Migration
   def change
     create_table :builds do |t|
-      t.integer :number
-      t.string :event
-      t.json :payload
-      t.references :repository, index: true
+      t.string :event, null: false
+      t.json :payload, null: false
+      t.references :repository, index: true, null: false
 
       t.timestamps
     end

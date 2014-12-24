@@ -1,8 +1,8 @@
 RSpec.shared_examples_for 'Task' do
-  describe '#run' do
+  describe '#start' do
     context 'when status is queued' do
       it 'transitions to running' do
-        queued_task.run
+        queued_task.start
 
         expect(queued_task.status).to eq('running')
       end

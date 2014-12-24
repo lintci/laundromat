@@ -4,7 +4,7 @@ class BuildRequest
     @payload = Payload.new(payload_data)
   end
 
-  def request
+  def call
     ActiveRecord::Base.transaction do
       build = create_build
 

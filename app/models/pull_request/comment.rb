@@ -5,11 +5,11 @@ class PullRequest
       @pull_request = pull_request
     end
 
-    def add(file, line, violations)
+    def add(file, line, messages)
       client.create_pull_request_comment(
         repo,
         pull_request.id,
-        format(violations),
+        format(messages),
         pull_request.head_sha,
         file,
         line
@@ -22,8 +22,8 @@ class PullRequest
 
   private
 
-    def format(violations)
-      violations.messages.join('<br>')
+    def format(messages)
+      messages.join('<br>')
     end
 
     def repo

@@ -6,13 +6,13 @@ class TaskScheduler
   def schedule_categorization
     task = build.create_categorization_task
 
-    schedule{CategorizationTaskRequested.}
+    schedule(task)
   end
 
-  def schedule_analysis
-    task = build.tasks.create!(type: 'AnalysisTask')
+  def schedule_analysis(language, linter, file_modifications)
+    task = build.create_analysis_task(language, linter, file_modifications)
 
-    schedule{}
+    schedule(task)
   end
 
 protected
@@ -21,13 +21,17 @@ protected
 
 private
 
-  def schedule
+  def schedule(task)
     return unless available_workers?
 
-    yield
+    event_class = "#{task.type}RequestedEvent".constantize
+    serializer_class = "#{task.type}Requested".constantize
+    event_class.perform_async(serializer_class.new(task))
+
+    true
   end
 
   def available_workers?
-    build.owner.available_workers?
+    true
   end
 end
