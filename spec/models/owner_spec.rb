@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Owner, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#valid?' do
+    subject(:owner){build(:owner)}
+
+    it 'requires a name' do
+      owner.name = nil
+      expect(owner).to_not be_valid
+    end
+  end
 end

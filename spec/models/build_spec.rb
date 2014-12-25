@@ -1,6 +1,25 @@
 require 'rails_helper'
 
 RSpec.describe Build, :type => :model do
+  describe '#valid?' do
+    subject(:build){FactoryGirl.build(:build)}
+
+    it 'requires an event' do
+      build.event = nil
+      expect(build).to_not be_valid
+    end
+
+    it 'requires a payload' do
+      build.payload = nil
+      expect(build).to_not be_valid
+    end
+
+    it 'requires a repository' do
+      build.repository = nil
+      expect(build).to_not be_valid
+    end
+  end
+
   describe '#create_categorization_task' do
     let(:build){create(:build)}
 
