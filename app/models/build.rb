@@ -22,6 +22,8 @@ class Build < ActiveRecord::Base
   end
 
   def payload
+    return unless self[:payload]
+
     Payload.new(self[:payload])
   end
 end

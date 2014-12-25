@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Repository, :type => :model do
-  describe '#valid' do
+  describe '#valid?' do
     subject(:repository){build(:repository)}
 
     it 'requires owner to be specified' do

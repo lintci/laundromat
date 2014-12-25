@@ -1,4 +1,23 @@
 RSpec.shared_examples_for 'Task' do
+  describe '#valid?' do
+    subject(:task){queued_task}
+
+    it 'expects a build' do
+      task.build = nil
+      expect(task).to_not be_valid
+    end
+
+    it 'expects a status' do
+      task.status = nil
+      expect(task).to_not be_valid
+    end
+
+    it 'expects a type' do
+      task.type = nil
+      expect(task).to_not be_valid
+    end
+  end
+
   describe '#start' do
     context 'when status is queued' do
       it 'transitions to running' do

@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20141206222739) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "builds", force: true do |t|
+  create_table "builds", force: :cascade do |t|
     t.string   "event",         null: false
     t.json     "payload",       null: false
     t.integer  "repository_id", null: false
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20141206222739) do
 
   add_index "builds", ["repository_id"], name: "index_builds_on_repository_id", using: :btree
 
-  create_table "modified_files", force: true do |t|
+  create_table "modified_files", force: :cascade do |t|
     t.string   "name",             null: false
     t.integer  "lines",            null: false, array: true
     t.integer  "analysis_task_id", null: false
@@ -36,24 +36,13 @@ ActiveRecord::Schema.define(version: 20141206222739) do
 
   add_index "modified_files", ["analysis_task_id"], name: "index_modified_files_on_analysis_task_id", using: :btree
 
-  create_table "owners", force: true do |t|
+  create_table "owners", force: :cascade do |t|
     t.string   "name"
-    t.integer  "plan_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "owners", ["plan_id"], name: "index_owners_on_plan_id", using: :btree
-
-  create_table "plans", force: true do |t|
-    t.string   "name",       null: false
-    t.integer  "cost",       null: false
-    t.integer  "workers",    null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "repositories", force: true do |t|
+  create_table "repositories", force: :cascade do |t|
     t.string   "name",       null: false
     t.string   "full_name",  null: false
     t.integer  "owner_id",   null: false
@@ -63,12 +52,14 @@ ActiveRecord::Schema.define(version: 20141206222739) do
 
   add_index "repositories", ["owner_id"], name: "index_repositories_on_owner_id", using: :btree
 
-  create_table "tasks", force: true do |t|
+  create_table "tasks", force: :cascade do |t|
     t.string   "language"
     t.string   "linter"
-    t.string   "status",     null: false
-    t.string   "type",       null: false
-    t.integer  "build_id",   null: false
+    t.string   "status",      null: false
+    t.string   "type",        null: false
+    t.integer  "build_id",    null: false
+    t.datetime "started_at"
+    t.datetime "finished_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

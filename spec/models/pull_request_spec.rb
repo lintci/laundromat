@@ -13,8 +13,8 @@ describe PullRequest do
   its(:slug){is_expected.to eq('lintci/guinea_pig/mostly-bad')}
   its(:inspect){is_expected.to eq('<PullRequest:lintci/guinea_pig/mostly-bad (bbf813a...6dbc62f)>')}
 
-  xdescribe '#comment' do
-    let(:violations){build(:violations)}
+  describe '#comment' do
+    let(:violations){['This is wrong']}
 
     it 'delegates commenting to PullRequest::Comment' do
       expect_any_instance_of(PullRequest::Comment).to receive(:add).with('bad.rb', '1', violations)
