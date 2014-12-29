@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe PullRequest do
+describe Payload::PullRequest do
   subject(:pull_request){build(:pull_request)}
 
   its(:id){is_expected.to eq(1)}
@@ -17,7 +17,7 @@ describe PullRequest do
     let(:violations){['This is wrong']}
 
     it 'delegates commenting to PullRequest::Comment' do
-      expect_any_instance_of(PullRequest::Comment).to receive(:add).with('bad.rb', '1', violations)
+      expect_any_instance_of(Payload::PullRequest::Comment).to receive(:add).with('bad.rb', '1', violations)
 
       pull_request.comment('bad.rb', '1', violations)
     end

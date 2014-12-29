@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :build do
-    repository
+    association :repository, strategy: :build
     payload
 
     event 'pull_request'

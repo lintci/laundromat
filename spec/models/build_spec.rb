@@ -34,12 +34,12 @@ RSpec.describe Build, :type => :model do
 
   describe '#create_analysis_task' do
     let(:build){create(:build)}
-    let(:file_modifications){{'ruby.rb' => [1, 2, 3, 7]}}
+    let(:linter){FactoryGirl.build(:linter)}
 
     it 'creates an analysis task' do
-      expect_any_instance_of(AnalysisTask).to receive(:add_file_modifications).with(file_modifications)
+      expect_any_instance_of(AnalysisTask).to receive(:add_file_modifications).with(linter)
 
-      task = build.create_analysis_task('Ruby', 'Rubocop', file_modifications)
+      task = build.create_analysis_task(linter)
 
       expect(task.language).to eq('Ruby')
       expect(task.linter).to eq('Rubocop')

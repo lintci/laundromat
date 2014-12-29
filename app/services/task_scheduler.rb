@@ -9,8 +9,8 @@ class TaskScheduler
     schedule(task)
   end
 
-  def schedule_analysis(language, linter, file_modifications)
-    task = build.create_analysis_task(language, linter, file_modifications)
+  def schedule_analysis(linter)
+    task = build.create_analysis_task(linter)
 
     schedule(task)
   end
@@ -24,14 +24,16 @@ private
   def schedule(task)
     return unless available_workers?
 
-    event_class = "#{task.type}RequestedEvent".constantize
-    serializer_class = "#{task.type}Requested".constantize
-    event_class.perform_async(serializer_class.new(task))
+    worker(task).perform_async(TaskSerializer.new(task))
 
-    true
+    task
   end
 
   def available_workers?
     true
+  end
+
+  def worker(task)
+    "#{task.type}RequestedWorker".constantize
   end
 end

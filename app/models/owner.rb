@@ -6,8 +6,10 @@ class Owner < ActiveRecord::Base
   validates_presence_of :name
 
   def available_workers?
-    active_workers = tasks.where(status: :running).count
+    # TODO: Something like this. Total workers would come from the plan.
+    # active_workers = tasks.total_running
 
-    total_workers - active_workers > 0
+    # total_workers - active_workers > 0
+    true
   end
 end

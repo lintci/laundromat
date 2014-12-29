@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :categorization_task, aliases: [:queued_categorization_task] do
-    build
+    association :build, strategy: :build
 
     language 'All'
     linter 'None'

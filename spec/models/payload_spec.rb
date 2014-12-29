@@ -5,7 +5,7 @@ describe Payload do
 
   describe '#pull_request' do
     it 'returns a pull_request' do
-      expect(payload.pull_request).to be_a(PullRequest)
+      expect(payload.pull_request).to be_a(Payload::PullRequest)
     end
   end
 

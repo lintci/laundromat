@@ -1,11 +1,11 @@
-class BuildRequest
+class BuildRequest < CommandService
   def initialize(event, payload_data)
     @event = event
     @payload = Payload.new(payload_data)
   end
 
   def call
-    ActiveRecord::Base.transaction do
+    transaction do
       build = create_build
 
       schedule_build_tasks(build)

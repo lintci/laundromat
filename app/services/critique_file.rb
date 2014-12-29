@@ -1,10 +1,10 @@
-class CritiqueFile
+class CritiqueFile < CommandService
   def initialize(data)
     @data = data
   end
 
   def call
-    ActiveRecord::Base.transaction do
+    transaction do
 
     end
   end

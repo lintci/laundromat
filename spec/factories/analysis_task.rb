@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :analysis_task, aliases: [:queued_analysis_task] do
-    build
+    association :build, strategy: :build
+
     language 'Ruby'
     linter 'Rubocop'
     status 'queued'

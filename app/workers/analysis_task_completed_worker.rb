@@ -1,4 +1,4 @@
-class AnalysisTaskCompletedEvent
+class AnalysisTaskCompletedWorker
   include Sidekiq::Worker
 
   sidekiq_options queue: :laundromat, backtrace: true

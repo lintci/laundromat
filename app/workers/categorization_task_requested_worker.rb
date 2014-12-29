@@ -1,4 +1,4 @@
-class CategorizationTaskRequestedEvent
+class CategorizationTaskRequestedWorker
   include Sidekiq::Worker
 
   sidekiq_options queue: :dryer, backtrace: true

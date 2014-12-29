@@ -8,22 +8,16 @@ RSpec.describe AnalysisTask, :type => :model do
 
   describe '#add_file_modifications' do
     let(:task){build(:analysis_task)}
-    let(:file_modifications) do
-      {
-        'good.rb' => [1, 2, 7],
-        'bad.rb' => [3, 5]
-      }
-    end
+    let(:linter){build(:linter)}
 
     it 'builds each of the associated records' do
-      task.add_file_modifications(file_modifications)
+      task.add_file_modifications(linter)
 
-      expect(task.modified_files.size).to eq(2)
+      expect(task.modified_files.size).to eq(1)
 
-      good, bad = task.modified_files
+      bad = task.modified_files.first
 
-      expect(good.attributes).to include('name' => 'good.rb', 'lines' => [1, 2, 7])
-      expect(bad.attributes).to include('name' => 'bad.rb', 'lines' => [3, 5])
+      expect(bad.attributes).to include('name' => 'bad.rb', 'lines' => [1, 2, 3])
     end
   end
 end
