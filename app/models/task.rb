@@ -5,6 +5,24 @@ class Task < ActiveRecord::Base
 
   validates_presence_of :status, :type
 
+  class << self
+    def total_running
+      running.count
+    end
+
+    def status
+      if any?(&:failed?)
+        :failed
+      elsif any?(&:running?)
+        :running
+      elsif any?(&:queued?)
+        :queued
+      else
+        :success
+      end
+    end
+  end
+
   aasm column: :status do
     state :queued, initial: true
     state :running

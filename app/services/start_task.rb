@@ -1,10 +1,10 @@
-class StartTask
+class StartTask < CommandService
   def initialize(data)
     @data = data
   end
 
   def call
-    ActiveRecord::Base.transaction do
+    transaction do
       task.started_at = started_at
       task.start
       task.save!

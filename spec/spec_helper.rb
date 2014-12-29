@@ -4,6 +4,7 @@ require 'rspec/rails'
 require 'rspec/its'
 require 'factory_girl_rails'
 require 'vcr'
+require 'sidekiq/testing'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each{|f| require f}
 
@@ -95,4 +96,8 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+
+  config.before(:each) do
+    Sidekiq::Worker.clear_all
+  end
 end

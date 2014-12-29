@@ -5,14 +5,15 @@ class Build < ActiveRecord::Base
   validates_presence_of :event, :payload
 
   delegate :owner, to: :repository
+  delegate :status, to: :tasks
 
   def create_categorization_task
     tasks.create!(type: 'CategorizationTask', language: 'All', linter: 'None')
   end
 
-  def create_analysis_task(language, linter, file_modifications)
-    task = tasks.build(type: 'AnalysisTask', language: language, linter: linter)
-    task.add_file_modifications(file_modifications)
+  def create_analysis_task(linter)
+    task = tasks.build(type: 'AnalysisTask', language: linter.language, linter: linter.name)
+    task.add_file_modifications(linter)
     task.save!
     task
   end
@@ -25,5 +26,9 @@ class Build < ActiveRecord::Base
     return unless self[:payload]
 
     Payload.new(self[:payload])
+  end
+
+  def status
+    tasks.status
   end
 end

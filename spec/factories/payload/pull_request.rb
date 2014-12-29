@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :pull_request do
+  factory :pull_request, class: Payload::PullRequest do
     payload{build(:pull_request_opened_payload)}
 
     skip_create

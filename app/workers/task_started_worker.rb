@@ -1,9 +1,9 @@
-class CategorizationTaskCompletedEvent
+class TaskStartedWorker
   include Sidekiq::Worker
 
   sidekiq_options queue: :laundromat, backtrace: true
 
   def perform(data)
-    CompleteCategorizationTask.new(data).call
+    StartTask.new(data).call
   end
 end

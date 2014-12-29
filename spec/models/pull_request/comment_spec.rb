@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe PullRequest::Comment do
+describe Payload::PullRequest::Comment do
   describe '#add' do
     let(:pull_request){build(:pull_request)}
-    subject(:comment){PullRequest::Comment.new(pull_request)}
+    subject(:comment){Payload::PullRequest::Comment.new(pull_request)}
 
     it 'successfully adds a comment to the pull request', vcr: {match_requests_on: [:method, :host, :path]} do
       result = comment.add('Good.java', '3', ['Nice comment.'])

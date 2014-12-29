@@ -1,2 +1,3 @@
-class CompleteAnalysisTask
+class CompleteAnalysisTask < CommandService
+
 end

@@ -1,4 +1,4 @@
-class FileAnalyzedEvent
+class FileAnalyzedWorker
   include Sidekiq::Worker
 
   sidekiq_options queue: :dryer, backtrace: true

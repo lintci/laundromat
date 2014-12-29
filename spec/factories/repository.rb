@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :repository do
-    owner
+    association :owner, strategy: :build
 
     name 'guinea_pig'
     full_name 'lintci/guinea_pig'

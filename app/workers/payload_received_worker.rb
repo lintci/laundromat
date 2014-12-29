@@ -1,5 +1,5 @@
 # Event enqueued when a payload is received
-class PayloadReceivedEvent
+class PayloadReceivedWorker
   include Sidekiq::Worker
 
   sidekiq_options queue: :laundry, backtrace: true

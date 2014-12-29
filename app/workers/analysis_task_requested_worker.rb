@@ -1,4 +1,4 @@
-class AnalysisTaskRequestedEvent
+class AnalysisTaskRequestedWorker
   include Sidekiq::Worker
 
   sidekiq_options queue: :dryer, backtrace: true
