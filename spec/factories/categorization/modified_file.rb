@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :file, class: Categorization::ModifiedFile do
+  factory :categorization_modified_file, class: Categorization::ModifiedFile do
     name 'bad.rb'
     lines [1, 2, 3]
 

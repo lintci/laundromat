@@ -17,4 +17,8 @@ class Payload
   def full_name
     data['repository']['full_name']
   end
+
+  def ==(other)
+    data == other.data
+  end
 end

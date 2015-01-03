@@ -1,13 +1,13 @@
+require 'command_service'
+
 class CompleteCategorizationTask < CommandService
   def initialize(data)
     @categorization = Categorization.new(data)
   end
 
-  def call
-    transaction do
-      complete_categorization_task
-      schedule_analysis_tasks
-    end
+  def perform
+    complete_categorization_task
+    schedule_analysis_tasks
   end
 
 protected
