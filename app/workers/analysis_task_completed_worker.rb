@@ -4,6 +4,6 @@ class AnalysisTaskCompletedWorker
   sidekiq_options queue: :laundromat, backtrace: true
 
   def perform(data)
-    CompleteAnalysisTask.new(data).call
+    CompleteAnalysisTask.call(data)
   end
 end

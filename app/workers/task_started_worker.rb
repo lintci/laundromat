@@ -4,6 +4,6 @@ class TaskStartedWorker
   sidekiq_options queue: :laundromat, backtrace: true
 
   def perform(data)
-    StartTask.new(data).call
+    StartTask.call(data)
   end
 end

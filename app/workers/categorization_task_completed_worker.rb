@@ -4,6 +4,6 @@ class CategorizationTaskCompletedWorker
   sidekiq_options queue: :laundromat, backtrace: true
 
   def perform(data)
-    CompleteCategorizationTask.new(data).call
+    CompleteCategorizationTask.call(data)
   end
 end
