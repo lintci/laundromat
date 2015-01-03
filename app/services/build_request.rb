@@ -1,15 +1,15 @@
+require 'command_service'
+
 class BuildRequest < CommandService
   def initialize(event, payload_data)
     @event = event
     @payload = Payload.new(payload_data)
   end
 
-  def call
-    transaction do
-      build = create_build
+  def perform
+    build = create_build
 
-      schedule_build_tasks(build)
-    end
+    schedule_build_tasks(build)
   end
 
 protected
@@ -19,7 +19,7 @@ protected
 private
 
   def create_build
-    repository.builds.create!(event: event, payload: payload)
+    repository.create_build(event, payload)
   end
 
   def schedule_build_tasks(build)

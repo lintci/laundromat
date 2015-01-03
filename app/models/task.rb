@@ -29,8 +29,18 @@ class Task < ActiveRecord::Base
     state :success
     state :failed
 
-    event(:start){transitions from: :queued, to: :running}
-    event(:succeed){transitions from: :running, to: :success}
-    event(:fail){transitions from: :running, to: :failed}
+    event(:start){transitions from: :queued, to: :running, after: :process_start_event}
+    event(:succeed){transitions from: :running, to: :success, after: :process_finish_event}
+    event(:fail){transitions from: :running, to: :failed, after: :process_finish_event}
+  end
+
+private
+
+  def process_start_event(event)
+    self.started_at = event.started_at
+  end
+
+  def process_finish_event(event)
+    self.finished_at = event.finished_at
   end
 end

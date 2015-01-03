@@ -4,4 +4,8 @@ class Repository < ActiveRecord::Base
   has_many :tasks, through: :builds
 
   validates_presence_of :name, :full_name
+
+  def create_build!(event, payload)
+    builds.create!(event: event, payload: payload)
+  end
 end

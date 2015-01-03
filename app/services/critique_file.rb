@@ -1,12 +1,11 @@
+require 'command_service'
+
 class CritiqueFile < CommandService
   def initialize(data)
     @data = data
   end
 
-  def call
-    transaction do
-
-    end
+  def perform
   end
 
 protected

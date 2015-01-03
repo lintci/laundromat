@@ -8,4 +8,10 @@ class CommandService
   def transaction
     ActiveRecord::Base.transaction(&Proc.new)
   end
+
+  def call
+    transaction do
+      perform
+    end
+  end
 end

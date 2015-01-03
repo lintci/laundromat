@@ -1,27 +1,21 @@
+require 'command_service'
+
 class StartTask < CommandService
   def initialize(data)
-    @data = data
+    @event = TaskStarted.new(data)
   end
 
-  def call
-    transaction do
-      task.started_at = started_at
-      task.start
-      task.save!
-    end
+  def perform
+    task.start!(event)
   end
 
 protected
 
-  attr_reader :data
+  attr_reader :event
 
 private
 
-  def started_at
-    Time.iso8601(data['started_at'])
-  end
-
   def task
-    @task ||= Task.find(data['task_id'])
+    @task ||= Task.find(event.task_id)
   end
 end

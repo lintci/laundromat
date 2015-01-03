@@ -2,9 +2,9 @@
 class PayloadReceivedWorker
   include Sidekiq::Worker
 
-  sidekiq_options queue: :laundry, backtrace: true
+  sidekiq_options queue: :laundromat, backtrace: true
 
   def perform(event, payload_data)
-    BuildRequest.new(event, payload_data).call
+    BuildRequest.call(event, payload_data)
   end
 end
