@@ -19,7 +19,7 @@ protected
 private
 
   def create_build
-    repository.create_build(event, payload)
+    repository.create_build!(event, payload)
   end
 
   def schedule_build_tasks(build)
