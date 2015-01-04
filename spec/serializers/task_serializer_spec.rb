@@ -8,31 +8,25 @@ describe TaskSerializer do
     let(:expected_json) do
       <<-JSON.chomp
 {
-  "builds": [
-    {
-      "id": null,
-      "pull_request_id": 1
-    }
-  ],
-  "pull_requests": [
-    {
-      "id": 1,
-      "base_sha": "bbf813a806dacf043a592f04a0ed320236caca3a",
-      "head_sha": "6dbc62fe88432b6f9489a3d9f00dddf955a44c4e",
-      "branch": "mostly-bad",
-      "clone_url": "git://github.com/lintci/guinea_pig.git",
-      "owner": "lintci",
-      "repo": "guinea_pig",
-      "slug": "lintci/guinea_pig/mostly-bad"
-    }
-  ],
   "task": {
     "id": null,
     "type": "CategorizationTask",
     "status": "queued",
     "language": "All",
     "linter": "None",
-    "build_id": null
+    "build": {
+      "id": null,
+      "pull_request": {
+        "id": 1,
+        "base_sha": "bbf813a806dacf043a592f04a0ed320236caca3a",
+        "head_sha": "6dbc62fe88432b6f9489a3d9f00dddf955a44c4e",
+        "branch": "mostly-bad",
+        "clone_url": "git://github.com/lintci/guinea_pig.git",
+        "owner": "lintci",
+        "repo": "guinea_pig",
+        "slug": "lintci/guinea_pig/mostly-bad"
+      }
+    }
   }
 }
 JSON

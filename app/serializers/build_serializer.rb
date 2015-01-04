@@ -1,6 +1,4 @@
 class BuildSerializer < ActiveModel::Serializer
-  embed :ids, include: true
-
   has_one :pull_request, serializer: PullRequestSerializer
 
   attributes :id
