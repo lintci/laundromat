@@ -11,7 +11,7 @@ RSpec.describe AnalysisTask, :type => :model do
     let(:linter){build(:linter)}
 
     it 'builds each of the associated records' do
-      task.add_file_modifications(linter)
+      task.add_modified_files(linter)
 
       expect(task.modified_files.size).to eq(1)
 

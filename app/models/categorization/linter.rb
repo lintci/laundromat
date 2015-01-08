@@ -1,32 +1,26 @@
 class Categorization
   class Linter
+    attr_reader :name, :language
     # {
     #   'name' => 'Rubocop',
     #   'language' => 'Ruby',
-    #   'file_modifications' => {
-    #     'bad.rb' => [1, 2, 3]
-    #   }
+    #   'modified_files' => [{
+    #      'name' => 'bad.rb',
+    #      'lines' => [1, 2, 3]
+    #    }]
     # }
     def initialize(data)
-      @data = data
+      @name, @language, @modified_files = data.values_at('name', 'language', 'modified_files')
     end
 
-    def name
-      data['name']
-    end
-
-    def language
-      data['language']
-    end
-
-    def each_file_modification
-      data['file_modifications'].each do |name, modifications|
-        yield ModifiedFile.new(name, modifications)
+    def each_modified_file
+      modified_files.each do |data|
+        yield ModifiedFile.new(data)
       end
     end
 
   protected
 
-    attr_reader :data
+    attr_reader :modified_files
   end
 end

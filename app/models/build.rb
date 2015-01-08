@@ -13,7 +13,7 @@ class Build < ActiveRecord::Base
 
   def create_analysis_task(linter)
     task = tasks.build(type: 'AnalysisTask', language: linter.language, linter: linter.name)
-    task.add_file_modifications(linter)
+    task.add_modified_files(linter)
     task.save!
     task
   end

@@ -5,7 +5,10 @@ FactoryGirl.define do
 
     skip_create
     initialize_with do
-      Categorization::ModifiedFile.new(name, lines)
+      Categorization::ModifiedFile.new(
+        'name' => name,
+        'lines' => lines
+      )
     end
   end
 end

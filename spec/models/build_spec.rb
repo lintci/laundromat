@@ -37,7 +37,7 @@ RSpec.describe Build, :type => :model do
     let(:linter){FactoryGirl.build(:linter)}
 
     it 'creates an analysis task' do
-      expect_any_instance_of(AnalysisTask).to receive(:add_file_modifications).with(linter)
+      expect_any_instance_of(AnalysisTask).to receive(:add_modified_files).with(linter)
 
       task = build.create_analysis_task(linter)
 

@@ -1,8 +1,8 @@
 class AnalysisTask < Task
   has_many :modified_files
 
-  def add_file_modifications(linter)
-    linter.each_file_modification do |file|
+  def add_modified_files(linter)
+    linter.each_modified_file do |file|
       modified_files.build(name: file.name, lines: file.lines)
     end
   end
