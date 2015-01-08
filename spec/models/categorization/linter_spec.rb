@@ -8,7 +8,7 @@ describe Categorization::Linter do
 
   describe '#each_file_modification' do
     it 'yields the modified files' do
-      linter.each_file_modification do |file|
+      linter.each_modified_file do |file|
         expect(file).to be_a(Categorization::ModifiedFile)
       end
     end
