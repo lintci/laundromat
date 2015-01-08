@@ -10,8 +10,7 @@ describe Payload::PullRequest do
   its(:clone_url){is_expected.to eq('git://github.com/lintci/guinea_pig.git')}
   its(:owner){is_expected.to eq('lintci')}
   its(:repo){is_expected.to eq('guinea_pig')}
-  its(:slug){is_expected.to eq('lintci/guinea_pig/mostly-bad')}
-  its(:inspect){is_expected.to eq('<PullRequest:lintci/guinea_pig/mostly-bad (bbf813a...6dbc62f)>')}
+  its(:inspect){is_expected.to eq('<PullRequest:lintci/guinea_pig (bbf813a...6dbc62f)>')}
 
   describe '#comment' do
     let(:violations){['This is wrong']}
