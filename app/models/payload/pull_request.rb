@@ -32,16 +32,12 @@ class Payload
       data['head']['repo']['name']
     end
 
-    def slug
-      "#{owner}/#{repo}/#{branch}"
-    end
-
     def ==(other)
       data == other.data
     end
 
     def inspect
-      "<PullRequest:#{slug} (#{base_sha[0..6]}...#{head_sha[0..6]})>"
+      "<PullRequest:#{owner}/#{repo} (#{base_sha[0..6]}...#{head_sha[0..6]})>"
     end
 
     def comment(file, line, violations)

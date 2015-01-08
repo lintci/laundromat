@@ -23,8 +23,7 @@ describe TaskSerializer do
         "branch": "mostly-bad",
         "clone_url": "git://github.com/lintci/guinea_pig.git",
         "owner": "lintci",
-        "repo": "guinea_pig",
-        "slug": "lintci/guinea_pig/mostly-bad"
+        "repo": "guinea_pig"
       }
     }
   }
