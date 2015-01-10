@@ -1,4 +1,4 @@
-class Categorization
+class Classification
   class Linter
     attr_reader :name, :language
     # {

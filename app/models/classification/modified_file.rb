@@ -1,4 +1,4 @@
-class Categorization
+class Classification
   class ModifiedFile
     attr_reader :name, :lines
 

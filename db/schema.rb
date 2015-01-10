@@ -27,14 +27,14 @@ ActiveRecord::Schema.define(version: 20141206222739) do
   add_index "builds", ["repository_id"], name: "index_builds_on_repository_id", using: :btree
 
   create_table "modified_files", force: :cascade do |t|
-    t.string   "name",             null: false
-    t.integer  "lines",            null: false, array: true
-    t.integer  "analysis_task_id", null: false
+    t.string   "name",         null: false
+    t.integer  "lines",        null: false, array: true
+    t.integer  "lint_task_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "modified_files", ["analysis_task_id"], name: "index_modified_files_on_analysis_task_id", using: :btree
+  add_index "modified_files", ["lint_task_id"], name: "index_modified_files_on_lint_task_id", using: :btree
 
   create_table "owners", force: :cascade do |t|
     t.string   "name"

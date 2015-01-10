@@ -1,9 +1,9 @@
-class AnalysisTaskCompletedWorker
+class LintTaskCompletedWorker
   include Sidekiq::Worker
 
   sidekiq_options queue: :laundromat, backtrace: true
 
   def perform(data)
-    CompleteAnalysisTask.call(data)
+    CompleteLintTask.call(data)
   end
 end
