@@ -1,13 +1,13 @@
 require 'command_service'
 
-class CompleteCategorizationTask < CommandService
+class CompleteClassifyTask < CommandService
   def initialize(data)
-    @categorization = Categorization.new(data)
+    @classification = Classification.new(data)
   end
 
   def perform
-    complete_categorization_task
-    schedule_analysis_tasks
+    complete_classify_task
+    schedule_lint_tasks
   end
 
 protected
@@ -16,22 +16,22 @@ protected
 
 private
 
-  def complete_categorization_task
-    task.finished_at = categorization.finished_at
+  def complete_classify_task
+    task.finished_at = classification.finished_at
     task.succeed
     task.save!
   end
 
-  def schedule_analysis_tasks
+  def schedule_lint_tasks
     scheduler = TaskScheduler.new(build)
 
-    categorization.each_linter do |linter|
-      scheduler.schedule_analysis(linter)
+    classification.each_linter do |linter|
+      scheduler.schedule_linting(linter)
     end
   end
 
   def task
-    @task ||= Task.includes(:build).find(categorization.task_id)
+    @task ||= Task.includes(:build).find(classification.task_id)
   end
 
   def build

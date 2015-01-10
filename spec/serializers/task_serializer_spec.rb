@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe TaskSerializer do
   describe '#to_json' do
-    let(:task){build(:categorization_task)}
+    let(:task){build(:classify_task)}
     subject(:serializer){described_class.new(task)}
 
     let(:expected_json) do
@@ -10,7 +10,7 @@ describe TaskSerializer do
 {
   "task": {
     "id": null,
-    "type": "CategorizationTask",
+    "type": "ClassifyTask",
     "status": "queued",
     "language": "All",
     "linter": "None",

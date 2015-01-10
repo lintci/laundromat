@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe StartTask do
-  subject(:task){create(:categorization_task)}
+  subject(:task){create(:classify_task)}
   let(:started_at){iso8601_time(Time.now)}
   let(:data){{'task_id' => task.id, 'started_at' => started_at.iso8601}}
 

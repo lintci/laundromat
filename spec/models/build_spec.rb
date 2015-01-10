@@ -20,30 +20,30 @@ RSpec.describe Build, :type => :model do
     end
   end
 
-  describe '#create_categorization_task' do
+  describe '#create_classify_task' do
     let(:build){create(:build)}
 
-    it 'creates the categorization task' do
-      task = build.create_categorization_task
+    it 'creates the classification task' do
+      task = build.create_classify_task
 
       expect(task.language).to eq('All')
       expect(task.linter).to eq('None')
-      expect(task).to be_a(CategorizationTask)
+      expect(task).to be_a(ClassifyTask)
     end
   end
 
-  describe '#create_analysis_task' do
+  describe '#create_lint_task' do
     let(:build){create(:build)}
     let(:linter){FactoryGirl.build(:linter)}
 
-    it 'creates an analysis task' do
-      expect_any_instance_of(AnalysisTask).to receive(:add_modified_files).with(linter)
+    it 'creates an lint task' do
+      expect_any_instance_of(LintTask).to receive(:add_modified_files).with(linter)
 
-      task = build.create_analysis_task(linter)
+      task = build.create_lint_task(linter)
 
       expect(task.language).to eq('Ruby')
       expect(task.linter).to eq('Rubocop')
-      expect(task).to be_a(AnalysisTask)
+      expect(task).to be_a(LintTask)
     end
   end
 

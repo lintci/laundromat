@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe AnalysisTask, :type => :model do
+RSpec.describe LintTask, :type => :model do
   it_behaves_like 'Task' do
-    let(:queued_task){build(:queued_analysis_task)}
-    let(:running_task){build(:running_analysis_task)}
+    let(:queued_task){build(:lint_task, :queued)}
+    let(:running_task){build(:lint_task, :running)}
   end
 
   describe '#add_file_modifications' do
-    let(:task){build(:analysis_task)}
+    let(:task){build(:lint_task)}
     let(:linter){build(:linter)}
 
     it 'builds each of the associated records' do

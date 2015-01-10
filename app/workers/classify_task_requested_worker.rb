@@ -1,4 +1,4 @@
-class CategorizationTaskRequestedWorker
+class ClassifyTaskRequestedWorker
   include Sidekiq::Worker
 
   sidekiq_options queue: :dryer, backtrace: true

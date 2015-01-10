@@ -1,4 +1,4 @@
-class AnalysisTaskRequestedWorker
+class LintTaskRequestedWorker
   include Sidekiq::Worker
 
   sidekiq_options queue: :dryer, backtrace: true
