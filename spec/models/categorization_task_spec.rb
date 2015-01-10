@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe CategorizationTask, :type => :model do
+RSpec.describe ClassifyTask, :type => :model do
   it_behaves_like 'Task' do
-    let(:queued_task){build(:queued_categorization_task)}
-    let(:running_task){build(:running_categorization_task)}
+    let(:queued_task){build(:classify_task, :queued)}
+    let(:running_task){build(:classify_task, :running)}
   end
 end

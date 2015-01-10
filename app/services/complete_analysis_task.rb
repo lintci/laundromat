@@ -1,6 +1,6 @@
 require 'command_service'
 
-class CompleteAnalysisTask < CommandService
+class CompleteLintTask < CommandService
   def perform
   end
 end

@@ -3,14 +3,14 @@ class TaskScheduler
     @build = build
   end
 
-  def schedule_categorization
-    task = build.create_categorization_task
+  def schedule_classification
+    task = build.create_classify_task
 
     schedule(task)
   end
 
-  def schedule_analysis(linter)
-    task = build.create_analysis_task(linter)
+  def schedule_linting(linter)
+    task = build.create_lint_task(linter)
 
     schedule(task)
   end

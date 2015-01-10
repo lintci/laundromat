@@ -7,12 +7,12 @@ class Build < ActiveRecord::Base
   delegate :owner, to: :repository
   delegate :status, to: :tasks
 
-  def create_categorization_task
-    tasks.create!(type: 'CategorizationTask', language: 'All', linter: 'None')
+  def create_classify_task
+    tasks.create!(type: 'ClassifyTask', language: 'All', linter: 'None')
   end
 
-  def create_analysis_task(linter)
-    task = tasks.build(type: 'AnalysisTask', language: linter.language, linter: linter.name)
+  def create_lint_task(linter)
+    task = tasks.build(type: 'LintTask', language: linter.language, linter: linter.name)
     task.add_modified_files(linter)
     task.save!
     task

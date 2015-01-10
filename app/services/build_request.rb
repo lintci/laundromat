@@ -23,7 +23,7 @@ private
   end
 
   def schedule_build_tasks(build)
-    TaskScheduler.new(build).schedule_categorization
+    TaskScheduler.new(build).schedule_classification
   end
 
   def repository

@@ -16,8 +16,8 @@ RSpec.describe ModifiedFile, :type => :model do
       expect(modified_file).to_not be_valid
     end
 
-    it 'requires an analysis task' do
-      modified_file.analysis_task = nil
+    it 'requires an lint task' do
+      modified_file.lint_task = nil
 
       expect(modified_file).to_not be_valid
     end

@@ -1,4 +1,4 @@
-class Categorization
+class Classification
   attr_reader :task_id
 
   def initialize(data)
@@ -11,7 +11,7 @@ class Categorization
 
   def each_linter
     linters.each do |data|
-      yield Categorization::Linter.new(data)
+      yield Classification::Linter.new(data)
     end
   end
 

@@ -1,12 +1,16 @@
 FactoryGirl.define do
-  factory :analysis_task, aliases: [:queued_analysis_task] do
+  factory :lint_task do
     association :build, strategy: :build
 
     language 'Ruby'
     linter 'Rubocop'
     status 'queued'
 
-    factory :running_analysis_task do
+    trait :queued do
+      status 'queued'
+    end
+
+    trait :running do
       status 'running'
     end
   end

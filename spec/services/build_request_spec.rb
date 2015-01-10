@@ -12,8 +12,8 @@ describe BuildRequest do
       end.to change{Build.count}.by(1)
     end
 
-    it 'schedules a categorization task' do
-      expect_any_instance_of(TaskScheduler).to receive(:schedule_categorization)
+    it 'schedules a classification task' do
+      expect_any_instance_of(TaskScheduler).to receive(:schedule_classification)
 
       described_class.call(event, payload_data)
     end

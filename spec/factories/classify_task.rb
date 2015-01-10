@@ -1,12 +1,16 @@
 FactoryGirl.define do
-  factory :categorization_task, aliases: [:queued_categorization_task] do
+  factory :classify_task do
     association :build, strategy: :build
 
     language 'All'
     linter 'None'
     status 'queued'
 
-    factory :running_categorization_task do
+    trait :queued do
+      status 'queued'
+    end
+
+    trait :running do
       status 'running'
     end
   end

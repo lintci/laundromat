@@ -4,17 +4,17 @@ describe TaskScheduler do
   let(:build){create(:build)}
   subject(:scheduler){described_class.new(build)}
 
-  describe '#schedule_categorization' do
-    it 'creates a categorization task' do
+  describe '#schedule_classification' do
+    it 'creates a classification task' do
       expect do
-        scheduler.schedule_categorization
+        scheduler.schedule_classification
       end.to change{build.tasks.size}.by(1)
     end
 
     it 'schedules the task to be run' do
       expect do
-        scheduler.schedule_categorization
-      end.to change(CategorizationTaskRequestedWorker.jobs, :size).by(1)
+        scheduler.schedule_classification
+      end.to change(ClassifyTaskRequestedWorker.jobs, :size).by(1)
     end
   end
 end

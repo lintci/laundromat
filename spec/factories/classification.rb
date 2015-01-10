@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :categorization do
+  factory :classification do
     task_id 1
     finished_at{Time.now}
     linters [{
@@ -12,7 +12,7 @@ FactoryGirl.define do
 
     skip_create
     initialize_with do
-      Categorization.new(
+      Classification.new(
         'task_id' => task_id,
         'finished_at' => finished_at.iso8601,
         'linters' => linters
