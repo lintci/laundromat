@@ -8,11 +8,11 @@ class Build < ActiveRecord::Base
   delegate :status, to: :tasks
 
   def create_classify_task
-    tasks.create!(type: 'ClassifyTask', language: 'All', linter: 'None')
+    tasks.create!(type: 'ClassifyTask', language: 'All', tool: 'Linguist')
   end
 
   def create_lint_task(linter)
-    task = tasks.build(type: 'LintTask', language: linter.language, linter: linter.name)
+    task = tasks.build(type: 'LintTask', language: linter.language, tool: linter.name)
     task.add_modified_files(linter)
     task.save!
     task

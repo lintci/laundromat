@@ -2,7 +2,7 @@ class CreateTasks < ActiveRecord::Migration
   def change
     create_table :tasks do |t|
       t.string :language
-      t.string :linter
+      t.string :tool
       t.string :status, null: false
       t.string :type, null: false
       t.references :build, index: true, null: false
