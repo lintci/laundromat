@@ -27,7 +27,7 @@ RSpec.describe Build, :type => :model do
       task = build.create_classify_task
 
       expect(task.language).to eq('All')
-      expect(task.linter).to eq('None')
+      expect(task.tool).to eq('Linguist')
       expect(task).to be_a(ClassifyTask)
     end
   end
@@ -42,7 +42,7 @@ RSpec.describe Build, :type => :model do
       task = build.create_lint_task(linter)
 
       expect(task.language).to eq('Ruby')
-      expect(task.linter).to eq('Rubocop')
+      expect(task.tool).to eq('Rubocop')
       expect(task).to be_a(LintTask)
     end
   end

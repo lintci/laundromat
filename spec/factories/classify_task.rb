@@ -3,7 +3,7 @@ FactoryGirl.define do
     association :build, strategy: :build
 
     language 'All'
-    linter 'None'
+    tool 'Linguist'
     status 'queued'
 
     trait :queued do
