@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20141206222739) do
 
   create_table "tasks", force: :cascade do |t|
     t.string   "language"
-    t.string   "linter"
+    t.string   "tool"
     t.string   "status",      null: false
     t.string   "type",        null: false
     t.integer  "build_id",    null: false

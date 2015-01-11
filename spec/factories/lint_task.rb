@@ -3,7 +3,7 @@ FactoryGirl.define do
     association :build, strategy: :build
 
     language 'Ruby'
-    linter 'Rubocop'
+    tool 'Rubocop'
     status 'queued'
 
     trait :queued do

@@ -13,7 +13,7 @@ describe TaskSerializer do
     "type": "ClassifyTask",
     "status": "queued",
     "language": "All",
-    "linter": "None",
+    "tool": "Linguist",
     "build": {
       "id": null,
       "pull_request": {
