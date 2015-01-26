@@ -11,9 +11,14 @@ gem 'aasm'
 gem 'active_model_serializers', '~> 0.8.0'
 gem 'octokit'
 
-gem 'rails_12factor', group: :production
 gem 'foreman'
 gem 'puma'
+gem 'rails_12factor', group: :production
+gem 'newrelic_rpm'
+gem 'sentry-raven'
+gem 'le'
+gem 'skylight'
+gem 'lograge'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
