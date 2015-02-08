@@ -4,7 +4,7 @@ class PayloadReceivedWorker
 
   sidekiq_options queue: :laundromat, backtrace: true
 
-  def perform(event, payload_data)
-    BuildRequest.call(event, payload_data)
+  def perform(event, event_id, payload_data)
+    BuildRequest.call(event, event_id, payload_data)
   end
 end

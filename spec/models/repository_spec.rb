@@ -22,14 +22,16 @@ RSpec.describe Repository, :type => :model do
 
   describe '#create_build!' do
     let(:event){'pull_request'}
+    let(:event_id){'bdb6ec00-5284-11e4-8e22-6dacd62599e2'}
     let(:payload){build(:payload)}
     subject(:repository){create(:repository)}
 
     it 'creates a build with the passed event and payload' do
-      build = repository.create_build!(event, payload)
+      build = repository.create_build!(event, event_id, payload)
 
       expect(build).to be_a(Build)
       expect(build.event).to eq(event)
+      expect(build.event_id).to eq(event_id)
       expect(build.payload).to eq(payload)
     end
   end

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20141206222739) do
 
   create_table "builds", force: :cascade do |t|
     t.string   "event",         null: false
+    t.string   "event_id",      null: false
     t.json     "payload",       null: false
     t.integer  "repository_id", null: false
     t.datetime "created_at"

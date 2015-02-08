@@ -9,6 +9,11 @@ RSpec.describe Build, :type => :model do
       expect(build).to_not be_valid
     end
 
+    it 'requires an event id' do
+      build.event_id = nil
+      expect(build).to_not be_valid
+    end
+
     it 'requires a payload' do
       build.payload = nil
       expect(build).to_not be_valid

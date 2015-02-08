@@ -15,7 +15,7 @@ gem 'foreman'
 gem 'puma'
 gem 'rails_12factor', group: :production
 gem 'newrelic_rpm'
-gem 'sentry-raven'
+gem 'sentry-raven', group: :production
 gem 'le'
 gem 'skylight'
 gem 'lograge'

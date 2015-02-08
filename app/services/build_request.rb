@@ -1,8 +1,9 @@
 require 'command_service'
 
 class BuildRequest < CommandService
-  def initialize(event, payload_data)
+  def initialize(event, event_id, payload_data)
     @event = event
+    @event_id = event_id
     @payload = Payload.new(payload_data)
   end
 
@@ -14,12 +15,12 @@ class BuildRequest < CommandService
 
 protected
 
-  attr_reader :event, :payload
+  attr_reader :event, :event_id, :payload
 
 private
 
   def create_build
-    repository.create_build!(event, payload)
+    repository.create_build!(event, event_id, payload)
   end
 
   def schedule_build_tasks(build)

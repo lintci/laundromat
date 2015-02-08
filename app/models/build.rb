@@ -2,7 +2,7 @@ class Build < ActiveRecord::Base
   belongs_to :repository, required: true
   has_many :tasks
 
-  validates_presence_of :event, :payload
+  validates_presence_of :event, :event_id, :payload
 
   delegate :owner, to: :repository
   delegate :status, to: :tasks

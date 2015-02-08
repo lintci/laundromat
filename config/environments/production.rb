@@ -22,7 +22,6 @@ Rails.application.configure do
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.serve_static_files = false
 
-
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
@@ -59,9 +58,34 @@ Rails.application.configure do
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
-  # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
-
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.logger = Le.new(ENV['LOGENTRIES_TOKEN'])
+  config.logger.formatter = proc do |severity, timestamp, _, message|
+    data = {severity: severity, timestamp: timestamp}
+
+    if message.is_a? Hash
+      data.merge!(message)
+    else
+      data.merge!(message: message)
+    end
+
+    JSON.dump(data)
+  end
+
+  config.lograge.enabled = true
+  config.lograge.logger = config.logger
+  config.lograge.formatter = Lograge::Formatters::Raw.new
+  config.lograge.custom_options = lambda do |event|
+    params = event.payload[:params].reject do |key|
+      %w(controller action).include?(key)
+    end
+
+    {
+      'params' => params,
+      'timestamp' => Time.now.iso8601,
+      'severity' => 'INFO'
+    }
+  end
 end
