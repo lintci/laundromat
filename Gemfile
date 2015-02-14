@@ -18,6 +18,7 @@ gem 'newrelic_rpm'
 gem 'sentry-raven', group: :production
 gem 'le'
 gem 'skylight'
+gem 'sidekiq-skylight'
 gem 'lograge'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
