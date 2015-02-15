@@ -24,7 +24,7 @@ private
   def schedule(task)
     return unless available_workers?
 
-    worker(task).perform_async(serializer(task))
+    worker(task).perform_async(serialize(task))
 
     task
   end
@@ -37,7 +37,7 @@ private
     "#{task.type}RequestedWorker".constantize
   end
 
-  def serializer(task)
-    TaskSerializer.new(task)
+  def serialize(task)
+    TaskSerializer.new(task).serializable_hash
   end
 end
