@@ -181,7 +181,7 @@ GEM
     sidekiq-notifications (0.0.1)
       activesupport (>= 4.2.0)
       sidekiq (>= 3.3.0)
-    sidekiq-skylight (0.0.3)
+    sidekiq-skylight (0.0.4)
       sidekiq (>= 3.3.0)
       skylight (>= 0.5.2)
     skylight (0.6.0)
