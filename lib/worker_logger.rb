@@ -5,7 +5,7 @@ class WorkerLogger
       started: started,
       finished: finished,
       duration: finished - started,
-      notification: unique_id
+      notification: unique_id,
       payload: payload
     )
   end
