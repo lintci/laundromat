@@ -61,7 +61,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.logger = Le.new(ENV['LOGENTRIES_TOKEN'])
+  config.logger = Rails.logger
   config.logger.formatter = proc do |severity, timestamp, _, message|
     data = {severity: severity, timestamp: timestamp}
 
@@ -75,6 +75,7 @@ Rails.application.configure do
   end
 
   config.skylight.logger = config.logger
+  Sidekiq::Logging.logger = config.logger
 
   config.lograge.enabled = true
   config.lograge.logger = config.logger

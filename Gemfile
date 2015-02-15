@@ -19,6 +19,7 @@ gem 'sentry-raven', group: :production
 gem 'le'
 gem 'skylight'
 gem 'sidekiq-skylight'
+gem 'sidekiq-notifications'
 gem 'lograge'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
