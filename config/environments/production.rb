@@ -74,6 +74,8 @@ Rails.application.configure do
     JSON.dump(data)
   end
 
+  config.skylight.logger = config.logger
+
   config.lograge.enabled = true
   config.lograge.logger = config.logger
   config.lograge.formatter = Lograge::Formatters::Raw.new
