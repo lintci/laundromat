@@ -1,6 +1,6 @@
 class WorkerLogger
   def call(name, started, finished, unique_id, payload)
-    Rails.logger(
+    Rails.logger.info(
       name: name,
       started: started,
       finished: finished,
