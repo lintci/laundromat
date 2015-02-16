@@ -9,8 +9,6 @@ class WorkerLogger
       payload: strip_urls(payload)
     }
 
-    puts data[:payload]
-
     if Sidekiq.server?
       Sidekiq.logger.info(data)
     else
