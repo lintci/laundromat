@@ -22,7 +22,7 @@ private
 
   def strip_urls(payload)
     payload.each_pair.with_object({}) do |(key, value), new_payload|
-      next if key =~ /_url$/
+      next if key =~ /url|_links$/
 
       new_payload[key] = if value.is_a?(Hash)
         strip_urls(value)
