@@ -38,6 +38,9 @@ private
   end
 
   def serialize(task)
-    TaskSerializer.new(task).serializable_hash
+    TaskSerializer.new(
+      task,
+      meta: {event_id: build.event_id}
+    ).as_json
   end
 end
