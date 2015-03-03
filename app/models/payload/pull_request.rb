@@ -21,7 +21,7 @@ class Payload
     end
 
     def clone_url
-      data['head']['repo']['git_url']
+      "git://github.com/#{owner}/#{repo}.git"
     end
 
     def owner
