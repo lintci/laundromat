@@ -30,7 +30,6 @@ describe TaskScheduler do
           'tool' => 'Linguist',
           'build' => {
             'id' => be_a(Integer),
-            'event_id' => 'bdb6ec00-5284-11e4-8e22-6dacd62599e2',
             'pull_request' => {
               'id' => 1,
               'base_sha' => 'bbf813a806dacf043a592f04a0ed320236caca3a',
@@ -43,6 +42,7 @@ describe TaskScheduler do
           }
         },
         'meta' => {
+          'event' => 'pull_request',
           'event_id' => 'bdb6ec00-5284-11e4-8e22-6dacd62599e2'
         }
       }])

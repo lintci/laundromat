@@ -40,7 +40,10 @@ private
   def serialize(task)
     TaskSerializer.new(
       task,
-      meta: {event_id: build.event_id}
+      meta: {
+        event: build.event,
+        event_id: build.event_id
+      }
     ).as_json
   end
 end
