@@ -1,10 +1,10 @@
 require 'command_service'
 
-class BuildRequest < CommandService
-  def initialize(event, event_id, payload_data)
-    @event = event
-    @event_id = event_id
-    @payload = Payload.new(payload_data)
+class RequestBuild < CommandService
+  def initialize(data)
+    @event = data['meta']['event']
+    @event_id = data['meta']['event_id']
+    @payload = Payload.new(data['payload'])
   end
 
   def perform
