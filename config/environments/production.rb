@@ -87,7 +87,7 @@ Rails.application.configure do
 
     {
       'params' => params,
-      'timestamp' => Time.now.iso8601,
+      'timestamp' => Time.stamp,
       'severity' => 'INFO'
     }
   end

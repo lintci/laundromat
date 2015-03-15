@@ -43,7 +43,8 @@ describe TaskScheduler do
         },
         'meta' => {
           'event' => 'pull_request',
-          'event_id' => 'bdb6ec00-5284-11e4-8e22-6dacd62599e2'
+          'event_id' => 'bdb6ec00-5284-11e4-8e22-6dacd62599e2',
+          'requested_at' => be_timestamp
         }
       }])
     end

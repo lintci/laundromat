@@ -22,7 +22,6 @@ RSpec.configure do |config|
   # The settings below are suggested to provide a good initial experience
   # with RSpec, but feel free to customize to your heart's content.
   config.include FixtureFile
-  config.include TimeISO8601
   config.include FactoryGirl::Syntax::Methods
   # These two settings work together to allow you to limit a spec run
   # to individual examples or groups you care about by tagging them with

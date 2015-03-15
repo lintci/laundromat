@@ -36,11 +36,11 @@ class Task < ActiveRecord::Base
 
 private
 
-  def process_start_event(event)
-    self.started_at = event.started_at
+  def process_start_event(started_at)
+    self.started_at = started_at
   end
 
-  def process_finish_event(event)
-    self.finished_at = event.finished_at
+  def process_finish_event(finished_at)
+    self.finished_at = finished_at
   end
 end

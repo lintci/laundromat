@@ -42,7 +42,8 @@ private
       task,
       meta: {
         event: build.event,
-        event_id: build.event_id
+        event_id: build.event_id,
+        requested_at: Time.stamp
       }
     ).as_json
   end

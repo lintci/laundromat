@@ -2,20 +2,15 @@ require 'command_service'
 
 class StartTask < CommandService
   def initialize(data)
-    @event = TaskStarted.new(data)
+    @task = Task.find(data['task']['id'])
+    @started_at = Time.from_stamp(data['meta']['started_at'])
   end
 
   def perform
-    task.start!(event)
+    task.start!(started_at)
   end
 
 protected
 
-  attr_reader :event
-
-private
-
-  def task
-    @task ||= Task.find(event.task_id)
-  end
+  attr_reader :task, :started_at
 end
