@@ -20,10 +20,11 @@ RSpec.shared_examples_for 'Task' do
 
   describe '#start' do
     context 'when status is queued' do
-      let(:started_at){Time.now}
+      let(:data){{'started_at' => started_at.stamp}}
+      let(:started_at){Time.stamp_time}
 
       it 'transitions to running and sets the started_at time' do
-        queued_task.start(started_at)
+        queued_task.start(data)
 
         expect(queued_task.status).to eq('running')
         expect(queued_task.started_at).to eq(started_at)
@@ -33,10 +34,12 @@ RSpec.shared_examples_for 'Task' do
 
   describe '#succeed' do
     context 'when status is running' do
-      let(:finished_at){Time.now}
+      let(:data){{'finished_at' => finished_at.stamp, 'started_at' => started_at.stamp}}
+      let(:finished_at){Time.stamp_time}
+      let(:started_at){Time.stamp_time - 3.minutes}
 
       it 'transitions to success and sets the finished_at time' do
-        running_task.succeed(finished_at)
+        running_task.succeed(data)
 
         expect(running_task.status).to eq('success')
         expect(running_task.finished_at).to eq(finished_at)
@@ -46,10 +49,12 @@ RSpec.shared_examples_for 'Task' do
 
   describe '#fail' do
     context 'when status is running' do
-      let(:finished_at){Time.now}
+      let(:data){{'finished_at' => finished_at.stamp, 'started_at' => started_at.stamp}}
+      let(:finished_at){Time.stamp_time}
+      let(:started_at){Time.stamp_time - 3.minutes}
 
       it 'transitions to failed' do
-        running_task.fail(finished_at)
+        running_task.fail(data)
 
         expect(running_task.status).to eq('failed')
         expect(running_task.finished_at).to eq(finished_at)

@@ -3,14 +3,14 @@ require 'command_service'
 class StartTask < CommandService
   def initialize(data)
     @task = Task.find(data['task']['id'])
-    @started_at = Time.from_stamp(data['meta']['started_at'])
+    @meta = data['meta']
   end
 
   def perform
-    task.start!(started_at)
+    task.start!(meta)
   end
 
 protected
 
-  attr_reader :task, :started_at
+  attr_reader :task, :meta
 end

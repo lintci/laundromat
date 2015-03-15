@@ -3,14 +3,12 @@ require 'spec_helper'
 describe PayloadReceivedWorker do
   describe '#perform' do
     subject(:worker){described_class.new}
-    let(:event){'pull_request'}
-    let(:event_id){'bdb6ec00-5284-11e4-8e22-6dacd62599e2'}
-    let(:payload_data){json_fixture_file('github/pull_request_opened_payload.json')}
+    let(:event){{}}
 
     it 'delegates to the RequestBuild service' do
-      expect(RequestBuild).to receive(:call).with(event, event_id, payload_data)
+      expect(RequestBuild).to receive(:call).with(event)
 
-      worker.perform(event, event_id, payload_data)
+      worker.perform(event)
     end
   end
 end

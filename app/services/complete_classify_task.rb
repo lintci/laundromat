@@ -2,7 +2,8 @@ require 'command_service'
 
 class CompleteClassifyTask < CommandService
   def initialize(data)
-    @classification = Classification.new(data)
+    @classification = Classification.new(data['classification'])
+    @meta = data['meta']
   end
 
   def perform
@@ -17,8 +18,7 @@ protected
 private
 
   def complete_classify_task
-    task.finished_at = classification.finished_at
-    task.succeed
+    task.succeed(meta)
     task.save!
   end
 

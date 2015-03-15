@@ -1,7 +1,7 @@
 class ClassifyTaskCompletedWorker
   include Sidekiq::Worker
 
-  sidekiq_options queue: :laundromat, backtrace: true
+  sidekiq_options queue: :laundromat
 
   def perform(data)
     CompleteClassifyTask.call(data)

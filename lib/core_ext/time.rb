@@ -7,6 +7,10 @@ class Time
     def stamp(time = now)
       time.stamp
     end
+
+    def stamp_time
+      from_stamp(stamp)
+    end
   end
 
   def stamp

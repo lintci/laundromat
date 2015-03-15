@@ -29,18 +29,18 @@ class Task < ActiveRecord::Base
     state :success
     state :failed
 
-    event(:start){transitions from: :queued, to: :running, after: :process_start_event}
-    event(:succeed){transitions from: :running, to: :success, after: :process_finish_event}
-    event(:fail){transitions from: :running, to: :failed, after: :process_finish_event}
+    event(:start){transitions from: :queued, to: :running, after: :process_event_data}
+    event(:succeed){transitions from: %i(queued running), to: :success, after: :process_event_data}
+    event(:fail){transitions from: %i(queued running), to: :failed, after: :process_event_data}
   end
 
 private
 
-  def process_start_event(started_at)
-    self.started_at = started_at
-  end
+  def process_event_data(data)
+    %i(started_at finished_at).each do |key|
+      next unless (timestamp = data[key.to_s])
 
-  def process_finish_event(finished_at)
-    self.finished_at = finished_at
+      self[key] ||= Time.from_stamp(timestamp)
+    end
   end
 end
