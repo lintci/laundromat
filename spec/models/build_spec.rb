@@ -39,15 +39,15 @@ RSpec.describe Build, :type => :model do
 
   describe '#create_lint_task' do
     let(:build){create(:build)}
-    let(:linter){FactoryGirl.build(:linter)}
+    let(:group){FactoryGirl.build(:group)}
 
     it 'creates an lint task' do
-      expect_any_instance_of(LintTask).to receive(:add_modified_files).with(linter)
+      expect_any_instance_of(LintTask).to receive(:add_modified_files).with(group)
 
-      task = build.create_lint_task(linter)
+      task = build.create_lint_task(group)
 
       expect(task.language).to eq('Ruby')
-      expect(task.tool).to eq('Rubocop')
+      expect(task.tool).to eq('RuboCop')
       expect(task).to be_a(LintTask)
     end
   end

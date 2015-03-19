@@ -11,9 +11,9 @@ class Build < ActiveRecord::Base
     tasks.create!(type: 'ClassifyTask', language: 'All', tool: 'Linguist')
   end
 
-  def create_lint_task(linter)
-    task = tasks.build(type: 'LintTask', language: linter.language, tool: linter.name)
-    task.add_modified_files(linter)
+  def create_lint_task(group)
+    task = tasks.build(type: 'LintTask', language: group.language, tool: group.linter)
+    task.add_modified_files(group)
     task.save!
     task
   end

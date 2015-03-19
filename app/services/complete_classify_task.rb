@@ -13,7 +13,7 @@ class CompleteClassifyTask < CommandService
 
 protected
 
-  attr_reader :data
+  attr_reader :meta, :classification
 
 private
 
@@ -25,8 +25,8 @@ private
   def schedule_lint_tasks
     scheduler = TaskScheduler.new(build)
 
-    classification.each_linter do |linter|
-      scheduler.schedule_linting(linter)
+    classification.each_group do |group|
+      scheduler.schedule_linting(group)
     end
   end
 

@@ -9,14 +9,14 @@ describe StartTask do
 
   describe '.call' do
     it 'updates the started_at and sets the state to running' do
-      StartTask.call(data)
+      described_class.call(data)
 
       task.reload
       expect(task.started_at).to eq(started_at)
     end
 
     it 'sets the status to running' do
-      StartTask.call(data)
+      described_class.call(data)
 
       task.reload
       expect(task.status).to eq('running')

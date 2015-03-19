@@ -3,6 +3,6 @@ FactoryGirl.define do
     association :lint_task, strategy: :build
 
     name 'ruby.rb'
-    lines [2, 3, 7]
+    lines [1, 2, 3, 4]
   end
 end

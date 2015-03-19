@@ -12,6 +12,7 @@ FactoryGirl.define do
 
     trait :running do
       status 'running'
+      started_at{Time.stamp_time - 3.minutes}
     end
   end
 end

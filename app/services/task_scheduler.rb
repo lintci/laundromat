@@ -9,8 +9,8 @@ class TaskScheduler
     schedule(task)
   end
 
-  def schedule_linting(linter)
-    task = build.create_lint_task(linter)
+  def schedule_linting(group)
+    task = build.create_lint_task(group)
 
     schedule(task)
   end
@@ -38,7 +38,7 @@ private
   end
 
   def serialize(task)
-    TaskSerializer.new(
+    "#{task.type}Serializer".constantize.new(
       task,
       meta: {
         event: build.event,

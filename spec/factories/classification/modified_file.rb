@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :classification_modified_file, class: Classification::ModifiedFile do
     name 'bad.rb'
-    lines [1, 2, 3]
+    lines [1, 2, 3, 4]
 
     skip_create
     initialize_with do

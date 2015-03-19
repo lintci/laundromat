@@ -1,0 +1,2 @@
+class ClassifyTaskSerializer < TaskSerializer
+end

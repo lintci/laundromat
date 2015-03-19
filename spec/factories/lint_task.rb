@@ -3,8 +3,14 @@ FactoryGirl.define do
     association :build, strategy: :build
 
     language 'Ruby'
-    tool 'Rubocop'
+    tool 'RuboCop'
     status 'queued'
+
+    trait :with_modified_files do
+      after(:build) do |task, _|
+        task.modified_files = [build(:modified_file, lint_task: task)]
+      end
+    end
 
     trait :queued do
       status 'queued'
