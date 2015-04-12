@@ -1,3 +1,4 @@
+# Task serializer
 class TaskSerializer < ActiveModel::Serializer
   has_one :build, serializer: BuildSerializer
 

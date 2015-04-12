@@ -1,3 +1,4 @@
+# Build serializer
 class BuildSerializer < ActiveModel::Serializer
   has_one :pull_request, serializer: PullRequestSerializer
 
