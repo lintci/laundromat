@@ -4,12 +4,5 @@ describe Classification do
   subject(:classification){build(:classification)}
 
   its(:task_id){is_expected.to eq(1)}
-
-  describe '#each_group' do
-    it 'yields groups' do
-      classification.each_group do |group|
-        expect(group).to be_a(Classification::Group)
-      end
-    end
-  end
+  its(:source_files){is_expected.to match([be_a(SourceFile), be_a(SourceFile), be_a(SourceFile)])}
 end

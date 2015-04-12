@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Owner, :type => :model do
+RSpec.describe Owner, type: :model do
   describe '#valid?' do
     subject(:owner){build(:owner)}
 

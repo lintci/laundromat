@@ -3,6 +3,6 @@ class ClassifyTaskRequestedWorker
 
   sidekiq_options queue: :dryer
 
-  def perform(data)
+  def perform(_data)
   end
 end

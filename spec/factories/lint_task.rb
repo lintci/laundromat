@@ -6,10 +6,8 @@ FactoryGirl.define do
     tool 'RuboCop'
     status 'queued'
 
-    trait :with_modified_files do
-      after(:build) do |task, _|
-        task.modified_files = [build(:modified_file, lint_task: task)]
-      end
+    trait :with_source_files do
+      source_files{build_list(:source_file, 1, build: build)}
     end
 
     trait :queued do

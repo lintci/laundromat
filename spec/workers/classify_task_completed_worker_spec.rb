@@ -5,8 +5,8 @@ describe ClassifyTaskCompletedWorker do
     let(:event){{}}
     subject(:worker){described_class.new}
 
-    it 'delegates to the CompleteClassifyTask service' do
-      expect(CompleteClassifyTask).to receive(:call).with(event)
+    it 'delegates to the ProcessSourceFiles service' do
+      expect(ProcessSourceFiles).to receive(:call).with(event)
 
       worker.perform(event)
     end

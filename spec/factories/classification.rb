@@ -1,13 +1,19 @@
 FactoryGirl.define do
   factory :classification do
     task_id 1
-    groups{[attributes_for(:group).stringify_keys]}
+    source_files do
+      [
+        attributes_for(:javascript_source_file),
+        attributes_for(:ruby_source_file),
+        attributes_for(:text_source_file)
+      ]
+    end
 
     skip_create
     initialize_with do
       Classification.new(
         'task_id' => task_id,
-        'groups' => groups
+        'source_files' => source_files
       )
     end
   end

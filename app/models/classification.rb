@@ -1,19 +1,16 @@
 class Classification
-  attr_reader :task_id
+  attr_reader :task_id, :source_files
 
   def initialize(data)
-    @task_id, @groups = data.values_at('task_id', 'groups')
+    @task_id = data['task_id']
+    @source_files = build_source_files(data)
   end
 
-  def each_group
-    groups.each do |data|
-      group = Classification::Group.new(data)
+private
 
-      yield group unless group.skip?
+  def build_source_files(data)
+    data['source_files'].map do |source_file_data|
+      SourceFile.new(source_file_data)
     end
   end
-
-protected
-
-  attr_reader :groups
 end

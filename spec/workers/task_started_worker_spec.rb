@@ -12,4 +12,3 @@ describe TaskStartedWorker do
     end
   end
 end
-

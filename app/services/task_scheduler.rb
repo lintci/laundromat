@@ -1,3 +1,4 @@
+# Schedules work to be run for a build
 class TaskScheduler
   def initialize(build)
     @build = build

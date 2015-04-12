@@ -4,6 +4,6 @@ class ClassifyTaskCompletedWorker
   sidekiq_options queue: :laundromat
 
   def perform(data)
-    CompleteClassifyTask.call(data)
+    ProcessSourceFiles.call(data)
   end
 end

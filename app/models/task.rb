@@ -2,6 +2,8 @@ class Task < ActiveRecord::Base
   include AASM
 
   belongs_to :build, required: true
+  has_many :task_results
+  has_many :source_files, through: :task_results
 
   validates_presence_of :status, :type
 
@@ -31,7 +33,7 @@ class Task < ActiveRecord::Base
 
     event(:start){transitions from: :queued, to: :running, after: :process_event_data}
     event(:succeed){transitions from: %i(queued running), to: :success, after: :process_event_data}
-    event(:fail){transitions from: %i(queued running), to: :failed, after: :process_event_data}
+    event(:failure){transitions from: %i(queued running), to: :failed, after: :process_event_data}
   end
 
 private

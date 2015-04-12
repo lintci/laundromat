@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Build, :type => :model do
+RSpec.describe Build, type: :model do
   describe '#valid?' do
     subject(:build){FactoryGirl.build(:build)}
 
@@ -39,16 +39,15 @@ RSpec.describe Build, :type => :model do
 
   describe '#create_lint_task' do
     let(:build){create(:build)}
-    let(:group){FactoryGirl.build(:group)}
+    let(:group){FactoryGirl.build(:source_file_group)}
 
     it 'creates an lint task' do
-      expect_any_instance_of(LintTask).to receive(:add_modified_files).with(group)
-
       task = build.create_lint_task(group)
 
       expect(task.language).to eq('Ruby')
       expect(task.tool).to eq('RuboCop')
       expect(task).to be_a(LintTask)
+      expect(task.source_files.size).to eq(1)
     end
   end
 

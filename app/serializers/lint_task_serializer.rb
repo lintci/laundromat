@@ -1,7 +1,8 @@
 class LintTaskSerializer < TaskSerializer
-  class ModifiedFileSerializer < ActiveModel::Serializer
-    attributes :name, :lines
+  class SourceFileSerializer < ActiveModel::Serializer
+    attributes :id, :name, :sha, :source_type, :language, :linters, :modified_lines, :extension, :size,
+               :generated, :vendored, :documentation, :binary, :image
   end
 
-  has_many :modified_files, serializer: ModifiedFileSerializer
+  has_many :source_files, serializer: SourceFileSerializer
 end

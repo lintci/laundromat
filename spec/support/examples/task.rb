@@ -54,7 +54,7 @@ RSpec.shared_examples_for 'Task' do
       let(:started_at){Time.stamp_time - 3.minutes}
 
       it 'transitions to failed' do
-        running_task.fail(data)
+        running_task.failure(data)
 
         expect(running_task.status).to eq('failed')
         expect(running_task.finished_at).to eq(finished_at)

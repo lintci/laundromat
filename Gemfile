@@ -10,6 +10,7 @@ gem 'sidekiq'
 gem 'aasm'
 gem 'active_model_serializers', '~> 0.8.0'
 gem 'octokit'
+gem 'stamped'
 
 gem 'foreman'
 gem 'puma'
@@ -31,7 +32,7 @@ gem 'pry-rails'
 gem 'pry-byebug'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0'
+  gem 'rspec-rails'
   gem 'dotenv-rails'
 end
 
@@ -56,4 +57,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-

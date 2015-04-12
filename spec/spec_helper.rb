@@ -5,6 +5,7 @@ require 'rspec/its'
 require 'factory_girl_rails'
 require 'vcr'
 require 'sidekiq/testing'
+require 'stamped/rspec'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each{|f| require f}
 

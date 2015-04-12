@@ -1,6 +1,9 @@
+# A collection of tasks to perform for events like pull requests
 class Build < ActiveRecord::Base
   belongs_to :repository, required: true
+
   has_many :tasks
+  has_many :source_files
 
   validates_presence_of :event, :event_id, :payload
 
@@ -12,10 +15,12 @@ class Build < ActiveRecord::Base
   end
 
   def create_lint_task(group)
-    task = tasks.build(type: 'LintTask', language: group.language, tool: group.linter)
-    task.add_modified_files(group)
-    task.save!
-    task
+    tasks.create!(
+      type: 'LintTask',
+      language: group.language,
+      tool: group.tool,
+      source_files: group.source_files
+    )
   end
 
   def payload=(payload)
@@ -26,9 +31,5 @@ class Build < ActiveRecord::Base
     return unless self[:payload]
 
     Payload.new(self[:payload])
-  end
-
-  def status
-    tasks.status
   end
 end
