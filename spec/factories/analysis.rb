@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :classification do
+  factory :analysis do
     task_id 1
     source_files do
       [
@@ -11,7 +11,7 @@ FactoryGirl.define do
 
     skip_create
     initialize_with do
-      Classification.new(
+      Analysis.new(
         'task_id' => task_id,
         'source_files' => source_files
       )

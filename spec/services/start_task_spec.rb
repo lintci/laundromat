@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe StartTask do
   subject(:service){}
-  let(:task){create(:classify_task)}
+  let(:task){create(:analyze_task)}
   let(:started_at){Time.stamp}
   let(:started_at_time){Time.from_stamp(started_at)}
   let(:data){build(:task_started_event, task: task, started_at: started_at_time)}

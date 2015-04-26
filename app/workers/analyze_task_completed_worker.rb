@@ -1,4 +1,4 @@
-class ClassifyTaskCompletedWorker
+class AnalyzeTaskCompletedWorker
   include Sidekiq::Worker
 
   sidekiq_options queue: :laundromat

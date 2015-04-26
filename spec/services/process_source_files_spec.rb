@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe ProcessSourceFiles do
   describe '#call' do
-    let(:task){create(:classify_task, :running)}
+    let(:task){create(:analyze_task, :running)}
     let(:finished_at){Time.stamp_time}
     let(:data) do
       {
-        'classification' => {
+        'analysis' => {
           'task_id' => task.id,
           'source_files' => [{
             'name' => 'bad.rb',
@@ -47,7 +47,7 @@ describe ProcessSourceFiles do
       }
     end
 
-    it 'transitions the classify task to success' do
+    it 'transitions the analyze task to success' do
       described_class.call(data)
 
       task.reload

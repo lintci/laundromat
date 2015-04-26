@@ -1,4 +1,4 @@
-class ClassifyTaskRequestedWorker
+class AnalyzeTaskRequestedWorker
   include Sidekiq::Worker
 
   sidekiq_options queue: :dryer

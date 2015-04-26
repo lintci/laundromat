@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :task_started_event, class: Hash do
     started_at{Time.now}
-    task{build(:classify_task)}
+    task{build(:analyze_task)}
 
     skip_create
     initialize_with do

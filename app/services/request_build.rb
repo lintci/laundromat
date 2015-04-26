@@ -24,7 +24,7 @@ private
   end
 
   def schedule_build_tasks(build)
-    TaskScheduler.new(build).schedule_classification
+    TaskScheduler.new(build).schedule_analysis
   end
 
   def repository

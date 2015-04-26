@@ -1,4 +1,4 @@
-class Classification
+class Analysis
   attr_reader :task_id, :source_files
 
   def initialize(data)

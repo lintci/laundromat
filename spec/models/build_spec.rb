@@ -25,15 +25,15 @@ RSpec.describe Build, type: :model do
     end
   end
 
-  describe '#create_classify_task' do
+  describe '#create_analyze_task' do
     let(:build){create(:build)}
 
-    it 'creates the classification task' do
-      task = build.create_classify_task
+    it 'creates the analysis task' do
+      task = build.create_analyze_task
 
       expect(task.language).to eq('All')
       expect(task.tool).to eq('Linguist')
-      expect(task).to be_a(ClassifyTask)
+      expect(task).to be_a(AnalyzeTask)
     end
   end
 

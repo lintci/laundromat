@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :classify_task do
+  factory :analyze_task do
     association :build, strategy: :build
 
     language 'All'

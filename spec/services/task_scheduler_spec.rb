@@ -4,29 +4,29 @@ describe TaskScheduler do
   let(:build){create(:build)}
   subject(:scheduler){described_class.new(build)}
 
-  describe '#schedule_classification' do
-    it 'creates a classify task' do
+  describe '#schedule_analysis' do
+    it 'creates a analyze task' do
       expect do
-        scheduler.schedule_classification
+        scheduler.schedule_analysis
       end.to change{build.tasks.size}.by(1)
 
       task = Task.last
-      expect(task).to be_a(ClassifyTask)
+      expect(task).to be_a(AnalyzeTask)
       expect(task.language).to eq('All')
       expect(task.tool).to eq('Linguist')
     end
 
     it 'schedules the task to be run' do
       expect do
-        scheduler.schedule_classification
-      end.to change(ClassifyTaskRequestedWorker.jobs, :size).by(1)
+        scheduler.schedule_analysis
+      end.to change(AnalyzeTaskRequestedWorker.jobs, :size).by(1)
 
-      job = ClassifyTaskRequestedWorker.jobs.last
+      job = AnalyzeTaskRequestedWorker.jobs.last
       expect(job['args']).to match([
         {
-          'classify_task'  =>  {
+          'analyze_task'  =>  {
             'id' => be_a(Integer),
-            'type' => 'ClassifyTask',
+            'type' => 'AnalyzeTask',
             'status' => 'queued',
             'language' => 'All',
             'tool' => 'Linguist',

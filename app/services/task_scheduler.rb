@@ -4,8 +4,8 @@ class TaskScheduler
     @build = build
   end
 
-  def schedule_classification
-    task = build.create_classify_task
+  def schedule_analysis
+    task = build.create_analyze_task
 
     schedule(task)
   end

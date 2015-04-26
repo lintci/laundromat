@@ -19,8 +19,8 @@ describe RequestBuild do
       expect(build.payload).to eq(payload)
     end
 
-    it 'schedules a classification task' do
-      expect_any_instance_of(TaskScheduler).to receive(:schedule_classification)
+    it 'schedules a analysis task' do
+      expect_any_instance_of(TaskScheduler).to receive(:schedule_analysis)
 
       described_class.call(payload_received)
     end

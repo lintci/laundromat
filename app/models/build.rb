@@ -10,8 +10,8 @@ class Build < ActiveRecord::Base
   delegate :owner, to: :repository
   delegate :status, to: :tasks
 
-  def create_classify_task
-    tasks.create!(type: 'ClassifyTask', language: 'All', tool: 'Linguist')
+  def create_analyze_task
+    tasks.create!(type: 'AnalyzeTask', language: 'All', tool: 'Linguist')
   end
 
   def create_lint_task(group)
