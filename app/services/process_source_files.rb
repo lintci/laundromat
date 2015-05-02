@@ -1,6 +1,6 @@
 require 'command_service'
 
-# Runs after source files have been classified. Splits the source files into
+# Runs after source files have been analyzed. Splits the source files into
 # pieces of work that run concurrently as tasks.
 class ProcessSourceFiles < CommandService
   def initialize(data)

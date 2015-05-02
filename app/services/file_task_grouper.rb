@@ -1,3 +1,4 @@
+# Groups files together, that will be linted together.
 class FileTaskGrouper
   def initialize(source_files)
     @source_files = source_files

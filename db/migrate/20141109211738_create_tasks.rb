@@ -10,5 +10,6 @@ class CreateTasks < ActiveRecord::Migration
       t.datetime :finished_at
       t.timestamps
     end
+    add_foreign_key :tasks, :builds
   end
 end

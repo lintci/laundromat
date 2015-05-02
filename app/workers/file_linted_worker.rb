@@ -1,4 +1,5 @@
-class FileAnalyzedWorker
+# Message from dryer that file has been linted.
+class FileLintedWorker
   include Sidekiq::Worker
 
   sidekiq_options queue: :laundromat

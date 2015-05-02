@@ -1,5 +1,6 @@
 require 'command_service'
 
+# Triggers a build to run
 class RequestBuild < CommandService
   def initialize(data)
     @event = data['meta']['event']

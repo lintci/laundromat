@@ -1,5 +1,5 @@
-# Connects tasks to source files
+# Connects tasks to violations
 class TaskResult < ActiveRecord::Base
   belongs_to :task
-  belongs_to :source_file
+  belongs_to :violation
 end

@@ -1,11 +1,14 @@
+# A piece of work, such as linting to perform
 class Task < ActiveRecord::Base
   include AASM
 
   belongs_to :build, required: true
+  has_many :task_source_files
+  has_many :source_files, through: :task_source_files
   has_many :task_results
-  has_many :source_files, through: :task_results
+  has_many :violations, through: :task_results
 
-  validates_presence_of :status, :type
+  validates :status, :type, presence: true
 
   class << self
     def total_running

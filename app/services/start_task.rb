@@ -1,5 +1,6 @@
 require 'command_service'
 
+# Transitions task to being started
 class StartTask < CommandService
   def initialize(data)
     @task = Task.find(data['task']['id'])

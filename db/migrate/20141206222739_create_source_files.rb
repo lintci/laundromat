@@ -18,5 +18,6 @@ class CreateSourceFiles < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_foreign_key :source_files, :builds
   end
 end

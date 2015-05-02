@@ -7,8 +7,10 @@ AllCops:
     - '**/*.rake'
     - '**/Gemfile'
   Exclude:
-    - 'vendor/**'
-    - 'spec/fixtures/**'
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'bin/**/*'
+    - 'db/migrate/**/*'
   RunRailsCops: true
 
 # Indent private/protected/public as deep as method definitions

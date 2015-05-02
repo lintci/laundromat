@@ -1,4 +1,5 @@
 class Payload
+  # Pull request information from a payload
   class PullRequest
     def initialize(data)
       @data = data
@@ -40,8 +41,8 @@ class Payload
       "<PullRequest:#{owner}/#{repo} (#{base_sha[0..6]}...#{head_sha[0..6]})>"
     end
 
-    def comment(file, line, violations)
-      Comment.new(self).add(file, line, violations)
+    def comment(source_file, line, violations)
+      Comment.new(self).add(source_file, line, violations)
     end
 
     def read_attribute_for_serialization(name)

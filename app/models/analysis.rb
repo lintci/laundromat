@@ -1,3 +1,4 @@
+# The result of analyzing files to determine their language, linter, etc...
 class Analysis
   attr_reader :task_id, :source_files
 

@@ -8,5 +8,6 @@ class CreateBuilds < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_foreign_key :builds, :repositories
   end
 end

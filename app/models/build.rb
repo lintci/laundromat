@@ -5,7 +5,7 @@ class Build < ActiveRecord::Base
   has_many :tasks
   has_many :source_files
 
-  validates_presence_of :event, :event_id, :payload
+  validates :event, :event_id, :payload, presence: true
 
   delegate :owner, to: :repository
   delegate :status, to: :tasks

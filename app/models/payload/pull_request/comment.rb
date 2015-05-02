@@ -6,13 +6,13 @@ class Payload
         @pull_request = pull_request
       end
 
-      def add(file, line, messages)
+      def add(source_file, line, violations)
         client.create_pull_request_comment(
           repo,
           pull_request.id,
-          format(messages),
+          format(violations),
           pull_request.head_sha,
-          file,
+          source_file.name,
           line
         )
       end
@@ -23,8 +23,8 @@ class Payload
 
     private
 
-      def format(messages)
-        messages.join('<br>')
+      def format(violations)
+        violations.map(&:message).join('<br>')
       end
 
       def repo

@@ -1,9 +1,10 @@
+# Repository owner
 class Owner < ActiveRecord::Base
   has_many :repositories
   has_many :builds, through: :repositories
   has_many :tasks, through: :builds
 
-  validates_presence_of :name
+  validates :name, presence: true
 
   def available_workers?
     # TODO: Something like this. Total workers would come from the plan.

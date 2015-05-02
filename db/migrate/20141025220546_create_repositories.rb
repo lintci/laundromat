@@ -7,5 +7,6 @@ class CreateRepositories < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_foreign_key :repositories, :owners
   end
 end
