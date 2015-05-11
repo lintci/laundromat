@@ -1,3 +1,4 @@
+# Notifies dryer to perform a lint task
 class LintTaskRequestedWorker
   include Sidekiq::Worker
 

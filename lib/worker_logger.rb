@@ -1,3 +1,4 @@
+# Subscribes to wokers and logs them
 class WorkerLogger
   def call(name, started, finished, unique_id, message)
     data = {

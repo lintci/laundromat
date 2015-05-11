@@ -1,3 +1,4 @@
+# Notifies laundromat that a task has been started
 class TaskStartedWorker
   include Sidekiq::Worker
 

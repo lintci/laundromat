@@ -1,3 +1,4 @@
+# Simple abstraction of common functionality from services
 class CommandService
   class << self
     def call(*args)

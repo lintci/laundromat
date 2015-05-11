@@ -1,3 +1,4 @@
+# Defines basic structure of a query
 class Query
   delegate :to_sql, :inspect, to: :scope
 
