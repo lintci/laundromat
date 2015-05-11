@@ -16,20 +16,22 @@ class TaskScheduler
     schedule(task)
   end
 
+  def schedule(task)
+    return unless available_workers?
+
+    task.schedule!(scheduled_at: Time.stamp)
+    worker(task).perform_async(serialize(task))
+
+    task
+  end
+
 protected
 
   attr_reader :build
 
 private
 
-  def schedule(task)
-    return unless available_workers?
-
-    worker(task).perform_async(serialize(task))
-
-    task
-  end
-
+  # TODO: Implement worker limits
   def available_workers?
     true
   end

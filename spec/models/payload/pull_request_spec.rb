@@ -21,4 +21,22 @@ describe Payload::PullRequest do
       pull_request.comment('bad.rb', '1', violations)
     end
   end
+
+  describe '#==' do
+    context 'when compared to the same pull request' do
+      let(:other_pull_request){build(:pull_request)}
+
+      it 'returns true' do
+        expect(pull_request).to eq(other_pull_request)
+      end
+    end
+
+    context 'when compared to a different pull request' do
+      let(:other_pull_request){Payload::PullRequest.new({})}
+
+      it 'returns false' do
+        expect(pull_request).to_not eq(other_pull_request)
+      end
+    end
+  end
 end

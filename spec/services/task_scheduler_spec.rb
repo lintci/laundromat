@@ -27,7 +27,7 @@ describe TaskScheduler do
           'analyze_task'  =>  {
             'id' => be_a(Integer),
             'type' => 'AnalyzeTask',
-            'status' => 'queued',
+            'status' => 'scheduled',
             'language' => 'All',
             'tool' => 'Linguist',
             'build' => {
@@ -78,7 +78,7 @@ describe TaskScheduler do
           'lint_task'  =>  {
             'id' => be_a(Integer),
             'type' => 'LintTask',
-            'status' => 'queued',
+            'status' => 'scheduled',
             'language' => 'Ruby',
             'tool' => 'RuboCop',
             'build' => {

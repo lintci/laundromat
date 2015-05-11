@@ -87,5 +87,9 @@ FactoryGirl.define do
       linters ['Unknown']
       size 5
     end
+
+    trait :with_violations do
+      violations{build_list(:violation, 2)}
+    end
   end
 end

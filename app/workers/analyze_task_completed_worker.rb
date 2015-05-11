@@ -1,3 +1,4 @@
+# Notified laundromat that an analysis task has been completed
 class AnalyzeTaskCompletedWorker
   include Sidekiq::Worker
 

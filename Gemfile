@@ -22,6 +22,7 @@ gem 'skylight'
 gem 'sidekiq-skylight'
 gem 'sidekiq-notifications'
 gem 'lograge'
+gem 'virtus'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 

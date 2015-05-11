@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(version: 20_150_426_224_423) do
   create_table 'task_source_files', force: :cascade do |t|
     t.integer 'task_id'
     t.integer 'source_file_id'
+    t.datetime 'started_at'
+    t.datetime 'finished_at'
     t.datetime 'created_at',     null: false
     t.datetime 'updated_at',     null: false
   end
@@ -84,9 +86,10 @@ ActiveRecord::Schema.define(version: 20_150_426_224_423) do
   create_table 'tasks', force: :cascade do |t|
     t.string 'language'
     t.string 'tool'
-    t.string 'status',      null: false
-    t.string 'type',        null: false
-    t.integer 'build_id',    null: false
+    t.string 'status',       null: false
+    t.string 'type',         null: false
+    t.integer 'build_id',     null: false
+    t.datetime 'scheduled_at'
     t.datetime 'started_at'
     t.datetime 'finished_at'
     t.datetime 'created_at'

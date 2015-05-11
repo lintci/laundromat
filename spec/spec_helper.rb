@@ -4,6 +4,7 @@ SimpleCov.start 'rails' do
   add_group 'Services', 'app/services'
   add_group 'Workers', 'app/workers'
   add_group 'Serializers', 'app/serializers'
+  add_group 'Queries', 'app/queries'
 end
 
 require File.expand_path('../../config/environment', __FILE__)

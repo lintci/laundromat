@@ -1,9 +1,9 @@
 # The result of linting a group of files
 class Linting
-  attr_reader :task_id, :clean
-  alias_method :clean, :clean?
+  include Virtus.value_object
 
-  def initialize(data)
-    @task_id, @clean = data.values_at('task_id', 'clean')
+  values do
+    attribute :task_id, Integer
+    attribute :clean, Boolean
   end
 end
