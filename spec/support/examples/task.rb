@@ -18,16 +18,30 @@ RSpec.shared_examples_for 'Task' do
     end
   end
 
-  describe '#start' do
+  describe '#schedule' do
     context 'when status is queued' do
+      let(:data){{'scheduled_at' => scheduled_at.stamp}}
+      let(:scheduled_at){Time.stamp_time}
+
+      it 'transitions to running and sets the started_at time' do
+        queued_task.schedule(data)
+
+        expect(queued_task.status).to eq('scheduled')
+        expect(queued_task.scheduled_at).to eq(scheduled_at)
+      end
+    end
+  end
+
+  describe '#start' do
+    context 'when status is scheduled' do
       let(:data){{'started_at' => started_at.stamp}}
       let(:started_at){Time.stamp_time}
 
       it 'transitions to running and sets the started_at time' do
-        queued_task.start(data)
+        scheduled_task.start(data)
 
-        expect(queued_task.status).to eq('running')
-        expect(queued_task.started_at).to eq(started_at)
+        expect(scheduled_task.status).to eq('running')
+        expect(scheduled_task.started_at).to eq(started_at)
       end
     end
   end

@@ -15,9 +15,25 @@ describe Payload do
     end
   end
 
-  describe 'full_name' do
+  describe '#full_name' do
     it 'returns the full name of repository' do
       expect(payload.full_name).to eq('lintci/guinea_pig')
+    end
+  end
+
+  describe '#==' do
+    context 'when comparing against the same payload' do
+      it 'is equal' do
+        expect(payload).to eq(payload)
+      end
+    end
+
+    context 'when comparing against a different payload' do
+      let(:other_payload){build(:pull_request_reopened_payload_data)}
+
+      it 'is not equal' do
+        expect(payload).to eq(payload)
+      end
     end
   end
 end
