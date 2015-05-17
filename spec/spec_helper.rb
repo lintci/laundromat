@@ -5,6 +5,8 @@ SimpleCov.start 'rails' do
   add_group 'Workers', 'app/workers'
   add_group 'Serializers', 'app/serializers'
   add_group 'Queries', 'app/queries'
+
+  coverage_dir ENV['CIRCLE_ARTIFACTS'] if ENV['CIRCLE_ARTIFACTS']
 end
 
 require File.expand_path('../../config/environment', __FILE__)
