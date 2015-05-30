@@ -8,7 +8,7 @@ class StartTask < CommandService
   end
 
   def perform
-    task.start!(meta)
+    task.start!(meta) if task.may_start?
   end
 
 protected
