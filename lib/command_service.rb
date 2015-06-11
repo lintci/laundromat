@@ -4,6 +4,20 @@ class CommandService
     def call(*args)
       new(*args).call
     end
+
+    def callback(*names)
+      names.each do |name|
+        define_method name do |*args, &block|
+          @_callbacks ||= Hash.new(->(*){})
+
+          if block
+            @_callbacks[__callee__] = block
+          else
+            @_callbacks[__callee__].call(*args)
+          end
+        end
+      end
+    end
   end
 
   def transaction

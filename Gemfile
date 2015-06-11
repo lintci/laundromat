@@ -9,6 +9,7 @@ gem 'pg'
 gem 'sidekiq'
 gem 'aasm'
 gem 'active_model_serializers', '~> 0.8.0'
+gem 'jsonapi-resources'
 gem 'octokit'
 gem 'stamped'
 
@@ -22,7 +23,9 @@ gem 'skylight'
 gem 'sidekiq-skylight'
 gem 'sidekiq-notifications'
 gem 'lograge'
+gem 'rack-cors', require: 'rack/cors'
 gem 'virtus'
+gem 'sshkey'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
@@ -43,6 +46,7 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'simplecov'
+  gem 'timecop'
 end
 
 group :development do

@@ -26,6 +26,9 @@ VCR.configure do |config|
   config.filter_sensitive_data('<CREDENTIALS>') do
     "#{ENV['GITHUB_USER']}:#{ENV['GITHUB_PASSWORD']}"
   end
+  config.filter_sensitive_data('<GITHUB_OAUTH_TOKEN>') do
+    "#{ENV['GITHUB_OAUTH_TOKEN']}"
+  end
 end
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
@@ -34,6 +37,8 @@ RSpec.configure do |config|
   # with RSpec, but feel free to customize to your heart's content.
   config.include FixtureFile
   config.include FactoryGirl::Syntax::Methods
+  config.include Helpers::Controllers, type: :controller
+  config.include Helpers::Resources, type: :resource
   # These two settings work together to allow you to limit a spec run
   # to individual examples or groups you care about by tagging them with
   # `:focus` metadata. When nothing is tagged with `:focus`, all examples

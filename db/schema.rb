@@ -11,9 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_150_426_224_423) do
+ActiveRecord::Schema.define(version: 20_150_531_004_729) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
+
+  create_table 'access_tokens', force: :cascade do |t|
+    t.integer 'user_id',        null: false
+    t.string 'access_token',   null: false
+    t.string 'provider_token', null: false
+    t.datetime 'expires_at',     null: false
+    t.datetime 'created_at',     null: false
+    t.datetime 'updated_at',     null: false
+  end
+
+  add_index 'access_tokens', ['access_token'], name: 'index_access_tokens_on_access_token', using: :btree
+  add_index 'access_tokens', ['user_id'], name: 'index_access_tokens_on_user_id', using: :btree
 
   create_table 'builds', force: :cascade do |t|
     t.string 'event',         null: false
@@ -34,13 +46,17 @@ ActiveRecord::Schema.define(version: 20_150_426_224_423) do
 
   create_table 'repositories', force: :cascade do |t|
     t.string 'name',       null: false
-    t.string 'full_name',  null: false
+    t.string 'owner_name', null: false
+    t.string 'host',       null: false
+    t.string 'slug',       null: false
+    t.string 'status',     null: false
     t.integer 'owner_id',   null: false
     t.datetime 'created_at'
     t.datetime 'updated_at'
   end
 
   add_index 'repositories', ['owner_id'], name: 'index_repositories_on_owner_id', using: :btree
+  add_index 'repositories', ['slug'], name: 'index_repositories_on_slug', unique: true, using: :btree
 
   create_table 'source_files', force: :cascade do |t|
     t.string 'name',                           null: false
@@ -98,6 +114,18 @@ ActiveRecord::Schema.define(version: 20_150_426_224_423) do
 
   add_index 'tasks', ['build_id'], name: 'index_tasks_on_build_id', using: :btree
 
+  create_table 'users', force: :cascade do |t|
+    t.string 'username',   null: false
+    t.string 'provider',   null: false
+    t.string 'uid',        null: false
+    t.string 'email',      null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+  end
+
+  add_index 'users', %w(uid provider), name: 'index_users_on_uid_and_provider', unique: true, using: :btree
+  add_index 'users', ['username'], name: 'index_users_on_username', using: :btree
+
   create_table 'violations', force: :cascade do |t|
     t.integer 'line'
     t.integer 'column'
@@ -112,6 +140,7 @@ ActiveRecord::Schema.define(version: 20_150_426_224_423) do
 
   add_index 'violations', ['source_file_id'], name: 'index_violations_on_source_file_id', using: :btree
 
+  add_foreign_key 'access_tokens', 'users'
   add_foreign_key 'builds', 'repositories'
   add_foreign_key 'repositories', 'owners'
   add_foreign_key 'source_files', 'builds'
