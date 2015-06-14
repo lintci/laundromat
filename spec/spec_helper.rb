@@ -27,7 +27,13 @@ VCR.configure do |config|
     "#{ENV['GITHUB_USER']}:#{ENV['GITHUB_PASSWORD']}"
   end
   config.filter_sensitive_data('<GITHUB_OAUTH_TOKEN>') do
-    "#{ENV['GITHUB_OAUTH_TOKEN']}"
+    ENV['GITHUB_OAUTH_TOKEN']
+  end
+  config.filter_sensitive_data('<GITHUB_CLIENT_ID>') do
+    ENV['GITHUB_CLIENT_ID']
+  end
+  config.filter_sensitive_data('<GITHUB_CLIENT_SECRET>') do
+    ENV['GITHUB_CLIENT_SECRET']
   end
 end
 
@@ -45,6 +51,8 @@ RSpec.configure do |config|
   # get run.
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
+
+  config.example_status_persistence_file_path = './spec/examples.txt'
 
   # Many RSpec users commonly either run the entire suite or an individual
   # file, and it's useful to allow more verbose output when running an

@@ -29,6 +29,6 @@ private
   end
 
   def repository
-    @repository ||= Repository.includes(:owner).find_by(full_name: payload.full_name)
+    @repository ||= Repository.includes(:owner).find_by(name: payload.repository, owner_name: payload.owner)
   end
 end

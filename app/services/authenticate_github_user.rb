@@ -11,6 +11,7 @@ class AuthenticateGithubUser < CommandService
 
     user = find_or_create_user(user_data)
     if user.persisted?
+      enqueue_repositories_sync(user)
       success(access_token(user, token))
     else
       failure(user.errors)
@@ -37,6 +38,10 @@ private
 
   def find_or_create_user(user_data)
     User.find_or_create_from_oauth(user_data)
+  end
+
+  def enqueue_repositories_sync(user)
+    SyncRepositoriesWorker.perform_async(user.id)
   end
 
   def access_token(user, token)

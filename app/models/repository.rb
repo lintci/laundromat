@@ -1,19 +1,20 @@
 # Code repository
 class Repository < ActiveRecord::Base
   include AASM
-
-  GITHUB = 'Github'
-  HOSTS = {
-    GITHUB => 'gh'
-  }
+  include HasProvider
 
   belongs_to :owner, required: true
   has_many :builds
   has_many :tasks, through: :builds
 
-  validates :name, :owner_name, :host, :slug, :status, presence: true
+  validates :name, presence: true
+  validates :owner_name, presence: true
+  validates :provider, presence: true
+  validates :status, presence: true
+  validates :public_key, presence: true
+  validates :private_key, presence: true
 
-  before_validation :set_slug
+  after_initialize :generate_ssh_keys
 
   aasm column: :status do
     state :inactive, initial: true
@@ -29,7 +30,11 @@ class Repository < ActiveRecord::Base
 
 private
 
-  def set_slug
-    self.slug ||= "#{HOSTS[host]}/#{owner}/#{name}"
+  def generate_ssh_keys
+    return if public_key? && private_key?
+
+    key_pair = SSHKey.generate(passphrase: ENV.fetch('SSH_PASSPHRASE'), comment: 'LintCI')
+    self.private_key = key_pair.private_key
+    self.public_key = key_pair.ssh_public_key
   end
 end

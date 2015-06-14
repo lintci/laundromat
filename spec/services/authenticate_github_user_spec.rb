@@ -10,7 +10,7 @@ describe AuthenticateGithubUser do
         expect(user.username).to eq('blatyo')
         expect(user.email).to eq('blatyo@gmail.com')
         expect(user.uid).to eq('71221')
-        expect(user.provider).to eq('github')
+        expect(user.provider).to eq(Provider[:github])
       end
 
       service.failure do |errors|
@@ -19,9 +19,11 @@ describe AuthenticateGithubUser do
 
       expect do
         expect do
-          service.call
-        end.to change{User.count}.by(1)
-      end.to change{AccessToken.count}.by(1)
+          expect do
+            service.call
+          end.to change{User.count}.by(1)
+        end.to change{AccessToken.count}.by(1)
+      end.to change{SyncRepositoriesWorker.jobs.size}.by(1)
     end
   end
 end

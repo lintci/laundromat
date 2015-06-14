@@ -3,7 +3,7 @@ FactoryGirl.define do
 
   factory :user do
     username 'bob'
-    provider 'github'
+    provider Provider[:github]
     uid
     email 'bob@gmail.com'
 

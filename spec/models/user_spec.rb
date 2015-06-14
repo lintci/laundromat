@@ -47,7 +47,7 @@ describe User, type: :model do
         expect(@user.uid).to eq(uid)
         expect(@user.email).to eq(email)
         expect(@user.username).to eq(login)
-        expect(@user.provider).to eq('github')
+        expect(@user.provider).to eq(Provider[:github])
       end
     end
   end

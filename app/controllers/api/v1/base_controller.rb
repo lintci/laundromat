@@ -2,15 +2,9 @@ module API
   module V1
     # Base API
     class BaseController < ::ApplicationController
-      include JSONAPI::ActsAsResourceController
-
       skip_before_action :verify_authenticity_token
 
     protected
-
-      def context
-        {current_user: current_user}
-      end
 
       def ensure_valid_access_token!
         access_token || render_unauthorized

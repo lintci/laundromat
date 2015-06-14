@@ -18,6 +18,14 @@ class Payload
     data['repository']['full_name']
   end
 
+  def repository
+    data['repository']['name']
+  end
+
+  def owner
+    data['repository']['owner']['login']
+  end
+
   def ==(other)
     data == other.data
   end

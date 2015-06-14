@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://github.com/login/oauth/access_token?client_id=a8b0985072c39d486364&client_secret=c9b8feee6473f580dc55f067d17cbd8af8b92d6d
+    uri: https://github.com/login/oauth/access_token?client_id=<GITHUB_CLIENT_ID>&client_secret=<GITHUB_CLIENT_SECRET>
     body:
       encoding: UTF-8
-      string: '{"code":"<GITHUB_OAUTH_TOKEN>","client_id":"a8b0985072c39d486364","client_secret":"c9b8feee6473f580dc55f067d17cbd8af8b92d6d"}'
+      string: '{"code":"<GITHUB_OAUTH_TOKEN>","client_id":"<GITHUB_CLIENT_ID>","client_secret":"<GITHUB_CLIENT_SECRET>"}'
     headers:
       Accept:
       - application/json
       User-Agent:
-      - Octokit Ruby Gem 3.7.1
+      - Octokit Ruby Gem 3.8.0
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Mon, 01 Jun 2015 00:23:11 GMT
+      - Sun, 14 Jun 2015 20:43:08 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -51,11 +51,11 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Request-Id:
-      - d9ad49383e052040df01f00cfcbfd49f
+      - 93a17b36db3edfe0c8cd2ce5a1404f24
       X-Runtime:
-      - '0.011221'
+      - '0.009351'
       X-Github-Request-Id:
-      - 18DA1056:7BA4:52488F4:556BA5EF
+      - 18DA1056:5FD3:34E66A7:557DE75C
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
       X-Content-Type-Options:
@@ -65,12 +65,12 @@ http_interactions:
       X-Frame-Options:
       - deny
       X-Served-By:
-      - 362482c1f05726391203e2d2c32818a4
+      - a22dbcbd09a98eacdd14ac7804a635dd
     body:
       encoding: ASCII-8BIT
-      string: '{"access_token":"31e9445a47eed48bf7d7318e648195b4190f13d4","token_type":"bearer","scope":"user:email"}'
+      string: '{"access_token":"8259b6c76f4fc8bb98838e565bb21f29d855c372","token_type":"bearer","scope":"repo,user:email"}'
     http_version: 
-  recorded_at: Mon, 01 Jun 2015 00:23:11 GMT
+  recorded_at: Sun, 14 Jun 2015 20:43:09 GMT
 - request:
     method: get
     uri: https://api.github.com/user
@@ -81,11 +81,11 @@ http_interactions:
       Accept:
       - application/vnd.github.v3+json
       User-Agent:
-      - Octokit Ruby Gem 3.7.1
+      - Octokit Ruby Gem 3.8.0
       Content-Type:
       - application/json
       Authorization:
-      - token 31e9445a47eed48bf7d7318e648195b4190f13d4
+      - token 8259b6c76f4fc8bb98838e565bb21f29d855c372
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -96,7 +96,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Mon, 01 Jun 2015 00:23:11 GMT
+      - Sun, 14 Jun 2015 20:43:09 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -108,19 +108,19 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '4999'
       X-Ratelimit-Reset:
-      - '1433121791'
+      - '1434318189'
       Cache-Control:
       - private, max-age=60, s-maxage=60
       Last-Modified:
-      - Mon, 27 Apr 2015 16:01:00 GMT
+      - Thu, 11 Jun 2015 15:44:43 GMT
       Etag:
-      - W/"cf5be705de4b8aa2958f73e773e9c5bd"
+      - W/"c3430f41b62a8b36876d1efb25fe1432"
       X-Oauth-Scopes:
-      - user:email
+      - repo, user:email
       X-Accepted-Oauth-Scopes:
       - ''
       X-Oauth-Client-Id:
-      - a8b0985072c39d486364
+      - "<GITHUB_CLIENT_ID>"
       Vary:
       - Accept, Authorization, Cookie, X-GitHub-OTP
       - Accept-Encoding
@@ -140,18 +140,18 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Github-Request-Id:
-      - 18DA1056:301E:3E8071E:556BA5EF
+      - 18DA1056:6790:6980A2E:557DE75D
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
       X-Content-Type-Options:
       - nosniff
       X-Served-By:
-      - 8a5c38021a5cd7cef7b8f49a296fee40
+      - 474556b853193c38f1b14328ce2d1b7d
     body:
       encoding: ASCII-8BIT
       string: '{"login":"blatyo","id":71221,"avatar_url":"https://avatars.githubusercontent.com/u/71221?v=3","gravatar_id":"","url":"https://api.github.com/users/blatyo","html_url":"https://github.com/blatyo","followers_url":"https://api.github.com/users/blatyo/followers","following_url":"https://api.github.com/users/blatyo/following{/other_user}","gists_url":"https://api.github.com/users/blatyo/gists{/gist_id}","starred_url":"https://api.github.com/users/blatyo/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/blatyo/subscriptions","organizations_url":"https://api.github.com/users/blatyo/orgs","repos_url":"https://api.github.com/users/blatyo/repos","events_url":"https://api.github.com/users/blatyo/events{/privacy}","received_events_url":"https://api.github.com/users/blatyo/received_events","type":"User","site_admin":false,"name":"Allen
         Madsen","company":"Gazelle","blog":"http://www.allenmadsen.com","location":"Boston,
-        MA","email":"blatyo@gmail.com","hireable":false,"bio":null,"public_repos":59,"public_gists":38,"followers":21,"following":35,"created_at":"2009-04-07T03:03:35Z","updated_at":"2015-04-27T16:01:00Z"}'
+        MA","email":"blatyo@gmail.com","hireable":false,"bio":null,"public_repos":59,"public_gists":38,"followers":21,"following":35,"created_at":"2009-04-07T03:03:35Z","updated_at":"2015-06-11T15:44:43Z"}'
     http_version: 
-  recorded_at: Mon, 01 Jun 2015 00:23:11 GMT
+  recorded_at: Sun, 14 Jun 2015 20:43:09 GMT
 recorded_with: VCR 2.9.3

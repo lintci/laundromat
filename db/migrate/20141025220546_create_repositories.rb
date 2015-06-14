@@ -3,9 +3,10 @@ class CreateRepositories < ActiveRecord::Migration
     create_table :repositories do |t|
       t.string :name, null: false
       t.string :owner_name, null: false
-      t.string :host, null: false
-      t.string :slug, null: false, index: {unique: true}
+      t.string :provider, null: false
       t.string :status, null: false
+      t.text :public_key, null: false
+      t.text :private_key, null: false
       t.references :owner, null: false, index: true
 
       t.timestamps

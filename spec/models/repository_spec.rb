@@ -13,11 +13,6 @@ RSpec.describe Repository, type: :model do
       repository.name = nil
       expect(repository).to_not be_valid
     end
-
-    it 'requires a full_name' do
-      repository.full_name = nil
-      expect(repository).to_not be_valid
-    end
   end
 
   describe '#create_build!' do
