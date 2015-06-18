@@ -1,6 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe Repository, type: :model do
+  describe '#initialize' do
+    subject(:repository){build(:repository)}
+
+    it 'generates an ssh key pair', :aggregate_failures do
+      public_key_regex = /\Assh-rsa [^\s]{372} LintCI\z/
+      private_key_regex = /\A-----BEGIN RSA PRIVATE KEY-----.{1600,1700}-----END RSA PRIVATE KEY-----\n\z/m
+
+      expect(repository.public_key).to match(public_key_regex)
+      expect(repository.private_key).to match(private_key_regex)
+    end
+  end
+
   describe '#valid?' do
     subject(:repository){build(:repository)}
 
@@ -21,7 +33,7 @@ RSpec.describe Repository, type: :model do
     let(:payload){build(:payload)}
     subject(:repository){create(:repository)}
 
-    it 'creates a build with the passed event and payload' do
+    it 'creates a build with the passed event and payload', :aggregate_failures do
       build = repository.create_build!(event, event_id, payload)
 
       expect(build).to be_a(Build)

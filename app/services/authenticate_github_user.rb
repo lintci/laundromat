@@ -6,13 +6,11 @@ class AuthenticateGithubUser < CommandService
   end
 
   def call
-    token = exchange_code_for_token
-    user_data = lookup_user_data(token)
+    user, access_token = find_or_create_by_authorization_code
 
-    user = find_or_create_user(user_data)
     if user.persisted?
       enqueue_repositories_sync(user)
-      success(access_token(user, token))
+      success(access_token)
     else
       failure(user.errors)
     end
@@ -24,35 +22,18 @@ protected
 
 private
 
-  def exchange_code_for_token
-    app_client.exchange_code_for_token(authorization_code)
-  end
+  def find_or_create_by_authorization_code
+    token = Github.new.exchange_code_for_token(authorization_code)
+    user_data = Github.new(token.access_token).user
 
-  def lookup_user_data(token)
-    user_data = user_client(token).user
+    user = User.find_or_create_from_oauth(user_data)
+    access_token = user.create_or_update_access_token!(token)
 
-    user_data.email = user_data.emails.find(&:primary).email if user_data.email.blank?
-
-    user_data
-  end
-
-  def find_or_create_user(user_data)
-    User.find_or_create_from_oauth(user_data)
+    [user, access_token]
   end
 
   def enqueue_repositories_sync(user)
     SyncRepositoriesWorker.perform_async(user.id)
-  end
-
-  def access_token(user, token)
-    user.access_tokens.active.first_or_create(provider_token: token.access_token)
-  end
-
-  def app_client
-    @app_client ||= Octokit::Client.new(
-      client_id: ENV['GITHUB_CLIENT_ID'],
-      client_secret: ENV['GITHUB_CLIENT_SECRET']
-    )
   end
 
   def user_client(token)

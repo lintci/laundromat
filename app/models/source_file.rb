@@ -6,8 +6,17 @@ class SourceFile < ActiveRecord::Base
   has_many :tasks, through: :task_source_files
   has_many :violations
 
-  validates :name, :language, :linters, :source_type, :size, :extension, presence: true
-  validates :binary, :generated, :vendored, :documentation, :image, inclusion: {in: [true, false]}
+  validates :name, presence: true
+  validates :language, presence: true
+  validates :linters, presence: true
+  validates :source_type, presence: true
+  validates :size, presence: true
+  validates :extension, presence: true
+  validates :binary, inclusion: {in: [true, false]}
+  validates :generated, inclusion: {in: [true, false]}
+  validates :vendored, inclusion: {in: [true, false]}
+  validates :documentation, inclusion: {in: [true, false]}
+  validates :image, inclusion: {in: [true, false]}
 
   def add_violations(new_violations)
     violations.push(*new_violations)

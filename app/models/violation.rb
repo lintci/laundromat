@@ -4,5 +4,6 @@ class Violation < ActiveRecord::Base
   has_one :task_result
   has_one :task, through: :task_result
 
-  validates :line, :message, presence: true
+  validates :line, presence: true
+  validates :message, presence: true
 end

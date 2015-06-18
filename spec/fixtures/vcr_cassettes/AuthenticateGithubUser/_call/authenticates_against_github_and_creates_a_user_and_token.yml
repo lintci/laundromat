@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Sun, 14 Jun 2015 20:43:08 GMT
+      - Thu, 18 Jun 2015 01:38:01 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -51,11 +51,11 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Request-Id:
-      - 93a17b36db3edfe0c8cd2ce5a1404f24
+      - a1e086d23f94ed75d02b96037adf2d41
       X-Runtime:
-      - '0.009351'
+      - '0.008661'
       X-Github-Request-Id:
-      - 18DA1056:5FD3:34E66A7:557DE75C
+      - 18DA1056:67D5:29DA64:558220F9
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
       X-Content-Type-Options:
@@ -65,12 +65,12 @@ http_interactions:
       X-Frame-Options:
       - deny
       X-Served-By:
-      - a22dbcbd09a98eacdd14ac7804a635dd
+      - 7cc969f65c7ec8d9db2fa57dcc51d323
     body:
       encoding: ASCII-8BIT
       string: '{"access_token":"8259b6c76f4fc8bb98838e565bb21f29d855c372","token_type":"bearer","scope":"repo,user:email"}'
     http_version: 
-  recorded_at: Sun, 14 Jun 2015 20:43:09 GMT
+  recorded_at: Thu, 18 Jun 2015 01:38:01 GMT
 - request:
     method: get
     uri: https://api.github.com/user
@@ -96,7 +96,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Sun, 14 Jun 2015 20:43:09 GMT
+      - Thu, 18 Jun 2015 01:38:15 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -108,7 +108,7 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '4999'
       X-Ratelimit-Reset:
-      - '1434318189'
+      - '1434595095'
       Cache-Control:
       - private, max-age=60, s-maxage=60
       Last-Modified:
@@ -140,18 +140,18 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Github-Request-Id:
-      - 18DA1056:6790:6980A2E:557DE75D
+      - 18DA1056:6D1B:516172:55822107
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
       X-Content-Type-Options:
       - nosniff
       X-Served-By:
-      - 474556b853193c38f1b14328ce2d1b7d
+      - 07ff1c8a09e44b62e277fae50a1b1dc4
     body:
       encoding: ASCII-8BIT
       string: '{"login":"blatyo","id":71221,"avatar_url":"https://avatars.githubusercontent.com/u/71221?v=3","gravatar_id":"","url":"https://api.github.com/users/blatyo","html_url":"https://github.com/blatyo","followers_url":"https://api.github.com/users/blatyo/followers","following_url":"https://api.github.com/users/blatyo/following{/other_user}","gists_url":"https://api.github.com/users/blatyo/gists{/gist_id}","starred_url":"https://api.github.com/users/blatyo/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/blatyo/subscriptions","organizations_url":"https://api.github.com/users/blatyo/orgs","repos_url":"https://api.github.com/users/blatyo/repos","events_url":"https://api.github.com/users/blatyo/events{/privacy}","received_events_url":"https://api.github.com/users/blatyo/received_events","type":"User","site_admin":false,"name":"Allen
         Madsen","company":"Gazelle","blog":"http://www.allenmadsen.com","location":"Boston,
         MA","email":"blatyo@gmail.com","hireable":false,"bio":null,"public_repos":59,"public_gists":38,"followers":21,"following":35,"created_at":"2009-04-07T03:03:35Z","updated_at":"2015-06-11T15:44:43Z"}'
     http_version: 
-  recorded_at: Sun, 14 Jun 2015 20:43:09 GMT
+  recorded_at: Thu, 18 Jun 2015 01:38:15 GMT
 recorded_with: VCR 2.9.3

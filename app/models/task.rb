@@ -12,7 +12,8 @@ class Task < ActiveRecord::Base
 
   scope :active, ->{where(status: %w(scheduled running))}
 
-  validates :status, :type, presence: true
+  validates :status, presence: true
+  validates :type, presence: true
 
   aasm column: :status do
     state :queued, initial: true

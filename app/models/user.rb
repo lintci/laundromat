@@ -21,4 +21,10 @@ class User < ActiveRecord::Base
   def access_token
     access_tokens.active.first
   end
+
+  def create_or_update_access_token!(token)
+    access = access_token || access_tokens.build
+    access.update_attributes!(provider_token: token.access_token)
+    access
+  end
 end
