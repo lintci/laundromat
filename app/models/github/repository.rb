@@ -7,7 +7,7 @@ module Github
     end
 
     def owner_name
-      repository.owner.login
+      owner.name
     end
 
     def owner

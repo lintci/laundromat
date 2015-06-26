@@ -1,12 +1,16 @@
 module API
   module V1
     module Auth
-      # Provides access to a user
       class PushersController < BaseController
         before_action :ensure_valid_access_token!
 
         def create
-          render json: User.find(params[:id]), serializer: UserSerializer
+          authorize = AuthorizeChannel.new(params[:channel_name], params[:socket_id])
+
+          authorize.success{|authentication| render json: authentication}
+          authorize.failure{render json: {errors: ['Forbidden']}, status: :forbidden}
+
+          authorize.call
         end
       end
     end
