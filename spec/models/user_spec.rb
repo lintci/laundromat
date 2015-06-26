@@ -20,18 +20,15 @@ describe User, type: :model do
     end
   end
 
-  describe '.find_or_create_from_oauth' do
-    let(:uid){'1'}
-    let(:email){'bob@gmail.com'}
-    let(:login){'bob'}
-    let(:oauth){double('oauth', id: uid, email: email, login: login)}
+  describe '.upsert_from_provider!' do
+    let(:provider_user){build(:github_user)}
 
     context 'when user exists' do
-      subject!(:user){create(:user, uid: uid)}
+      subject!(:user){create(:user, uid: provider_user.uid)}
 
       it 'returns the existing user' do
         expect do
-          @user = User.find_or_create_from_oauth(oauth)
+          @user = User.upsert_from_provider!(provider_user)
         end.to_not change{User.count}
 
         expect(@user).to eq(user)
@@ -41,13 +38,13 @@ describe User, type: :model do
     context 'when user does not exist' do
       it 'creates a new user with the provided oauth details' do
         expect do
-          @user = User.find_or_create_from_oauth(oauth)
+          @user = User.upsert_from_provider!(provider_user)
         end.to change{User.count}.by(1)
 
-        expect(@user.uid).to eq(uid)
-        expect(@user.email).to eq(email)
-        expect(@user.username).to eq(login)
-        expect(@user.provider).to eq(Provider[:github])
+        expect(@user.uid).to eq(provider_user.uid)
+        expect(@user.email).to eq(provider_user.email)
+        expect(@user.username).to eq(provider_user.username)
+        expect(@user.provider).to eq(provider_user.provider)
       end
     end
   end
@@ -58,8 +55,8 @@ describe User, type: :model do
     it 'returns the active token' do
       old_token, current_token = user.access_tokens.sort_by(&:expires_at)
 
-      expect(user.access_token).to eq(current_token)
-      expect(user.access_token).to_not eq(old_token)
+      expect(user.active_access_token).to eq(current_token)
+      expect(user.active_access_token).to_not eq(old_token)
     end
   end
 end

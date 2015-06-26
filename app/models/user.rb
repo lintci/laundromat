@@ -2,29 +2,31 @@
 class User < ActiveRecord::Base
   include HasProvider
 
+  has_many :repository_accesses, dependent: :destroy
+  has_many :repositories, through: :repository_accesses
+  has_many :builds, through: :repositories
   has_many :access_tokens, dependent: :destroy
+  has_one :active_access_token, ->{active}, class_name: 'AccessToken'
 
-  validates :email, presence: true
   validates :provider, presence: true
   validates :uid, presence: true, uniqueness: {scope: :provider}
   validates :username, presence: true
 
   class << self
-    def find_or_create_from_oauth(oauth)
-      where(uid: oauth.id.to_s, provider: Provider[:github].to_s).first_or_create do |user|
-        user.email = oauth.email
-        user.username = oauth.login
+    def upsert_from_provider!(provider_user)
+      scope = where(uid: provider_user.uid, provider: provider_user.provider.to_s)
+      scope.first_or_create! do |user|
+        user.email = provider_user.email
+        user.username = provider_user.username
       end
     end
   end
 
-  def access_token
-    access_tokens.active.first
+  def upsert_access_token_from_provider!(provider_access_token)
+    access_tokens.upsert_from_provider!(provider_access_token)
   end
 
-  def create_or_update_access_token!(token)
-    access = access_token || access_tokens.build
-    access.update_attributes!(provider_token: token.access_token)
-    access
+  def upsert_repository_access!(repository, access)
+    repository_accesses.upsert_access!(repository, access)
   end
 end

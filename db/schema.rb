@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150531004729) do
+ActiveRecord::Schema.define(version: 20150621005306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,18 @@ ActiveRecord::Schema.define(version: 20150531004729) do
   end
 
   add_index "repositories", ["owner_id"], name: "index_repositories_on_owner_id", using: :btree
+
+  create_table "repository_accesses", force: :cascade do |t|
+    t.string   "access",        null: false
+    t.integer  "user_id"
+    t.integer  "repository_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "repository_accesses", ["repository_id"], name: "index_repository_accesses_on_repository_id", using: :btree
+  add_index "repository_accesses", ["user_id", "repository_id"], name: "index_repository_accesses_on_user_id_and_repository_id", using: :btree
+  add_index "repository_accesses", ["user_id"], name: "index_repository_accesses_on_user_id", using: :btree
 
   create_table "source_files", force: :cascade do |t|
     t.string   "name",                           null: false
@@ -119,7 +131,7 @@ ActiveRecord::Schema.define(version: 20150531004729) do
     t.string   "username",   null: false
     t.string   "provider",   null: false
     t.string   "uid",        null: false
-    t.string   "email",      null: false
+    t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -144,6 +156,8 @@ ActiveRecord::Schema.define(version: 20150531004729) do
   add_foreign_key "access_tokens", "users"
   add_foreign_key "builds", "repositories"
   add_foreign_key "repositories", "owners"
+  add_foreign_key "repository_accesses", "repositories"
+  add_foreign_key "repository_accesses", "users"
   add_foreign_key "source_files", "builds"
   add_foreign_key "task_results", "tasks"
   add_foreign_key "task_results", "violations"

@@ -7,8 +7,8 @@ describe API::V1::TokensController, type: :controller do
 
     context 'with valid code' do
       it 'responds successfully' do
-        expect_any_instance_of(AuthenticateGithubUser).to receive(:success){|&block| @block = block}
-        expect_any_instance_of(AuthenticateGithubUser).to receive(:call){@block.call(token)}
+        expect_any_instance_of(AuthenticateUser).to receive(:success){|&block| @block = block}
+        expect_any_instance_of(AuthenticateUser).to receive(:call){@block.call(token)}
 
         post :create, code: '1234'
 
@@ -19,8 +19,8 @@ describe API::V1::TokensController, type: :controller do
 
     context 'with invalid code' do
       it 'responds with unprocessable entity' do
-        expect_any_instance_of(AuthenticateGithubUser).to receive(:failure){|&block| @block = block}
-        expect_any_instance_of(AuthenticateGithubUser).to receive(:call) do
+        expect_any_instance_of(AuthenticateUser).to receive(:failure){|&block| @block = block}
+        expect_any_instance_of(AuthenticateUser).to receive(:call) do
           user = token.user
           user.errors.add(:email, 'must be present')
 

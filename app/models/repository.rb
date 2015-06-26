@@ -7,6 +7,8 @@ class Repository < ActiveRecord::Base
   has_many :builds
   has_many :tasks, through: :builds
 
+  scope :by_name, ->(name){where(name: name)}
+
   validates :name, presence: true
   validates :owner_name, presence: true
   validates :provider, presence: true
@@ -22,6 +24,16 @@ class Repository < ActiveRecord::Base
 
     event(:activate){transitions from: :inactive, to: :active}
     event(:deactive){transitions from: :active, to: :inactive}
+  end
+
+  class << self
+    def upsert_from_provider!(provider_repository)
+      owner = Owner.upsert_from_provider!(provider_repository.owner)
+      owner.repositories.by_name(provider_repository.name).first_or_create! do |repo|
+        repo.owner_name = provider_repository.owner_name
+        repo.provider = provider_repository.provider
+      end
+    end
   end
 
   def create_build!(event, event_id, payload)

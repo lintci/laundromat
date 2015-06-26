@@ -16,6 +16,12 @@ class AccessToken < ActiveRecord::Base
       access_token = authorization.gsub(/\ABearer /, '')
       active.find_by(access_token: access_token)
     end
+
+    def upsert_from_provider!(provider_access_token)
+      access_token = active.first_or_initialize
+      access_token.update_attributes!(provider_token: provider_access_token.access_token)
+      access_token
+    end
   end
 
   def expires_in

@@ -26,6 +26,7 @@ gem 'lograge'
 gem 'rack-cors', require: 'rack/cors'
 gem 'virtus'
 gem 'sshkey'
+gem 'pusher'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 

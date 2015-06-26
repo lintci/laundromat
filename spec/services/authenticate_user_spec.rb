@@ -1,16 +1,17 @@
 require 'spec_helper'
 
-describe AuthenticateGithubUser do
+describe AuthenticateUser do
   describe '#call', :vcr do
-    subject(:service){AuthenticateGithubUser.new(ENV['GITHUB_OAUTH_TOKEN'])}
+    let(:provider){Provider[:github]}
+    subject(:service){described_class.new(provider, ENV['GITHUB_OAUTH_TOKEN'])}
 
     it 'authenticates against github and creates a user and token' do
       service.success do |token|
         user = token.user
-        expect(user.username).to eq('blatyo')
-        expect(user.email).to eq('blatyo@gmail.com')
-        expect(user.uid).to eq('71221')
-        expect(user.provider).to eq(Provider[:github])
+        expect(user.username).to eq('lexci-lint')
+        expect(user.email).to eq('')
+        expect(user.uid).to eq('12980159')
+        expect(user.provider).to eq(provider)
       end
 
       service.failure do |errors|
