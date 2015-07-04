@@ -3,7 +3,6 @@ class AuthorizeChannel < CommandService
 
   def initialize(user, channel_name, socket_id)
     @user = user
-    binding.pry
     @channel = Channel[channel_name]
     @socket_id = socket_id
   end

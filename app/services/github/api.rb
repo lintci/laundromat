@@ -32,6 +32,25 @@ module Github
       end
     end
 
+    def comment_on_pull_request(pull_request, source_file, line, violations)
+      client.create_pull_request_comment(
+        pull_request.repo_full_name,
+        pull_request.id,
+        violations.map(&:message).join('<br>'),
+        pull_request.head_sha,
+        source_file.name,
+        line
+      )
+    end
+
+    def add_user_to_repository(username, repository)
+      if repository.organization?
+
+      else
+        client.add_collaborator(repository.name, username)
+      end
+    end
+
   protected
 
     attr_reader :client

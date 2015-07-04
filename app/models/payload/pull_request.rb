@@ -33,6 +33,10 @@ class Payload
       data['head']['repo']['name']
     end
 
+    def repo_full_name
+      "#{owner}/#{repo}"
+    end
+
     def ==(other)
       data == other.data
     end

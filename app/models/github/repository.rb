@@ -17,11 +17,11 @@ module Github
     def access
       perms = repository.permissions
       if perms.admin?
-        'admin'
+        RepositoryAccess::ADMIN
       elsif perms.push?
-        'write'
+        RepositoryAccess::WRITE
       else
-        'read'
+        RepositoryAccess::READ
       end
     end
 

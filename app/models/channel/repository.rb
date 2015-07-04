@@ -1,7 +1,7 @@
 module Channel
   class Repository < Base
     def authorized?(user)
-      user.repositories.exist?(id: id)
+      user.repositories.exists?(id: id)
     end
   end
 end

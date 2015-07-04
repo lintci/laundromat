@@ -14,5 +14,9 @@ FactoryGirl.define do
         user.access_tokens = [old_token, current_token]
       end
     end
+
+    trait :with_repository do
+      repositories{[build(:repository)]}
+    end
   end
 end
