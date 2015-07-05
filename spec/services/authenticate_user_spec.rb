@@ -7,11 +7,13 @@ describe AuthenticateUser do
 
     it 'authenticates against github and creates a user and token' do
       service.success do |token|
-        user = token.user
-        expect(user.username).to eq('lexci-lint')
-        expect(user.email).to eq('')
-        expect(user.uid).to eq('12980159')
-        expect(user.provider).to eq(provider)
+        aggregate_failures do
+          user = token.user
+          expect(user.username).to eq('lexci-lint')
+          expect(user.email).to eq('allen+lexci@lintci.com')
+          expect(user.uid).to eq('12980159')
+          expect(user.provider).to eq(provider)
+        end
       end
 
       service.failure do |errors|

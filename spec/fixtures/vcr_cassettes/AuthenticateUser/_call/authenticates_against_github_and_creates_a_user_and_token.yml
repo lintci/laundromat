@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Sat, 20 Jun 2015 17:42:16 GMT
+      - Sat, 04 Jul 2015 22:21:24 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -51,11 +51,11 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Request-Id:
-      - 3ccfc95db942a4fafbf166e594437ac5
+      - 797964b8137cb1b5262fed573c701812
       X-Runtime:
-      - '0.028934'
+      - '0.036038'
       X-Github-Request-Id:
-      - 18DA1056:6D1B:6DACB77:5585A5F8
+      - 18DA1056:506C:9F501E:55985C64
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
       X-Content-Type-Options:
@@ -65,12 +65,12 @@ http_interactions:
       X-Frame-Options:
       - deny
       X-Served-By:
-      - 76f8aa18dab86a06db6e70a0421dc28c
+      - f0ee042be143fcba78041fc2f69c0aa7
     body:
       encoding: ASCII-8BIT
-      string: '{"access_token":"28cc8832046954d4343de2afff2c50edf0f67b38","token_type":"bearer","scope":"repo,user"}'
+      string: '{"access_token":"92bc2774bdfc8e24c933758f5313ddb7aacbbe44","token_type":"bearer","scope":"repo,user:email"}'
     http_version: 
-  recorded_at: Sat, 20 Jun 2015 17:42:16 GMT
+  recorded_at: Sat, 04 Jul 2015 22:21:24 GMT
 - request:
     method: get
     uri: https://api.github.com/user
@@ -85,7 +85,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - token 28cc8832046954d4343de2afff2c50edf0f67b38
+      - token 92bc2774bdfc8e24c933758f5313ddb7aacbbe44
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -96,7 +96,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Sat, 20 Jun 2015 17:42:17 GMT
+      - Sat, 04 Jul 2015 22:21:24 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -106,17 +106,17 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4993'
+      - '4999'
       X-Ratelimit-Reset:
-      - '1434823623'
+      - '1436052084'
       Cache-Control:
       - private, max-age=60, s-maxage=60
       Last-Modified:
-      - Sat, 20 Jun 2015 17:41:27 GMT
+      - Sat, 04 Jul 2015 22:20:47 GMT
       Etag:
-      - W/"a574cceb2cb144ec20f69615e4df4cdd"
+      - W/"6ffffd61c3d0dcd0be49efb457ae0063"
       X-Oauth-Scopes:
-      - repo, user
+      - repo, user:email
       X-Accepted-Oauth-Scopes:
       - ''
       X-Oauth-Client-Id:
@@ -140,16 +140,95 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Github-Request-Id:
-      - 18DA1056:67D7:61EAE66:5585A5F9
+      - 18DA1056:6BEF:7C4011:55985C64
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
       X-Content-Type-Options:
       - nosniff
       X-Served-By:
-      - 76d9828c7e4f1d910f7ba069e90ce976
+      - dc1ce2bfb41810a06c705e83b388572d
     body:
       encoding: ASCII-8BIT
-      string: '{"login":"lexci-lint","id":12980159,"avatar_url":"https://avatars.githubusercontent.com/u/12980159?v=3","gravatar_id":"","url":"https://api.github.com/users/lexci-lint","html_url":"https://github.com/lexci-lint","followers_url":"https://api.github.com/users/lexci-lint/followers","following_url":"https://api.github.com/users/lexci-lint/following{/other_user}","gists_url":"https://api.github.com/users/lexci-lint/gists{/gist_id}","starred_url":"https://api.github.com/users/lexci-lint/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lexci-lint/subscriptions","organizations_url":"https://api.github.com/users/lexci-lint/orgs","repos_url":"https://api.github.com/users/lexci-lint/repos","events_url":"https://api.github.com/users/lexci-lint/events{/privacy}","received_events_url":"https://api.github.com/users/lexci-lint/received_events","type":"User","site_admin":false,"name":"","company":"","blog":"","location":"","email":"","hireable":false,"bio":null,"public_repos":1,"public_gists":0,"followers":0,"following":0,"created_at":"2015-06-20T16:57:16Z","updated_at":"2015-06-20T17:41:27Z","private_gists":0,"total_private_repos":0,"owned_private_repos":0,"disk_usage":0,"collaborators":0,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":0}}'
+      string: '{"login":"lexci-lint","id":12980159,"avatar_url":"https://avatars.githubusercontent.com/u/12980159?v=3","gravatar_id":"","url":"https://api.github.com/users/lexci-lint","html_url":"https://github.com/lexci-lint","followers_url":"https://api.github.com/users/lexci-lint/followers","following_url":"https://api.github.com/users/lexci-lint/following{/other_user}","gists_url":"https://api.github.com/users/lexci-lint/gists{/gist_id}","starred_url":"https://api.github.com/users/lexci-lint/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lexci-lint/subscriptions","organizations_url":"https://api.github.com/users/lexci-lint/orgs","repos_url":"https://api.github.com/users/lexci-lint/repos","events_url":"https://api.github.com/users/lexci-lint/events{/privacy}","received_events_url":"https://api.github.com/users/lexci-lint/received_events","type":"User","site_admin":false,"name":"","company":"","blog":"","location":"","email":"","hireable":false,"bio":null,"public_repos":1,"public_gists":0,"followers":0,"following":0,"created_at":"2015-06-20T16:57:16Z","updated_at":"2015-07-04T22:20:47Z"}'
     http_version: 
-  recorded_at: Sat, 20 Jun 2015 17:42:17 GMT
+  recorded_at: Sat, 04 Jul 2015 22:21:24 GMT
+- request:
+    method: get
+    uri: https://api.github.com/user/emails?per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 3.8.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token 92bc2774bdfc8e24c933758f5313ddb7aacbbe44
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 04 Jul 2015 22:21:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4998'
+      X-Ratelimit-Reset:
+      - '1436052084'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - W/"4f514b08ae53522e42834eb08e33d046"
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - user, user:email
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Github-Request-Id:
+      - 18DA1056:6BF1:B88B41:55985C64
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - a6882e5cd2513376cb9481dbcd83f3a2
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"email":"allen+lexci@lintci.com","primary":true,"verified":true}]'
+    http_version: 
+  recorded_at: Sat, 04 Jul 2015 22:21:25 GMT
 recorded_with: VCR 2.9.3

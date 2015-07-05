@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   validates :provider, presence: true
   validates :uid, presence: true, uniqueness: {scope: :provider}
   validates :username, presence: true
+  validates :email, presence: true
 
   class << self
     def upsert_from_provider!(provider_user)
