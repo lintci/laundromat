@@ -15,5 +15,4 @@ protected
   attr_reader :repository, :params
 
 private
-
 end

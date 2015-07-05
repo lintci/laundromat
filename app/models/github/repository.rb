@@ -6,9 +6,7 @@ module Github
       @repository = repository
     end
 
-    def owner_name
-      owner.name
-    end
+    delegate :name, to: :owner, prefix: true
 
     def owner
       Github::Owner.new(repository.owner)
