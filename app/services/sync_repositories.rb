@@ -7,7 +7,7 @@ class SyncRepositories < CommandService
   def call
     api.repositories do |provider_repository|
       repository = upsert_repository!(provider_repository)
-      upsert_repository_access!(repository, provider_repository)
+      upsert_repository_access!(repository, provider_repository) # TODO: Also delete
     end
   end
 

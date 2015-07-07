@@ -2,7 +2,7 @@ module Channel
   PATTERN = /
     \A
     (?:(?<private>private)-)?
-    (?<type>[^:]+):
+    (?<type>[^:]+)@
     (?<id>.+)
     \z
   /x

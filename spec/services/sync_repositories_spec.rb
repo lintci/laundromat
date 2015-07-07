@@ -8,7 +8,9 @@ describe SyncRepositories do
 
   describe '#call', :vcr do
     it 'synchronizes users repositories and access' do
-      service.call(provider.name, user.id)
+      expect do
+        service.call(provider.name, user.id)
+      end.to change{user.repositories.count}.by(3)
     end
   end
 end

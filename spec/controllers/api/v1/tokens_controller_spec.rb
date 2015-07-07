@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe API::V1::TokensController, type: :controller do
+describe API::V1::Auth::TokensController, type: :controller do
   describe 'POST #create' do
     let(:code){'1234'}
     let(:token){build(:access_token, id: 1)}

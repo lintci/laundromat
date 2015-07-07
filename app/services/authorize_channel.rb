@@ -9,7 +9,7 @@ class AuthorizeChannel < CommandService
 
   def call
     if authorized?
-      success(authorization)
+      success(authentication)
     else
       failure
     end
@@ -25,7 +25,7 @@ private
     channel.authorized?(user)
   end
 
-  def authorization
+  def authentication
     Pusher.channel(channel.name).authenticate(socket_id)
   end
 end

@@ -2,21 +2,16 @@ require 'spec_helper'
 
 describe AuthorizeChannel do
   let(:user){build(:user, id: 1)}
-  let(:socket_id){'12345678'}
+  let(:socket_id){'1234.5678'} # Pusher validates socket ID's to match /\A\d+\.\d+\z/
   subject(:service){described_class.new(user, channel_name, socket_id)}
 
   describe '#call' do
     context 'when authorized' do
-      let(:channel_name){"private-user:#{user.id}"}
-      let(:channel){instance_double(Pusher::Channel)}
-      let(:authentication){double(:authentication)}
+      let(:channel_name){"private-user@#{user.id}"}
 
       it 'calls success with the authentication' do
-        allow(Pusher).to receive(:channel).with(channel_name).and_return(channel)
-        allow(channel).to receive(:authenticate).and_return(authentication)
-
         service.success do |authentication|
-          expect(authentication).to eq(authentication)
+          expect(authentication).to include(:auth)
         end
 
         service.failure do
@@ -28,7 +23,7 @@ describe AuthorizeChannel do
     end
 
     context 'when unauthorized' do
-      let(:channel_name){"private-user:#{user.id + 1}"}
+      let(:channel_name){"private-user@#{user.id + 1}"}
 
       it 'calls failure' do
         service.success do

@@ -5,7 +5,7 @@ describe Channel do
     subject(:channel){described_class[channel_name]}
 
     context 'when given a user channel name' do
-      let(:channel_name){'private-user:1'}
+      let(:channel_name){'private-user@1'}
 
       it 'generates a user channel with id: 1', :aggregate_failures do
         expect(channel).to be_a(Channel::User)
@@ -15,7 +15,7 @@ describe Channel do
     end
 
     context 'when given a repository channel name' do
-      let(:channel_name){'private-repository:1'}
+      let(:channel_name){'private-repository@1'}
 
       it 'generates a repository channel with id: 1', :aggregate_failures do
         expect(channel).to be_a(Channel::Repository)
@@ -25,7 +25,7 @@ describe Channel do
     end
 
     context 'when given a nonsense channel name' do
-      let(:channel_name){'private-robot:1'}
+      let(:channel_name){'private-robot@1'}
 
       it 'returns nil' do
         expect(channel).to eq(nil)

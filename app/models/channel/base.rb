@@ -17,7 +17,7 @@ module Channel
     end
 
     def name
-      "private-#{type}:#{id}"
+      "private-#{type}@#{id}"
     end
 
     def authorized?(_user)
