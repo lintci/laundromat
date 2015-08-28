@@ -31,7 +31,7 @@ describe AccessToken, type: :model do
     subject!(:token){create(:access_token, access_token: '1')}
 
     it 'looks up token from authorization' do
-      expect(AccessToken.from_authorization('Bearer 1')).to eq(token)
+      expect(described_class.from_authorization('Bearer 1')).to eq(token)
     end
   end
 

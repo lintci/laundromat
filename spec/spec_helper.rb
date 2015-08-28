@@ -11,7 +11,6 @@ end
 
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
-require 'rspec/its'
 require 'factory_girl_rails'
 require 'vcr'
 require 'sidekiq/testing'
@@ -24,10 +23,13 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.configure_rspec_metadata!
   config.filter_sensitive_data('<CREDENTIALS>') do
-    "#{ENV['GITHUB_USER']}:#{ENV['GITHUB_PASSWORD']}"
+    "#{ENV['GITHUB_SERVICE_USER']}:#{ENV['GITHUB_SERVICE_PASSWORD']}"
   end
   config.filter_sensitive_data('<GITHUB_OAUTH_TOKEN>') do
     ENV['GITHUB_OAUTH_TOKEN']
+  end
+  config.filter_sensitive_data('<GITHUB_SERVICE_TOKEN>') do
+    ENV['GITHUB_SERVICE_TOKEN']
   end
   config.filter_sensitive_data('<GITHUB_CLIENT_ID>') do
     ENV['GITHUB_CLIENT_ID']
@@ -44,7 +46,6 @@ RSpec.configure do |config|
   config.include FixtureFile
   config.include FactoryGirl::Syntax::Methods
   config.include Helpers::Controllers, type: :controller
-  config.include Helpers::Resources, type: :resource
   # These two settings work together to allow you to limit a spec run
   # to individual examples or groups you care about by tagging them with
   # `:focus` metadata. When nothing is tagged with `:focus`, all examples

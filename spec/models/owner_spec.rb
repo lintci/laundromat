@@ -9,4 +9,34 @@ RSpec.describe Owner, type: :model do
       expect(owner).to_not be_valid
     end
   end
+
+  describe '.upsert_from_provider!' do
+    context 'when the owner exists' do
+      subject!(:owner){create(:owner)}
+      let(:provider_owner){build(:github_owner, name: owner.name)}
+
+      it 'returns the existing owner' do
+        expect do
+          @returned_owner = described_class.upsert_from_provider!(provider_owner)
+        end.to_not change{Owner.count}
+
+        expect(owner).to eq(@returned_owner)
+      end
+    end
+
+    context 'when the owner does not exist' do
+      let(:provider_owner){build(:github_owner)}
+
+      it 'returns a new user' do
+        expect do
+          @owner = described_class.upsert_from_provider!(provider_owner)
+        end.to change{Owner.count}.by(1)
+
+        expect(@owner).to have_attributes(
+          name: provider_owner.name,
+          provider: provider_owner.provider
+        )
+      end
+    end
+  end
 end

@@ -1,17 +1,33 @@
 module Provider
+  UnknownProviderError = Class.new(StandardError)
+
   class << self
-    def [](name)
-      @providers[name]
+    prepend
+
+    def [](provider)
+      providers[key(provider)]
     end
 
-    def add(provider)
-      @providers ||= {}
-      @providers[provider.to_s] = provider
-      @providers[provider.to_sym] = provider
-      @providers[provider.abbr] = provider
-      @providers[provider.abbr.to_sym] = provider
+    def fetch(provider, &block)
+      providers.fetch(key(provider), &block)
+    rescue KeyError
+      raise UnknownProviderError, "Received unknown provider: #{provider.inspect}"
     end
+
+    def register(provider)
+      self.providers ||= {}
+      providers[provider.name] = provider
+      providers[provider.abbr] = provider
+    end
+
+  private
+
+    def key(provider)
+      provider.to_s.underscore
+    end
+
+    attr_accessor :providers
   end
 
-  add(Provider::Github.new)
+  register(Provider::Github.new)
 end

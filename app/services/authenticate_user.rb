@@ -2,7 +2,7 @@ class AuthenticateUser < CommandService
   callback :success, :failure
 
   def initialize(provider, authorization_code)
-    @provider = provider
+    @provider = Provider.fetch(provider)
     @authorization_code = authorization_code
   end
 

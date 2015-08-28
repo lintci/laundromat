@@ -7,5 +7,9 @@ module Provider
     def api(*args)
       ::Github::API.new(*args)
     end
+
+    def service_api
+      ::Github::API.service
+    end
   end
 end

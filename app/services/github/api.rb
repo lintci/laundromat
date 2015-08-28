@@ -1,12 +1,25 @@
 module Github
   class API
+    SERVICE_USERNAME = ENV.fetch('GITHUB_SERVICE_USER')
+    SERVICE_TOKEN = ENV.fetch('GITHUB_SERVICE_TOKEN')
+    CLIENT_ID = ENV.fetch('GITHUB_CLIENT_ID')
+    CLIENT_SECRET = ENV.fetch('GITHUB_CLIENT_SECRET')
+
+    class << self
+      def service
+        new(SERVICE_TOKEN)
+      end
+    end
+
+    attr_reader :client
+
     def initialize(access_token = nil)
       @client = if access_token
         Octokit::Client.new(access_token: access_token, auto_paginate: true)
       else
         Octokit::Client.new(
-          client_id: ENV.fetch('GITHUB_CLIENT_ID'),
-          client_secret: ENV.fetch('GITHUB_CLIENT_SECRET'),
+          client_id: CLIENT_ID,
+          client_secret: CLIENT_SECRET,
           auto_paginate: true
         )
       end
@@ -43,16 +56,30 @@ module Github
       )
     end
 
-    def add_user_to_repository(username, repository)
+    def add_lintci_to_repository(repository)
       if repository.organization?
-
+        team_api.add_team_membership(repository, SERVICE_USERNAME)
       else
-        client.add_collaborator(repository.name, username)
+        client.add_collaborator(repository.full_name, SERVICE_USERNAME)
       end
     end
 
-  protected
+    def remove_user_from_repository(repository)
+      if repository.organization?
+        team_api.remove_membership(repository, SERVICE_USERNAME)
+      else
+        client.remove_collaborator(repository.full_name, SERVICE_USERNAME)
+      end
+    end
 
-    attr_reader :client
+    def add_deploy_key(repository)
+      client.add_deploy_key(repository.full_name, 'LintCI', repository.public_key)
+    end
+
+  private
+
+    def team_api
+      TeamAPI.new(client, self.class.service.client)
+    end
   end
 end

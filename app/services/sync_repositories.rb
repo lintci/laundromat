@@ -1,13 +1,15 @@
 class SyncRepositories < CommandService
-  def initialize(provider, user_id)
-    @provider = Provider[provider]
+  def initialize(user_id)
     @user = User.includes(:active_access_token).find(user_id)
+    @provider = user.provider
   end
 
   def call
     api.repositories do |provider_repository|
       repository = upsert_repository!(provider_repository)
-      upsert_repository_access!(repository, provider_repository) # TODO: Also delete
+      resert_repository_access!(repository, provider_repository) # TODO: Also delete
+
+      notify_channel(repository)
     end
   end
 
@@ -21,8 +23,18 @@ private
     Repository.upsert_from_provider!(provider_repository)
   end
 
-  def upsert_repository_access!(repository, provider_repository)
-    user.upsert_repository_access!(repository, provider_repository.access)
+  def resert_repository_access!(repository, provider_repository)
+    user.resert_repository_access!(repository, provider_repository.access)
+  end
+
+  def notify_channel(repository)
+    data = API::V1::RepositoryResource.new(repository).as_json(include: ['owner'])
+
+    Pusher.trigger(channel.name, 'data_updated', data)
+  end
+
+  def channel
+    Channel::User.new(user.id)
   end
 
   def api

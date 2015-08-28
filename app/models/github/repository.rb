@@ -12,6 +12,10 @@ module Github
       Github::Owner.new(repository.owner)
     end
 
+    def full_name
+      "#{owner.name}/#{name}"
+    end
+
     def access
       perms = repository.permissions
       if perms.admin?

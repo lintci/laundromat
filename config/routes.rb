@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
       resources :users, only: [:show]
 
-      resources :repositories, only: [:index, :show, :update]
+      jsonapi_resources :owners, only: [:index, :show]
+      jsonapi_resources :repositories, only: [:index, :show, :update]
       resources :builds, only: [:index, :show]
     end
   end

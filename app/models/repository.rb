@@ -18,6 +18,8 @@ class Repository < ActiveRecord::Base
 
   after_initialize :generate_ssh_keys
 
+  delegate :organization?, to: :owner
+
   aasm column: :status do
     state :inactive, initial: true
     state :active
@@ -38,6 +40,10 @@ class Repository < ActiveRecord::Base
 
   def create_build!(event, event_id, payload)
     builds.create!(event: event, event_id: event_id, payload: payload)
+  end
+
+  def full_name
+    "#{owner_name}/#{name}"
   end
 
 private

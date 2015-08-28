@@ -8,6 +8,10 @@ module Github
       owner.login
     end
 
+    def provider
+      Provider[:github]
+    end
+
   protected
 
     attr_reader :owner

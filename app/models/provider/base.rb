@@ -3,7 +3,7 @@ module Provider
     delegate :to_sym, to: :name
 
     def human_name
-      self.class.name.gsub('Provider::', '')
+      self.class.name.demodulize
     end
 
     def name

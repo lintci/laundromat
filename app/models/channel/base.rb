@@ -2,7 +2,7 @@ module Channel
   class Base
     class << self
       def type
-        name.split('::').last.underscore
+        name.demodulize.underscore
       end
     end
 

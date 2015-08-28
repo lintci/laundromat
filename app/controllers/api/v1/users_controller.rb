@@ -1,7 +1,7 @@
 module API
   module V1
     # Provides access to a user
-    class UsersController < BaseController
+    class UsersController < JSONAPIController
       before_action :ensure_valid_access_token!
 
       def show

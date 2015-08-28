@@ -49,6 +49,39 @@ describe User, type: :model do
     end
   end
 
+  describe '#upsert_access_token_from_provider!' do
+    context 'when a token exists' do
+      subject!(:user){create(:user, :with_tokens)}
+      let!(:existing_access_token){user.active_access_token}
+      let!(:existing_provider_token){existing_access_token.provider_token}
+      let(:new_provider_token){existing_provider_token.succ}
+      let(:provider_access_token){build(:github_access_token, access_token: new_provider_token)}
+
+      it 'updates the token' do
+        expect do
+          user.upsert_access_token_from_provider!(provider_access_token)
+          existing_access_token.reload
+        end.to change{existing_access_token.provider_token}.from(existing_provider_token).to(new_provider_token)
+      end
+    end
+
+    context 'when a token does not exist' do
+      subject!(:user){create(:user)}
+      let(:provider_access_token){build(:github_access_token, access_token: '1')}
+
+      it 'creates a token with the provider access token' do
+        expect do
+          @token = user.upsert_access_token_from_provider!(provider_access_token)
+        end.to change{AccessToken.count}.by(1)
+
+        expect(@token).to have_attributes(
+          user: user,
+          provider_token: '1'
+        )
+      end
+    end
+  end
+
   describe '#access_token' do
     subject(:user){create(:user, :with_tokens)}
 

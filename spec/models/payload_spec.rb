@@ -3,6 +3,13 @@ require 'spec_helper'
 describe Payload do
   subject(:payload){build(:payload)}
 
+  it do
+    is_expected.to have_attributes(
+      repository: 'guinea_pig',
+      owner: 'lintci'
+    )
+  end
+
   describe '#pull_request' do
     it 'returns a pull_request' do
       expect(payload.pull_request).to be_a(Payload::PullRequest)

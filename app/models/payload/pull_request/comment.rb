@@ -33,8 +33,8 @@ class Payload
 
       def client
         @client ||= Octokit::Client.new(
-          login: ENV.fetch('GITHUB_USER'),
-          password: ENV.fetch('GITHUB_PASSWORD')
+          login: ENV.fetch('GITHUB_SERVICE_USER'),
+          password: ENV.fetch('GITHUB_SERVICE_PASSWORD')
         )
       end
     end
