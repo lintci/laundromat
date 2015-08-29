@@ -1,0 +1,165 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.github.com/repos/lexci-lint-org-test/owner/keys
+    body:
+      encoding: UTF-8
+      string: '{"title":"LintCI","key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyZMgy2LJPgPgo98/l4MxwdMFaZkb3JwWwv5MGDzLJOd79RjneqSY5Vhh1VbnMK+iPLJFFO7MatGu647VdxUHBvDyoQGnuOkW0oFN0cCzMqxHQUhbYodvUd/HucqgqhbKYkxo0aRwUou6pnmplYXDyJgAJoDuQO8N/rWEDTDOdsz1/pzxECjLff1KtBNt6vFt85Es+g6pXZ+W7XHYEK3U/0t444POlfT5Hk0cFfqJba0j/J4JZomE0DaNmLoQ83oVQMzqJyo5Mm3LLt5+ecMZtEi3p1cx0A2mEhJknWanZzEfS4zG2pucjekyTIr6PAlJhDeWb0urMEaHLO1c2yxc1
+        LintCI"}'
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.0.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 29 Aug 2015 20:46:04 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '568'
+      Status:
+      - 201 Created
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4989'
+      X-Ratelimit-Reset:
+      - '1440884368'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - '"befc2cc0f044ee10a5191218f1a3d78c"'
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      Location:
+      - https://api.github.com/repos/lexci-lint-org-test/owner/keys/13462012
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Github-Request-Id:
+      - 18DA1056:18649:704321:55E21A0C
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - cee4c0729c8e9147e7abcb45b9d69689
+    body:
+      encoding: UTF-8
+      string: '{"id":13462012,"key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyZMgy2LJPgPgo98/l4MxwdMFaZkb3JwWwv5MGDzLJOd79RjneqSY5Vhh1VbnMK+iPLJFFO7MatGu647VdxUHBvDyoQGnuOkW0oFN0cCzMqxHQUhbYodvUd/HucqgqhbKYkxo0aRwUou6pnmplYXDyJgAJoDuQO8N/rWEDTDOdsz1/pzxECjLff1KtBNt6vFt85Es+g6pXZ+W7XHYEK3U/0t444POlfT5Hk0cFfqJba0j/J4JZomE0DaNmLoQ83oVQMzqJyo5Mm3LLt5+ecMZtEi3p1cx0A2mEhJknWanZzEfS4zG2pucjekyTIr6PAlJhDeWb0urMEaHLO1c2yxc1","url":"https://api.github.com/repos/lexci-lint-org-test/owner/keys/13462012","title":"LintCI","verified":true,"created_at":"2015-08-29T20:46:04Z","read_only":false}'
+    http_version: 
+  recorded_at: Sat, 29 Aug 2015 20:46:04 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/lexci-lint-org-test/owner/keys?per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.0.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 29 Aug 2015 20:46:05 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4988'
+      X-Ratelimit-Reset:
+      - '1440884368'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - W/"e0fc7b486c29d5f67115da3b6869fa18"
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Github-Request-Id:
+      - 18DA1056:181A8:2BA3B36:55E21A0D
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - 8dd185e423974a7e13abbbe6e060031e
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":13462002,"key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCTEvI3MtcsUbBjaXDw2thXyP0V8bQVP3D6tsC7YY0oteHJo3LTrp0/PJQhh7i/fFNE4qCTAfyRjWd6JeZZJH1fFeDoUYsOqLPpINVcuG+RyyLg4KVll5dKpwNIS45C74Uy9ejjlYfLUfK7Mmgqdvzmbfc/dzP8C+M7z8+0OK5gU5p+Ze04rb74ayvUsbM2afmRJ50kNmS/92ZCG1yXppxn3h4OAexIbSlfkj5jeOGOtnEWL3beDaE+/UWPX1ufN42v+k5jIdxaXKqoCWdL2oXrZlctFcVQrNOjLKTc1E4iKmNHSHeDcnxUrsryipp5pJPm9MFBDz7jaa7FZ0zPPGf3","url":"https://api.github.com/repos/lexci-lint-org-test/owner/keys/13462002","title":"LintCI","verified":true,"created_at":"2015-08-29T20:44:54Z","read_only":false},{"id":13462012,"key":"ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQCyZMgy2LJPgPgo98/l4MxwdMFaZkb3JwWwv5MGDzLJOd79RjneqSY5Vhh1VbnMK+iPLJFFO7MatGu647VdxUHBvDyoQGnuOkW0oFN0cCzMqxHQUhbYodvUd/HucqgqhbKYkxo0aRwUou6pnmplYXDyJgAJoDuQO8N/rWEDTDOdsz1/pzxECjLff1KtBNt6vFt85Es+g6pXZ+W7XHYEK3U/0t444POlfT5Hk0cFfqJba0j/J4JZomE0DaNmLoQ83oVQMzqJyo5Mm3LLt5+ecMZtEi3p1cx0A2mEhJknWanZzEfS4zG2pucjekyTIr6PAlJhDeWb0urMEaHLO1c2yxc1","url":"https://api.github.com/repos/lexci-lint-org-test/owner/keys/13462012","title":"LintCI","verified":true,"created_at":"2015-08-29T20:46:04Z","read_only":false}]'
+    http_version: 
+  recorded_at: Sat, 29 Aug 2015 20:46:05 GMT
+recorded_with: VCR 2.9.3

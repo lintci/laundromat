@@ -11,8 +11,6 @@ module Github
       end
     end
 
-    attr_reader :client
-
     def initialize(access_token = nil)
       @client = if access_token
         Octokit::Client.new(access_token: access_token, auto_paginate: true)
@@ -23,6 +21,11 @@ module Github
           auto_paginate: true
         )
       end
+      @service_client = Octokit::Client.new(access_token: SERVICE_TOKEN, auto_paginate: true)
+    end
+
+    def team_api
+      TeamAPI.new(client, service_client)
     end
 
     def access_token(authorization_code)
@@ -62,6 +65,8 @@ module Github
       else
         client.add_collaborator(repository.full_name, SERVICE_USERNAME)
       end
+
+      client.add_deploy_key(repository.full_name, 'LintCI', repository.public_key)
     end
 
     def remove_user_from_repository(repository)
@@ -72,14 +77,8 @@ module Github
       end
     end
 
-    def add_deploy_key(repository)
-      client.add_deploy_key(repository.full_name, 'LintCI', repository.public_key)
-    end
+  protected
 
-  private
-
-    def team_api
-      TeamAPI.new(client, self.class.service.client)
-    end
+    attr_reader :client, :service_client
   end
 end

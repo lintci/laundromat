@@ -1,9 +1,8 @@
 require 'spec_helper'
 
 describe Github::TeamAPI do
-  let(:client){Github::API.new(ENV.fetch('GITHUB_USER_ACCESS_TOKEN')).client}
   let(:service_api){Github::API.service}
-  subject(:team_api){described_class.new(client, service_api.client)}
+  subject(:team_api){Github::API.new(ENV.fetch('GITHUB_USER_ACCESS_TOKEN')).team_api}
 
   describe '#add_team_membership' do
     context 'when user has access through team', :vcr do
