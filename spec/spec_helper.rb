@@ -22,21 +22,12 @@ VCR.configure do |config|
   config.cassette_library_dir = File.expand_path('../fixtures/vcr_cassettes', __FILE__)
   config.hook_into :webmock
   config.configure_rspec_metadata!
-  config.filter_sensitive_data('<CREDENTIALS>') do
-    "#{ENV['GITHUB_SERVICE_USER']}:#{ENV['GITHUB_SERVICE_PASSWORD']}"
-  end
-  config.filter_sensitive_data('<GITHUB_OAUTH_TOKEN>') do
-    ENV['GITHUB_OAUTH_TOKEN']
-  end
-  config.filter_sensitive_data('<GITHUB_SERVICE_TOKEN>') do
-    ENV['GITHUB_SERVICE_TOKEN']
-  end
-  config.filter_sensitive_data('<GITHUB_CLIENT_ID>') do
-    ENV['GITHUB_CLIENT_ID']
-  end
-  config.filter_sensitive_data('<GITHUB_CLIENT_SECRET>') do
-    ENV['GITHUB_CLIENT_SECRET']
-  end
+  config.filter_sensitive_data('<CREDENTIALS>'){"#{ENV['GITHUB_SERVICE_USER']}:#{ENV['GITHUB_SERVICE_PASSWORD']}"}
+  config.filter_sensitive_data('<GITHUB_OAUTH_TOKEN>'){ENV['GITHUB_OAUTH_TOKEN']}
+  config.filter_sensitive_data('<GITHUB_SERVICE_TOKEN>'){ENV['GITHUB_SERVICE_TOKEN']}
+  config.filter_sensitive_data('<GITHUB_CLIENT_ID>'){ENV['GITHUB_CLIENT_ID']}
+  config.filter_sensitive_data('<GITHUB_CLIENT_SECRET>'){ENV['GITHUB_CLIENT_SECRET']}
+  config.filter_sensitive_data('<GITHUB_WEBHOOK_TOKEN>'){ENV['GITHUB_WEBHOOK_TOKEN']}
 end
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
