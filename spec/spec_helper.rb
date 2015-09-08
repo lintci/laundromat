@@ -9,6 +9,7 @@ SimpleCov.start 'rails' do
   coverage_dir ENV['CIRCLE_ARTIFACTS'] if ENV['CIRCLE_ARTIFACTS']
 end
 
+require 'spec/support/env'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'factory_girl_rails'
