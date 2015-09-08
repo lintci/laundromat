@@ -1,8 +1,0 @@
-ENV['SSH_PASSPHRASE'] ||= 'TurtleSocks'
-ENV['GITHUB_CLIENT_ID'] ||= 'MonkeySocks'
-ENV['GITHUB_CLIENT_SECRET'] ||= 'DoveSocks'
-ENV['PUSHER_URL'] ||= 'TigerSocks'
-ENV['GITHUB_SERVICE_USER'] ||= 'PossumSocks'
-ENV['GITHUB_SERVICE_TOKEN'] ||= 'BeaverSocks'
-ENV['PUSH_TO_START_URL'] ||= 'BearSocks'
-ENV['GITHUB_WEBHOOK_TOKEN'] ||= 'KittySocks'
