@@ -20,4 +20,4 @@ ENV SENTRY_DSN=CHANGEME \
     PUSH_TO_START_URL=CHANGEME
 
 
-RUN foreman start web
+CMD foreman start web
