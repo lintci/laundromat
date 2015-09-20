@@ -23,8 +23,7 @@ describe API::V1::RepositoryResource do
               links: {
                 self: '/api/v1/repositories/1/relationships/owner',
                 related: '/api/v1/repositories/1/owner'
-              },
-              data: nil
+              }
             }
           }
         }
