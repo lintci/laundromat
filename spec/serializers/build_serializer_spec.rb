@@ -6,9 +6,11 @@ describe BuildSerializer do
 
   describe '#as_json' do
     it 'generates the expected json' do
-      expect(serializer.as_json).to eq(
+      expect(serializer.as_json).to match(
         build: {
           id: nil,
+          ssh_public_key: match(/ssh-rsa/),
+          ssh_private_key: match(/-----BEGIN RSA PRIVATE KEY-----/),
           pull_request: {
             id: 1,
             base_sha: 'bbf813a806dacf043a592f04a0ed320236caca3a',

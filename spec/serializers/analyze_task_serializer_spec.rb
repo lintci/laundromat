@@ -6,7 +6,7 @@ describe AnalyzeTaskSerializer do
     subject(:serializer){described_class.new(task)}
 
     it 'generates the expected json' do
-      expect(serializer.as_json).to eq(
+      expect(serializer.as_json).to match(
         analyze_task: {
           id: nil,
           type: 'AnalyzeTask',
@@ -15,6 +15,8 @@ describe AnalyzeTaskSerializer do
           tool: 'Linguist',
           build: {
             id: nil,
+            ssh_public_key: match(/ssh-rsa/),
+            ssh_private_key: match(/-----BEGIN RSA PRIVATE KEY-----/),
             pull_request: {
               id: 1,
               base_sha: 'bbf813a806dacf043a592f04a0ed320236caca3a',

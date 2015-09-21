@@ -32,6 +32,8 @@ describe TaskScheduler do
             'tool' => 'Linguist',
             'build' => {
               'id' => be_a(Integer),
+              'ssh_public_key' => match(/ssh-rsa/),
+              'ssh_private_key' => match(/-----BEGIN RSA PRIVATE KEY-----/),
               'pull_request' => {
                 'id' => 1,
                 'base_sha' => 'bbf813a806dacf043a592f04a0ed320236caca3a',
@@ -83,6 +85,8 @@ describe TaskScheduler do
             'tool' => 'RuboCop',
             'build' => {
               'id' => be_a(Integer),
+              'ssh_public_key' => match(/ssh-rsa/),
+              'ssh_private_key' => match(/-----BEGIN RSA PRIVATE KEY-----/),
               'pull_request' => {
                 'id' => 1,
                 'base_sha' => 'bbf813a806dacf043a592f04a0ed320236caca3a',
@@ -142,6 +146,8 @@ describe TaskScheduler do
             'tool' => 'RuboCop',
             'build' => {
               'id' => be_a(Integer),
+              'ssh_public_key' => match(/ssh-rsa/),
+              'ssh_private_key' => match(/-----BEGIN RSA PRIVATE KEY-----/),
               'pull_request' => {
                 'id' => 1,
                 'base_sha' => 'bbf813a806dacf043a592f04a0ed320236caca3a',
