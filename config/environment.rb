@@ -2,7 +2,7 @@
 require File.expand_path('../application', __FILE__)
 
 if Rails.env.production?
-  Rails.logger = Le.new(ENV.fetch['LOGENTRIES_TOKEN'], local: STDOUT)
+  Rails.logger = Le.new(ENV.str('LOGENTRIES_TOKEN'), local: STDOUT)
 end
 
 # Initialize the Rails application.
