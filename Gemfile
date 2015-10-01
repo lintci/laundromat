@@ -15,6 +15,7 @@ gem 'octokit'
 gem 'stamped'
 
 gem 'foreman'
+gem 'envee'
 gem 'puma'
 gem 'rails_12factor', group: :production
 gem 'newrelic_rpm'
