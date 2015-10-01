@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   end
 
   root to: 'health_check#up'
+  get '/up' => 'health_check#up'
 end
