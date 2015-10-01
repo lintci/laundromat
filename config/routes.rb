@@ -13,4 +13,6 @@ Rails.application.routes.draw do
       resources :builds, only: [:index, :show]
     end
   end
+
+  root to: 'health_check#up'
 end
