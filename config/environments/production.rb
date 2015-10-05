@@ -91,4 +91,15 @@ Rails.application.configure do
       'severity' => 'INFO'
     }
   end
+
+  config.middleware.insert_before 0, 'Rack::Cors', logger: (->{Rails.logger}) do
+    allow do
+      origins 'http://localhost:4200', %r{https?://[^.]+\.lintci.com}
+
+      resource '*',
+               headers: :any,
+               methods: [:get, :post, :delete, :put, :options, :head, :patch],
+               max_age: 0
+    end
+  end
 end
