@@ -7,6 +7,7 @@ class AccessToken < ActiveRecord::Base
 
   before_validation :set_access_token, :set_expires_at, on: :create
 
+  default_scope{order(:created_at)}
   scope :active, ->{where('expires_at >= ?', Time.zone.now)}
 
   class << self

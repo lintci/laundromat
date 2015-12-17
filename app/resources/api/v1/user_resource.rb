@@ -1,6 +1,8 @@
 module API
   module V1
     class UserResource < BaseResource
+      readonly
+
       attributes :username, :provider, :email
 
       def provider
@@ -8,10 +10,6 @@ module API
       end
 
       class << self
-        def updatable_fields(_context)
-          []
-        end
-
         def records(options)
           options[:context][:current_user]
         end

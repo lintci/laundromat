@@ -1,32 +1,35 @@
 module Github
   class User
-    def initialize(user, emails)
-      @user = user
-      @emails = Array(emails)
-    end
+    include Virtus.value_object
 
-    def uid
-      user.id.to_s
-    end
-
-    def email
-      if user.email.present?
-        user.email
-      else
-        emails.find(&:primary).email
-      end
+    values do
+      attribute :uid, String
+      attribute :username, String
+      attribute :email, String
     end
 
     def provider
       Provider[:github]
     end
 
-    def username
-      user.login
+    class << self
+      def from_api(user, emails)
+        new(
+          uid: user.id,
+          username: user.login,
+          email: email_from_api(user, emails)
+        )
+      end
+
+    private
+
+      def email_from_api(user, emails)
+        if user.email.present?
+          user.email
+        else
+          emails.find(&:primary).email
+        end
+      end
     end
-
-  protected
-
-    attr_reader :user, :emails
   end
 end

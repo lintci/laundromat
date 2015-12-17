@@ -10,6 +10,17 @@ module API
       def current_user
         context[:current_user]
       end
+
+      class << self
+        def readonly
+          meta = class << self; self; end
+
+          meta.instance_eval do
+            define_method(:updatable_fields){|context| []}
+            define_method(:creatable_fields){|context| []}
+          end
+        end
+      end
     end
   end
 end

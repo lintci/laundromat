@@ -9,7 +9,7 @@ describe SyncRepositories do
     it 'synchronizes users repositories and access' do
       expect(Pusher).to receive(:trigger).exactly(3).times.with(
         "private-user@#{user.id}",
-        'data_updated',
+        'data-updated',
         hash_including(:data)
       )
 

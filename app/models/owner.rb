@@ -9,9 +9,11 @@ class Owner < ActiveRecord::Base
   validates :name, presence: true
   validates :provider, presence: true
 
+  default_scope{order(:created_at)}
+
   class << self
-    def upsert_from_provider!(provider_owner)
-      find_or_create_by!(name: provider_owner.name, provider: provider_owner.provider.to_s)
+    def upsert_from_provider!(provider_repository)
+      find_or_create_by!(name: provider_repository.owner_name, provider: provider_repository.provider.to_s)
     end
   end
 end

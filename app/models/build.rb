@@ -9,6 +9,8 @@ class Build < ActiveRecord::Base
   validates :event_id, presence: true
   validates :payload, presence: true
 
+  default_scope{order(:created_at)}
+
   delegate :owner, to: :repository
   delegate :status, to: :tasks
 

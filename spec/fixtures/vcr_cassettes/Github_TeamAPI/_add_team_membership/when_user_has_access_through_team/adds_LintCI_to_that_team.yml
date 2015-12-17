@@ -2,6 +2,84 @@
 http_interactions:
 - request:
     method: get
+    uri: https://api.github.com/user/repos?per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.moondragon+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token <GITHUB_SERVICE_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Mon, 14 Dec 2015 02:39:03 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4995'
+      X-Ratelimit-Reset:
+      - '1450063622'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - W/"43a35505c7cc443b804dfd93b09ba0e9"
+      X-Oauth-Scopes:
+      - admin:org, admin:org_hook, admin:public_key, admin:repo_hook, gist, repo,
+        user
+      X-Accepted-Oauth-Scopes:
+      - ''
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.moondragon; format=json
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - ef96c2e493b28ffea49b891b085ed2dd
+      X-Github-Request-Id:
+      - 18DA1056:134F4:9E2D4D2:566E2BC6
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":37778876,"name":"turbo-adventure","full_name":"lexci-lint/turbo-adventure","owner":{"login":"lexci-lint","id":12980159,"avatar_url":"https://avatars.githubusercontent.com/u/12980159?v=3","gravatar_id":"","url":"https://api.github.com/users/lexci-lint","html_url":"https://github.com/lexci-lint","followers_url":"https://api.github.com/users/lexci-lint/followers","following_url":"https://api.github.com/users/lexci-lint/following{/other_user}","gists_url":"https://api.github.com/users/lexci-lint/gists{/gist_id}","starred_url":"https://api.github.com/users/lexci-lint/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lexci-lint/subscriptions","organizations_url":"https://api.github.com/users/lexci-lint/orgs","repos_url":"https://api.github.com/users/lexci-lint/repos","events_url":"https://api.github.com/users/lexci-lint/events{/privacy}","received_events_url":"https://api.github.com/users/lexci-lint/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/lexci-lint/turbo-adventure","description":"","fork":false,"url":"https://api.github.com/repos/lexci-lint/turbo-adventure","forks_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/forks","keys_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/keys{/key_id}","collaborators_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/teams","hooks_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/hooks","issue_events_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/issues/events{/number}","events_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/events","assignees_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/assignees{/user}","branches_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/branches{/branch}","tags_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/tags","blobs_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/git/refs{/sha}","trees_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/git/trees{/sha}","statuses_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/statuses/{sha}","languages_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/languages","stargazers_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/stargazers","contributors_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/contributors","subscribers_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/subscribers","subscription_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/subscription","commits_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/commits{/sha}","git_commits_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/git/commits{/sha}","comments_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/comments{/number}","issue_comment_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/issues/comments{/number}","contents_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/contents/{+path}","compare_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/compare/{base}...{head}","merges_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/merges","archive_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/downloads","issues_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/issues{/number}","pulls_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/pulls{/number}","milestones_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/milestones{/number}","notifications_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/labels{/name}","releases_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/releases{/id}","created_at":"2015-06-20T17:31:26Z","updated_at":"2015-06-20T17:31:26Z","pushed_at":"2015-06-20T17:31:26Z","git_url":"git://github.com/lexci-lint/turbo-adventure.git","ssh_url":"git@github.com:lexci-lint/turbo-adventure.git","clone_url":"https://github.com/lexci-lint/turbo-adventure.git","svn_url":"https://github.com/lexci-lint/turbo-adventure","homepage":null,"size":120,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":0,"default_branch":"master","master_branch":"master","permissions":{"admin":false,"push":true,"pull":true}},{"id":39804037,"name":"owner","full_name":"lexci-lint-org-test/owner","owner":{"login":"lexci-lint-org-test","id":13529690,"avatar_url":"https://avatars.githubusercontent.com/u/13529690?v=3","gravatar_id":"","url":"https://api.github.com/users/lexci-lint-org-test","html_url":"https://github.com/lexci-lint-org-test","followers_url":"https://api.github.com/users/lexci-lint-org-test/followers","following_url":"https://api.github.com/users/lexci-lint-org-test/following{/other_user}","gists_url":"https://api.github.com/users/lexci-lint-org-test/gists{/gist_id}","starred_url":"https://api.github.com/users/lexci-lint-org-test/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lexci-lint-org-test/subscriptions","organizations_url":"https://api.github.com/users/lexci-lint-org-test/orgs","repos_url":"https://api.github.com/users/lexci-lint-org-test/repos","events_url":"https://api.github.com/users/lexci-lint-org-test/events{/privacy}","received_events_url":"https://api.github.com/users/lexci-lint-org-test/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/lexci-lint-org-test/owner","description":"","fork":false,"url":"https://api.github.com/repos/lexci-lint-org-test/owner","forks_url":"https://api.github.com/repos/lexci-lint-org-test/owner/forks","keys_url":"https://api.github.com/repos/lexci-lint-org-test/owner/keys{/key_id}","collaborators_url":"https://api.github.com/repos/lexci-lint-org-test/owner/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/lexci-lint-org-test/owner/teams","hooks_url":"https://api.github.com/repos/lexci-lint-org-test/owner/hooks","issue_events_url":"https://api.github.com/repos/lexci-lint-org-test/owner/issues/events{/number}","events_url":"https://api.github.com/repos/lexci-lint-org-test/owner/events","assignees_url":"https://api.github.com/repos/lexci-lint-org-test/owner/assignees{/user}","branches_url":"https://api.github.com/repos/lexci-lint-org-test/owner/branches{/branch}","tags_url":"https://api.github.com/repos/lexci-lint-org-test/owner/tags","blobs_url":"https://api.github.com/repos/lexci-lint-org-test/owner/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/lexci-lint-org-test/owner/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/lexci-lint-org-test/owner/git/refs{/sha}","trees_url":"https://api.github.com/repos/lexci-lint-org-test/owner/git/trees{/sha}","statuses_url":"https://api.github.com/repos/lexci-lint-org-test/owner/statuses/{sha}","languages_url":"https://api.github.com/repos/lexci-lint-org-test/owner/languages","stargazers_url":"https://api.github.com/repos/lexci-lint-org-test/owner/stargazers","contributors_url":"https://api.github.com/repos/lexci-lint-org-test/owner/contributors","subscribers_url":"https://api.github.com/repos/lexci-lint-org-test/owner/subscribers","subscription_url":"https://api.github.com/repos/lexci-lint-org-test/owner/subscription","commits_url":"https://api.github.com/repos/lexci-lint-org-test/owner/commits{/sha}","git_commits_url":"https://api.github.com/repos/lexci-lint-org-test/owner/git/commits{/sha}","comments_url":"https://api.github.com/repos/lexci-lint-org-test/owner/comments{/number}","issue_comment_url":"https://api.github.com/repos/lexci-lint-org-test/owner/issues/comments{/number}","contents_url":"https://api.github.com/repos/lexci-lint-org-test/owner/contents/{+path}","compare_url":"https://api.github.com/repos/lexci-lint-org-test/owner/compare/{base}...{head}","merges_url":"https://api.github.com/repos/lexci-lint-org-test/owner/merges","archive_url":"https://api.github.com/repos/lexci-lint-org-test/owner/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/lexci-lint-org-test/owner/downloads","issues_url":"https://api.github.com/repos/lexci-lint-org-test/owner/issues{/number}","pulls_url":"https://api.github.com/repos/lexci-lint-org-test/owner/pulls{/number}","milestones_url":"https://api.github.com/repos/lexci-lint-org-test/owner/milestones{/number}","notifications_url":"https://api.github.com/repos/lexci-lint-org-test/owner/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/lexci-lint-org-test/owner/labels{/name}","releases_url":"https://api.github.com/repos/lexci-lint-org-test/owner/releases{/id}","created_at":"2015-07-28T00:05:49Z","updated_at":"2015-07-28T00:05:49Z","pushed_at":"2015-07-28T00:05:49Z","git_url":"git://github.com/lexci-lint-org-test/owner.git","ssh_url":"git@github.com:lexci-lint-org-test/owner.git","clone_url":"https://github.com/lexci-lint-org-test/owner.git","svn_url":"https://github.com/lexci-lint-org-test/owner","homepage":null,"size":120,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":0,"default_branch":"master","master_branch":"master","permissions":{"admin":false,"push":true,"pull":true}},{"id":41515686,"name":"owner2","full_name":"lexci-lint-org-test/owner2","owner":{"login":"lexci-lint-org-test","id":13529690,"avatar_url":"https://avatars.githubusercontent.com/u/13529690?v=3","gravatar_id":"","url":"https://api.github.com/users/lexci-lint-org-test","html_url":"https://github.com/lexci-lint-org-test","followers_url":"https://api.github.com/users/lexci-lint-org-test/followers","following_url":"https://api.github.com/users/lexci-lint-org-test/following{/other_user}","gists_url":"https://api.github.com/users/lexci-lint-org-test/gists{/gist_id}","starred_url":"https://api.github.com/users/lexci-lint-org-test/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lexci-lint-org-test/subscriptions","organizations_url":"https://api.github.com/users/lexci-lint-org-test/orgs","repos_url":"https://api.github.com/users/lexci-lint-org-test/repos","events_url":"https://api.github.com/users/lexci-lint-org-test/events{/privacy}","received_events_url":"https://api.github.com/users/lexci-lint-org-test/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/lexci-lint-org-test/owner2","description":"","fork":false,"url":"https://api.github.com/repos/lexci-lint-org-test/owner2","forks_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/forks","keys_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/keys{/key_id}","collaborators_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/teams","hooks_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/hooks","issue_events_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/issues/events{/number}","events_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/events","assignees_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/assignees{/user}","branches_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/branches{/branch}","tags_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/tags","blobs_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/git/refs{/sha}","trees_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/git/trees{/sha}","statuses_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/statuses/{sha}","languages_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/languages","stargazers_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/stargazers","contributors_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/contributors","subscribers_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/subscribers","subscription_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/subscription","commits_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/commits{/sha}","git_commits_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/git/commits{/sha}","comments_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/comments{/number}","issue_comment_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/issues/comments{/number}","contents_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/contents/{+path}","compare_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/compare/{base}...{head}","merges_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/merges","archive_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/downloads","issues_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/issues{/number}","pulls_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/pulls{/number}","milestones_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/milestones{/number}","notifications_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/labels{/name}","releases_url":"https://api.github.com/repos/lexci-lint-org-test/owner2/releases{/id}","created_at":"2015-08-27T23:06:47Z","updated_at":"2015-08-27T23:06:47Z","pushed_at":"2015-08-27T23:06:47Z","git_url":"git://github.com/lexci-lint-org-test/owner2.git","ssh_url":"git@github.com:lexci-lint-org-test/owner2.git","clone_url":"https://github.com/lexci-lint-org-test/owner2.git","svn_url":"https://github.com/lexci-lint-org-test/owner2","homepage":null,"size":120,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":0,"default_branch":"master","master_branch":"master","permissions":{"admin":false,"push":true,"pull":true}},{"id":39751073,"name":"admin","full_name":"lintci-test/admin","owner":{"login":"lintci-test","id":13514323,"avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","gravatar_id":"","url":"https://api.github.com/users/lintci-test","html_url":"https://github.com/lintci-test","followers_url":"https://api.github.com/users/lintci-test/followers","following_url":"https://api.github.com/users/lintci-test/following{/other_user}","gists_url":"https://api.github.com/users/lintci-test/gists{/gist_id}","starred_url":"https://api.github.com/users/lintci-test/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lintci-test/subscriptions","organizations_url":"https://api.github.com/users/lintci-test/orgs","repos_url":"https://api.github.com/users/lintci-test/repos","events_url":"https://api.github.com/users/lintci-test/events{/privacy}","received_events_url":"https://api.github.com/users/lintci-test/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/lintci-test/admin","description":"","fork":false,"url":"https://api.github.com/repos/lintci-test/admin","forks_url":"https://api.github.com/repos/lintci-test/admin/forks","keys_url":"https://api.github.com/repos/lintci-test/admin/keys{/key_id}","collaborators_url":"https://api.github.com/repos/lintci-test/admin/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/lintci-test/admin/teams","hooks_url":"https://api.github.com/repos/lintci-test/admin/hooks","issue_events_url":"https://api.github.com/repos/lintci-test/admin/issues/events{/number}","events_url":"https://api.github.com/repos/lintci-test/admin/events","assignees_url":"https://api.github.com/repos/lintci-test/admin/assignees{/user}","branches_url":"https://api.github.com/repos/lintci-test/admin/branches{/branch}","tags_url":"https://api.github.com/repos/lintci-test/admin/tags","blobs_url":"https://api.github.com/repos/lintci-test/admin/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/lintci-test/admin/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/lintci-test/admin/git/refs{/sha}","trees_url":"https://api.github.com/repos/lintci-test/admin/git/trees{/sha}","statuses_url":"https://api.github.com/repos/lintci-test/admin/statuses/{sha}","languages_url":"https://api.github.com/repos/lintci-test/admin/languages","stargazers_url":"https://api.github.com/repos/lintci-test/admin/stargazers","contributors_url":"https://api.github.com/repos/lintci-test/admin/contributors","subscribers_url":"https://api.github.com/repos/lintci-test/admin/subscribers","subscription_url":"https://api.github.com/repos/lintci-test/admin/subscription","commits_url":"https://api.github.com/repos/lintci-test/admin/commits{/sha}","git_commits_url":"https://api.github.com/repos/lintci-test/admin/git/commits{/sha}","comments_url":"https://api.github.com/repos/lintci-test/admin/comments{/number}","issue_comment_url":"https://api.github.com/repos/lintci-test/admin/issues/comments{/number}","contents_url":"https://api.github.com/repos/lintci-test/admin/contents/{+path}","compare_url":"https://api.github.com/repos/lintci-test/admin/compare/{base}...{head}","merges_url":"https://api.github.com/repos/lintci-test/admin/merges","archive_url":"https://api.github.com/repos/lintci-test/admin/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/lintci-test/admin/downloads","issues_url":"https://api.github.com/repos/lintci-test/admin/issues{/number}","pulls_url":"https://api.github.com/repos/lintci-test/admin/pulls{/number}","milestones_url":"https://api.github.com/repos/lintci-test/admin/milestones{/number}","notifications_url":"https://api.github.com/repos/lintci-test/admin/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/lintci-test/admin/labels{/name}","releases_url":"https://api.github.com/repos/lintci-test/admin/releases{/id}","created_at":"2015-07-27T02:30:01Z","updated_at":"2015-07-27T02:34:18Z","pushed_at":"2015-07-27T02:30:01Z","git_url":"git://github.com/lintci-test/admin.git","ssh_url":"git@github.com:lintci-test/admin.git","clone_url":"https://github.com/lintci-test/admin.git","svn_url":"https://github.com/lintci-test/admin","homepage":null,"size":120,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":0,"default_branch":"master","master_branch":"master","permissions":{"admin":true,"push":true,"pull":true}}]'
+    http_version: 
+  recorded_at: Mon, 14 Dec 2015 02:39:03 GMT
+- request:
+    method: get
     uri: https://api.github.com/repos/lintci-test/admin/teams?per_page=100
     body:
       encoding: US-ASCII
@@ -10,7 +88,7 @@ http_interactions:
       Accept:
       - application/vnd.github.v3+json
       User-Agent:
-      - Octokit Ruby Gem 4.0.1
+      - Octokit Ruby Gem 4.1.0
       Content-Type:
       - application/json
       Authorization:
@@ -25,7 +103,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Thu, 27 Aug 2015 01:16:34 GMT
+      - Mon, 14 Dec 2015 02:40:20 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -35,13 +113,13 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4995'
+      - '4993'
       X-Ratelimit-Reset:
-      - '1440640325'
+      - '1450063622'
       Cache-Control:
       - private, max-age=60, s-maxage=60
       Etag:
-      - W/"cd56be608361d8089c65a064d806e734"
+      - W/"c6e1feecf843cf9d178fd656c3e4c769"
       X-Oauth-Scopes:
       - repo, user:email
       X-Accepted-Oauth-Scopes:
@@ -66,19 +144,19 @@ http_interactions:
         X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
       Access-Control-Allow-Origin:
       - "*"
-      X-Github-Request-Id:
-      - 18DA1056:4B3B:F0B84C:55DE64F2
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
       X-Content-Type-Options:
       - nosniff
       X-Served-By:
-      - a241e1a8264a6ace03db946c85b92db3
+      - 52437fedc85beec8da3449496900fb9a
+      X-Github-Request-Id:
+      - 18DA1056:14B63:86197C2:566E2C14
     body:
       encoding: ASCII-8BIT
-      string: '[{"name":"admin","id":1656969,"slug":"admin","description":"","permission":"admin","url":"https://api.github.com/teams/1656969","members_url":"https://api.github.com/teams/1656969/members{/member}","repositories_url":"https://api.github.com/teams/1656969/repos"}]'
+      string: '[{"name":"Owners","id":1656958,"slug":"owners","description":null,"permission":"admin","privacy":"secret","url":"https://api.github.com/teams/1656958","members_url":"https://api.github.com/teams/1656958/members{/member}","repositories_url":"https://api.github.com/teams/1656958/repos"},{"name":"admin","id":1656969,"slug":"admin","description":"","permission":"admin","privacy":"secret","url":"https://api.github.com/teams/1656969","members_url":"https://api.github.com/teams/1656969/members{/member}","repositories_url":"https://api.github.com/teams/1656969/repos"}]'
     http_version: 
-  recorded_at: Thu, 27 Aug 2015 01:16:34 GMT
+  recorded_at: Mon, 14 Dec 2015 02:40:20 GMT
 - request:
     method: get
     uri: https://api.github.com/user/teams?per_page=100
@@ -89,7 +167,7 @@ http_interactions:
       Accept:
       - application/vnd.github.v3+json
       User-Agent:
-      - Octokit Ruby Gem 4.0.1
+      - Octokit Ruby Gem 4.1.0
       Content-Type:
       - application/json
       Authorization:
@@ -104,7 +182,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Thu, 27 Aug 2015 01:16:34 GMT
+      - Mon, 14 Dec 2015 02:42:24 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -114,13 +192,13 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4994'
+      - '4992'
       X-Ratelimit-Reset:
-      - '1440640325'
+      - '1450063622'
       Cache-Control:
       - private, max-age=60, s-maxage=60
       Etag:
-      - W/"09fb6a8bbb8ab2672acb7a6a79928e83"
+      - W/"a9456e7f1ea5f08a998c0cbe8256459c"
       X-Oauth-Scopes:
       - repo, user:email
       X-Accepted-Oauth-Scopes:
@@ -145,20 +223,91 @@ http_interactions:
         X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
       Access-Control-Allow-Origin:
       - "*"
-      X-Github-Request-Id:
-      - 18DA1056:4B3B:F0B8BD:55DE64F2
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
       X-Content-Type-Options:
       - nosniff
       X-Served-By:
-      - 13d09b732ebe76f892093130dc088652
+      - d0b3c2c33a23690498aa8e70a435a259
+      X-Github-Request-Id:
+      - 18DA1056:134F5:69ECC22:566E2C8F
     body:
       encoding: ASCII-8BIT
-      string: '[{"name":"Testing Read Access","id":1580679,"slug":"testing-read-access","description":"","permission":"pull","url":"https://api.github.com/teams/1580679","members_url":"https://api.github.com/teams/1580679/members{/member}","repositories_url":"https://api.github.com/teams/1580679/repos","privacy":"secret","members_count":1,"repos_count":1,"organization":{"login":"lintci","id":7980645,"url":"https://api.github.com/orgs/lintci","repos_url":"https://api.github.com/orgs/lintci/repos","events_url":"https://api.github.com/orgs/lintci/events","members_url":"https://api.github.com/orgs/lintci/members{/member}","public_members_url":"https://api.github.com/orgs/lintci/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/7980645?v=3","description":"","name":"LintCI","company":null,"blog":"www.lintci.com","location":"","email":"","public_repos":11,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci","created_at":"2014-06-25T00:23:37Z","updated_at":"2015-08-24T18:43:15Z","type":"Organization"}},{"name":"Testing
-        Admin Access","id":1580701,"slug":"testing-admin-access","description":"","permission":"admin","url":"https://api.github.com/teams/1580701","members_url":"https://api.github.com/teams/1580701/members{/member}","repositories_url":"https://api.github.com/teams/1580701/repos","privacy":"secret","members_count":1,"repos_count":1,"organization":{"login":"lintci","id":7980645,"url":"https://api.github.com/orgs/lintci","repos_url":"https://api.github.com/orgs/lintci/repos","events_url":"https://api.github.com/orgs/lintci/events","members_url":"https://api.github.com/orgs/lintci/members{/member}","public_members_url":"https://api.github.com/orgs/lintci/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/7980645?v=3","description":"","name":"LintCI","company":null,"blog":"www.lintci.com","location":"","email":"","public_repos":11,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci","created_at":"2014-06-25T00:23:37Z","updated_at":"2015-08-24T18:43:15Z","type":"Organization"}},{"name":"read","id":1656965,"slug":"read","description":"","permission":"pull","url":"https://api.github.com/teams/1656965","members_url":"https://api.github.com/teams/1656965/members{/member}","repositories_url":"https://api.github.com/teams/1656965/repos","members_count":2,"repos_count":1,"organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null,"public_repos":3,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci-test","created_at":"2015-07-27T02:27:51Z","updated_at":"2015-07-27T02:27:51Z","type":"Organization"}},{"name":"write","id":1656968,"slug":"write","description":"","permission":"push","url":"https://api.github.com/teams/1656968","members_url":"https://api.github.com/teams/1656968/members{/member}","repositories_url":"https://api.github.com/teams/1656968/repos","members_count":2,"repos_count":1,"organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null,"public_repos":3,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci-test","created_at":"2015-07-27T02:27:51Z","updated_at":"2015-07-27T02:27:51Z","type":"Organization"}},{"name":"admin","id":1656969,"slug":"admin","description":"","permission":"admin","url":"https://api.github.com/teams/1656969","members_url":"https://api.github.com/teams/1656969/members{/member}","repositories_url":"https://api.github.com/teams/1656969/repos","members_count":2,"repos_count":1,"organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null,"public_repos":3,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci-test","created_at":"2015-07-27T02:27:51Z","updated_at":"2015-07-27T02:27:51Z","type":"Organization"}},{"name":"Owners","id":1659318,"slug":"owners","description":null,"permission":"admin","url":"https://api.github.com/teams/1659318","members_url":"https://api.github.com/teams/1659318/members{/member}","repositories_url":"https://api.github.com/teams/1659318/repos","members_count":2,"repos_count":1,"organization":{"login":"lexci-lint-org-test","id":13529690,"url":"https://api.github.com/orgs/lexci-lint-org-test","repos_url":"https://api.github.com/orgs/lexci-lint-org-test/repos","events_url":"https://api.github.com/orgs/lexci-lint-org-test/events","members_url":"https://api.github.com/orgs/lexci-lint-org-test/members{/member}","public_members_url":"https://api.github.com/orgs/lexci-lint-org-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13529690?v=3","description":null,"public_repos":1,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lexci-lint-org-test","created_at":"2015-07-28T00:05:15Z","updated_at":"2015-07-28T00:05:15Z","type":"Organization"}}]'
+      string: '[{"name":"Testing Read Access","id":1580679,"slug":"testing-read-access","description":"","permission":"pull","privacy":"secret","url":"https://api.github.com/teams/1580679","members_url":"https://api.github.com/teams/1580679/members{/member}","repositories_url":"https://api.github.com/teams/1580679/repos","members_count":1,"repos_count":1,"organization":{"login":"lintci","id":7980645,"url":"https://api.github.com/orgs/lintci","repos_url":"https://api.github.com/orgs/lintci/repos","events_url":"https://api.github.com/orgs/lintci/events","members_url":"https://api.github.com/orgs/lintci/members{/member}","public_members_url":"https://api.github.com/orgs/lintci/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/7980645?v=3","description":"","name":"LintCI","company":null,"blog":"www.lintci.com","location":"","email":"","public_repos":12,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci","created_at":"2014-06-25T00:23:37Z","updated_at":"2015-11-24T10:31:00Z","type":"Organization"}},{"name":"Testing
+        Admin Access","id":1580701,"slug":"testing-admin-access","description":"","permission":"admin","privacy":"secret","url":"https://api.github.com/teams/1580701","members_url":"https://api.github.com/teams/1580701/members{/member}","repositories_url":"https://api.github.com/teams/1580701/repos","members_count":1,"repos_count":1,"organization":{"login":"lintci","id":7980645,"url":"https://api.github.com/orgs/lintci","repos_url":"https://api.github.com/orgs/lintci/repos","events_url":"https://api.github.com/orgs/lintci/events","members_url":"https://api.github.com/orgs/lintci/members{/member}","public_members_url":"https://api.github.com/orgs/lintci/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/7980645?v=3","description":"","name":"LintCI","company":null,"blog":"www.lintci.com","location":"","email":"","public_repos":12,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci","created_at":"2014-06-25T00:23:37Z","updated_at":"2015-11-24T10:31:00Z","type":"Organization"}},{"name":"read","id":1656965,"slug":"read","description":"","permission":"pull","privacy":"secret","url":"https://api.github.com/teams/1656965","members_url":"https://api.github.com/teams/1656965/members{/member}","repositories_url":"https://api.github.com/teams/1656965/repos","members_count":2,"repos_count":1,"organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null,"public_repos":3,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci-test","created_at":"2015-07-27T02:27:51Z","updated_at":"2015-07-27T02:27:51Z","type":"Organization"}},{"name":"write","id":1656968,"slug":"write","description":"","permission":"push","privacy":"secret","url":"https://api.github.com/teams/1656968","members_url":"https://api.github.com/teams/1656968/members{/member}","repositories_url":"https://api.github.com/teams/1656968/repos","members_count":2,"repos_count":1,"organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null,"public_repos":3,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci-test","created_at":"2015-07-27T02:27:51Z","updated_at":"2015-07-27T02:27:51Z","type":"Organization"}},{"name":"admin","id":1656969,"slug":"admin","description":"","permission":"admin","privacy":"secret","url":"https://api.github.com/teams/1656969","members_url":"https://api.github.com/teams/1656969/members{/member}","repositories_url":"https://api.github.com/teams/1656969/repos","members_count":3,"repos_count":1,"organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null,"public_repos":3,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci-test","created_at":"2015-07-27T02:27:51Z","updated_at":"2015-07-27T02:27:51Z","type":"Organization"}},{"name":"Owners","id":1659318,"slug":"owners","description":null,"permission":"admin","privacy":"secret","url":"https://api.github.com/teams/1659318","members_url":"https://api.github.com/teams/1659318/members{/member}","repositories_url":"https://api.github.com/teams/1659318/repos","members_count":2,"repos_count":2,"organization":{"login":"lexci-lint-org-test","id":13529690,"url":"https://api.github.com/orgs/lexci-lint-org-test","repos_url":"https://api.github.com/orgs/lexci-lint-org-test/repos","events_url":"https://api.github.com/orgs/lexci-lint-org-test/events","members_url":"https://api.github.com/orgs/lexci-lint-org-test/members{/member}","public_members_url":"https://api.github.com/orgs/lexci-lint-org-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13529690?v=3","description":null,"public_repos":2,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lexci-lint-org-test","created_at":"2015-07-28T00:05:15Z","updated_at":"2015-07-28T00:05:15Z","type":"Organization"}}]'
     http_version: 
-  recorded_at: Thu, 27 Aug 2015 01:16:34 GMT
+  recorded_at: Mon, 14 Dec 2015 02:42:24 GMT
+- request:
+    method: put
+    uri: https://api.github.com/teams/1656969/memberships/LintCI
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Mon, 14 Dec 2015 02:46:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 403 Forbidden
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4991'
+      X-Ratelimit-Reset:
+      - '1450063622'
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - admin:org, repo
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Github-Request-Id:
+      - 18DA1056:14B5D:4C80992:566E2DA1
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"You must be an organization owner or team maintainer to
+        add a team membership.","documentation_url":"https://developer.github.com/v3"}'
+    http_version: 
+  recorded_at: Mon, 14 Dec 2015 02:46:57 GMT
 - request:
     method: put
     uri: https://api.github.com/teams/1656969/memberships/luci-lint
@@ -169,7 +318,78 @@ http_interactions:
       Accept:
       - application/vnd.github.v3+json
       User-Agent:
-      - Octokit Ruby Gem 4.0.1
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Mon, 14 Dec 2015 02:47:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 403 Forbidden
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4990'
+      X-Ratelimit-Reset:
+      - '1450063622'
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - admin:org, repo
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Github-Request-Id:
+      - 18DA1056:1D262:86D1DAE:566E2DC6
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"You must be an organization owner or team maintainer to
+        add a team membership.","documentation_url":"https://developer.github.com/v3"}'
+    http_version: 
+  recorded_at: Mon, 14 Dec 2015 02:47:34 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/lintci-test/admin
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
       Content-Type:
       - application/json
       Authorization:
@@ -184,7 +404,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Thu, 27 Aug 2015 01:16:35 GMT
+      - Mon, 14 Dec 2015 02:50:03 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -194,17 +414,19 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4993'
+      - '4989'
       X-Ratelimit-Reset:
-      - '1440640325'
+      - '1450063622'
       Cache-Control:
       - private, max-age=60, s-maxage=60
+      Last-Modified:
+      - Mon, 27 Jul 2015 02:34:18 GMT
       Etag:
-      - W/"5abcc2b5155e48c51ac51305ada5edea"
+      - W/"3a5358d77f88fdca5edc1ab6861bea58"
       X-Oauth-Scopes:
       - repo, user:email
       X-Accepted-Oauth-Scopes:
-      - admin:org, repo
+      - repo
       X-Oauth-Client-Id:
       - "<GITHUB_CLIENT_ID>"
       Vary:
@@ -225,34 +447,34 @@ http_interactions:
         X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
       Access-Control-Allow-Origin:
       - "*"
-      X-Github-Request-Id:
-      - 18DA1056:4B38:7D053F:55DE64F2
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
       X-Content-Type-Options:
       - nosniff
       X-Served-By:
-      - 5aeb3f30c9e3ef6ef7bcbcddfd9a68f7
+      - 7b641bda7ec2ca7cd9df72d2578baf75
+      X-Github-Request-Id:
+      - 18DA1056:14B61:82C6973:566E2E5B
     body:
       encoding: ASCII-8BIT
-      string: '{"state":"pending","url":"https://api.github.com/teams/1656969/memberships/luci-lint"}'
+      string: '{"id":39751073,"name":"admin","full_name":"lintci-test/admin","owner":{"login":"lintci-test","id":13514323,"avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","gravatar_id":"","url":"https://api.github.com/users/lintci-test","html_url":"https://github.com/lintci-test","followers_url":"https://api.github.com/users/lintci-test/followers","following_url":"https://api.github.com/users/lintci-test/following{/other_user}","gists_url":"https://api.github.com/users/lintci-test/gists{/gist_id}","starred_url":"https://api.github.com/users/lintci-test/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lintci-test/subscriptions","organizations_url":"https://api.github.com/users/lintci-test/orgs","repos_url":"https://api.github.com/users/lintci-test/repos","events_url":"https://api.github.com/users/lintci-test/events{/privacy}","received_events_url":"https://api.github.com/users/lintci-test/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/lintci-test/admin","description":"","fork":false,"url":"https://api.github.com/repos/lintci-test/admin","forks_url":"https://api.github.com/repos/lintci-test/admin/forks","keys_url":"https://api.github.com/repos/lintci-test/admin/keys{/key_id}","collaborators_url":"https://api.github.com/repos/lintci-test/admin/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/lintci-test/admin/teams","hooks_url":"https://api.github.com/repos/lintci-test/admin/hooks","issue_events_url":"https://api.github.com/repos/lintci-test/admin/issues/events{/number}","events_url":"https://api.github.com/repos/lintci-test/admin/events","assignees_url":"https://api.github.com/repos/lintci-test/admin/assignees{/user}","branches_url":"https://api.github.com/repos/lintci-test/admin/branches{/branch}","tags_url":"https://api.github.com/repos/lintci-test/admin/tags","blobs_url":"https://api.github.com/repos/lintci-test/admin/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/lintci-test/admin/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/lintci-test/admin/git/refs{/sha}","trees_url":"https://api.github.com/repos/lintci-test/admin/git/trees{/sha}","statuses_url":"https://api.github.com/repos/lintci-test/admin/statuses/{sha}","languages_url":"https://api.github.com/repos/lintci-test/admin/languages","stargazers_url":"https://api.github.com/repos/lintci-test/admin/stargazers","contributors_url":"https://api.github.com/repos/lintci-test/admin/contributors","subscribers_url":"https://api.github.com/repos/lintci-test/admin/subscribers","subscription_url":"https://api.github.com/repos/lintci-test/admin/subscription","commits_url":"https://api.github.com/repos/lintci-test/admin/commits{/sha}","git_commits_url":"https://api.github.com/repos/lintci-test/admin/git/commits{/sha}","comments_url":"https://api.github.com/repos/lintci-test/admin/comments{/number}","issue_comment_url":"https://api.github.com/repos/lintci-test/admin/issues/comments{/number}","contents_url":"https://api.github.com/repos/lintci-test/admin/contents/{+path}","compare_url":"https://api.github.com/repos/lintci-test/admin/compare/{base}...{head}","merges_url":"https://api.github.com/repos/lintci-test/admin/merges","archive_url":"https://api.github.com/repos/lintci-test/admin/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/lintci-test/admin/downloads","issues_url":"https://api.github.com/repos/lintci-test/admin/issues{/number}","pulls_url":"https://api.github.com/repos/lintci-test/admin/pulls{/number}","milestones_url":"https://api.github.com/repos/lintci-test/admin/milestones{/number}","notifications_url":"https://api.github.com/repos/lintci-test/admin/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/lintci-test/admin/labels{/name}","releases_url":"https://api.github.com/repos/lintci-test/admin/releases{/id}","created_at":"2015-07-27T02:30:01Z","updated_at":"2015-07-27T02:34:18Z","pushed_at":"2015-07-27T02:30:01Z","git_url":"git://github.com/lintci-test/admin.git","ssh_url":"git@github.com:lintci-test/admin.git","clone_url":"https://github.com/lintci-test/admin.git","svn_url":"https://github.com/lintci-test/admin","homepage":null,"size":120,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":0,"default_branch":"master","permissions":{"admin":true,"push":true,"pull":true},"organization":{"login":"lintci-test","id":13514323,"avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","gravatar_id":"","url":"https://api.github.com/users/lintci-test","html_url":"https://github.com/lintci-test","followers_url":"https://api.github.com/users/lintci-test/followers","following_url":"https://api.github.com/users/lintci-test/following{/other_user}","gists_url":"https://api.github.com/users/lintci-test/gists{/gist_id}","starred_url":"https://api.github.com/users/lintci-test/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lintci-test/subscriptions","organizations_url":"https://api.github.com/users/lintci-test/orgs","repos_url":"https://api.github.com/users/lintci-test/repos","events_url":"https://api.github.com/users/lintci-test/events{/privacy}","received_events_url":"https://api.github.com/users/lintci-test/received_events","type":"Organization","site_admin":false},"network_count":0,"subscribers_count":3}'
     http_version: 
-  recorded_at: Thu, 27 Aug 2015 01:16:35 GMT
+  recorded_at: Mon, 14 Dec 2015 02:50:03 GMT
 - request:
-    method: patch
-    uri: https://api.github.com/user/memberships/orgs/lintci-test
+    method: get
+    uri: https://api.github.com/user/teams?per_page=100
     body:
-      encoding: UTF-8
-      string: '{"state":"active"}'
+      encoding: US-ASCII
+      string: ''
     headers:
       Accept:
       - application/vnd.github.v3+json
       User-Agent:
-      - Octokit Ruby Gem 4.0.1
+      - Octokit Ruby Gem 4.1.0
       Content-Type:
       - application/json
       Authorization:
-      - token <GITHUB_SERVICE_TOKEN>
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -263,7 +485,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Thu, 27 Aug 2015 01:16:35 GMT
+      - Mon, 14 Dec 2015 02:54:19 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -273,18 +495,19 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4997'
+      - '4988'
       X-Ratelimit-Reset:
-      - '1440640328'
+      - '1450063622'
       Cache-Control:
       - private, max-age=60, s-maxage=60
       Etag:
-      - W/"cb273d5e739fa2a97a91414ed19955e3"
+      - W/"a9456e7f1ea5f08a998c0cbe8256459c"
       X-Oauth-Scopes:
-      - admin:org, admin:org_hook, admin:public_key, admin:repo_hook, gist, repo,
-        user
+      - repo, user:email
       X-Accepted-Oauth-Scopes:
-      - admin:org, repo, user, write:org
+      - admin:org, read:org, repo, user, write:org
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
       Vary:
       - Accept, Authorization, Cookie, X-GitHub-OTP
       - Accept-Encoding
@@ -303,34 +526,35 @@ http_interactions:
         X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
       Access-Control-Allow-Origin:
       - "*"
-      X-Github-Request-Id:
-      - 18DA1056:4B3A:D202EE:55DE64F3
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
       X-Content-Type-Options:
       - nosniff
       X-Served-By:
-      - 7f48e2f7761567e923121f17538d7a6d
+      - e183f7c661b1bbc2c987b3c4dc7b04e0
+      X-Github-Request-Id:
+      - 18DA1056:134F4:9E7356B:566E2F5B
     body:
       encoding: ASCII-8BIT
-      string: '{"url":"https://api.github.com/orgs/lintci-test/memberships/luci-lint","state":"active","role":"member","organization_url":"https://api.github.com/orgs/lintci-test","organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null},"user":{"login":"luci-lint","id":12652292,"avatar_url":"https://avatars.githubusercontent.com/u/12652292?v=3","gravatar_id":"","url":"https://api.github.com/users/luci-lint","html_url":"https://github.com/luci-lint","followers_url":"https://api.github.com/users/luci-lint/followers","following_url":"https://api.github.com/users/luci-lint/following{/other_user}","gists_url":"https://api.github.com/users/luci-lint/gists{/gist_id}","starred_url":"https://api.github.com/users/luci-lint/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/luci-lint/subscriptions","organizations_url":"https://api.github.com/users/luci-lint/orgs","repos_url":"https://api.github.com/users/luci-lint/repos","events_url":"https://api.github.com/users/luci-lint/events{/privacy}","received_events_url":"https://api.github.com/users/luci-lint/received_events","type":"User","site_admin":false}}'
+      string: '[{"name":"Testing Read Access","id":1580679,"slug":"testing-read-access","description":"","permission":"pull","privacy":"secret","url":"https://api.github.com/teams/1580679","members_url":"https://api.github.com/teams/1580679/members{/member}","repositories_url":"https://api.github.com/teams/1580679/repos","members_count":1,"repos_count":1,"organization":{"login":"lintci","id":7980645,"url":"https://api.github.com/orgs/lintci","repos_url":"https://api.github.com/orgs/lintci/repos","events_url":"https://api.github.com/orgs/lintci/events","members_url":"https://api.github.com/orgs/lintci/members{/member}","public_members_url":"https://api.github.com/orgs/lintci/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/7980645?v=3","description":"","name":"LintCI","company":null,"blog":"www.lintci.com","location":"","email":"","public_repos":12,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci","created_at":"2014-06-25T00:23:37Z","updated_at":"2015-11-24T10:31:00Z","type":"Organization"}},{"name":"Testing
+        Admin Access","id":1580701,"slug":"testing-admin-access","description":"","permission":"admin","privacy":"secret","url":"https://api.github.com/teams/1580701","members_url":"https://api.github.com/teams/1580701/members{/member}","repositories_url":"https://api.github.com/teams/1580701/repos","members_count":1,"repos_count":1,"organization":{"login":"lintci","id":7980645,"url":"https://api.github.com/orgs/lintci","repos_url":"https://api.github.com/orgs/lintci/repos","events_url":"https://api.github.com/orgs/lintci/events","members_url":"https://api.github.com/orgs/lintci/members{/member}","public_members_url":"https://api.github.com/orgs/lintci/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/7980645?v=3","description":"","name":"LintCI","company":null,"blog":"www.lintci.com","location":"","email":"","public_repos":12,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci","created_at":"2014-06-25T00:23:37Z","updated_at":"2015-11-24T10:31:00Z","type":"Organization"}},{"name":"read","id":1656965,"slug":"read","description":"","permission":"pull","privacy":"secret","url":"https://api.github.com/teams/1656965","members_url":"https://api.github.com/teams/1656965/members{/member}","repositories_url":"https://api.github.com/teams/1656965/repos","members_count":2,"repos_count":1,"organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null,"public_repos":3,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci-test","created_at":"2015-07-27T02:27:51Z","updated_at":"2015-07-27T02:27:51Z","type":"Organization"}},{"name":"write","id":1656968,"slug":"write","description":"","permission":"push","privacy":"secret","url":"https://api.github.com/teams/1656968","members_url":"https://api.github.com/teams/1656968/members{/member}","repositories_url":"https://api.github.com/teams/1656968/repos","members_count":2,"repos_count":1,"organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null,"public_repos":3,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci-test","created_at":"2015-07-27T02:27:51Z","updated_at":"2015-07-27T02:27:51Z","type":"Organization"}},{"name":"admin","id":1656969,"slug":"admin","description":"","permission":"admin","privacy":"secret","url":"https://api.github.com/teams/1656969","members_url":"https://api.github.com/teams/1656969/members{/member}","repositories_url":"https://api.github.com/teams/1656969/repos","members_count":3,"repos_count":1,"organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null,"public_repos":3,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci-test","created_at":"2015-07-27T02:27:51Z","updated_at":"2015-07-27T02:27:51Z","type":"Organization"}},{"name":"Owners","id":1659318,"slug":"owners","description":null,"permission":"admin","privacy":"secret","url":"https://api.github.com/teams/1659318","members_url":"https://api.github.com/teams/1659318/members{/member}","repositories_url":"https://api.github.com/teams/1659318/repos","members_count":2,"repos_count":2,"organization":{"login":"lexci-lint-org-test","id":13529690,"url":"https://api.github.com/orgs/lexci-lint-org-test","repos_url":"https://api.github.com/orgs/lexci-lint-org-test/repos","events_url":"https://api.github.com/orgs/lexci-lint-org-test/events","members_url":"https://api.github.com/orgs/lexci-lint-org-test/members{/member}","public_members_url":"https://api.github.com/orgs/lexci-lint-org-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13529690?v=3","description":null,"public_repos":2,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lexci-lint-org-test","created_at":"2015-07-28T00:05:15Z","updated_at":"2015-07-28T00:05:15Z","type":"Organization"}}]'
     http_version: 
-  recorded_at: Thu, 27 Aug 2015 01:16:35 GMT
+  recorded_at: Mon, 14 Dec 2015 02:54:19 GMT
 - request:
     method: get
-    uri: https://api.github.com/user/repos?per_page=100
+    uri: https://api.github.com/user/teams?per_page=100
     body:
       encoding: US-ASCII
       string: ''
     headers:
       Accept:
-      - application/vnd.github.moondragon+json
+      - application/vnd.github.v3+json
       User-Agent:
-      - Octokit Ruby Gem 4.0.1
+      - Octokit Ruby Gem 4.1.0
       Content-Type:
       - application/json
       Authorization:
-      - token <GITHUB_SERVICE_TOKEN>
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -341,7 +565,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Thu, 27 Aug 2015 01:16:41 GMT
+      - Mon, 14 Dec 2015 02:54:26 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -351,23 +575,24 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4996'
+      - '4987'
       X-Ratelimit-Reset:
-      - '1440640328'
+      - '1450063622'
       Cache-Control:
       - private, max-age=60, s-maxage=60
       Etag:
-      - W/"2bc95108ad2a2eba2326fd885bdcd6a1"
+      - W/"a9456e7f1ea5f08a998c0cbe8256459c"
       X-Oauth-Scopes:
-      - admin:org, admin:org_hook, admin:public_key, admin:repo_hook, gist, repo,
-        user
+      - repo, user:email
       X-Accepted-Oauth-Scopes:
-      - ''
+      - admin:org, read:org, repo, user, write:org
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
       Vary:
       - Accept, Authorization, Cookie, X-GitHub-OTP
       - Accept-Encoding
       X-Github-Media-Type:
-      - github.moondragon; format=json
+      - github.v3; format=json
       X-Xss-Protection:
       - 1; mode=block
       X-Frame-Options:
@@ -381,34 +606,35 @@ http_interactions:
         X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
       Access-Control-Allow-Origin:
       - "*"
-      X-Github-Request-Id:
-      - 18DA1056:4B3A:D20EBD:55DE64F9
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
       X-Content-Type-Options:
       - nosniff
       X-Served-By:
-      - a6882e5cd2513376cb9481dbcd83f3a2
+      - bae57931a6fe678a3dffe9be8e7819c8
+      X-Github-Request-Id:
+      - 18DA1056:134F3:8BAA544:566E2F62
     body:
       encoding: ASCII-8BIT
-      string: '[{"id":37778876,"name":"turbo-adventure","full_name":"lexci-lint/turbo-adventure","owner":{"login":"lexci-lint","id":12980159,"avatar_url":"https://avatars.githubusercontent.com/u/12980159?v=3","gravatar_id":"","url":"https://api.github.com/users/lexci-lint","html_url":"https://github.com/lexci-lint","followers_url":"https://api.github.com/users/lexci-lint/followers","following_url":"https://api.github.com/users/lexci-lint/following{/other_user}","gists_url":"https://api.github.com/users/lexci-lint/gists{/gist_id}","starred_url":"https://api.github.com/users/lexci-lint/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lexci-lint/subscriptions","organizations_url":"https://api.github.com/users/lexci-lint/orgs","repos_url":"https://api.github.com/users/lexci-lint/repos","events_url":"https://api.github.com/users/lexci-lint/events{/privacy}","received_events_url":"https://api.github.com/users/lexci-lint/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/lexci-lint/turbo-adventure","description":"","fork":false,"url":"https://api.github.com/repos/lexci-lint/turbo-adventure","forks_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/forks","keys_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/keys{/key_id}","collaborators_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/teams","hooks_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/hooks","issue_events_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/issues/events{/number}","events_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/events","assignees_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/assignees{/user}","branches_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/branches{/branch}","tags_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/tags","blobs_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/git/refs{/sha}","trees_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/git/trees{/sha}","statuses_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/statuses/{sha}","languages_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/languages","stargazers_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/stargazers","contributors_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/contributors","subscribers_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/subscribers","subscription_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/subscription","commits_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/commits{/sha}","git_commits_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/git/commits{/sha}","comments_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/comments{/number}","issue_comment_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/issues/comments{/number}","contents_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/contents/{+path}","compare_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/compare/{base}...{head}","merges_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/merges","archive_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/downloads","issues_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/issues{/number}","pulls_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/pulls{/number}","milestones_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/milestones{/number}","notifications_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/labels{/name}","releases_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/releases{/id}","created_at":"2015-06-20T17:31:26Z","updated_at":"2015-06-20T17:31:26Z","pushed_at":"2015-06-20T17:31:26Z","git_url":"git://github.com/lexci-lint/turbo-adventure.git","ssh_url":"git@github.com:lexci-lint/turbo-adventure.git","clone_url":"https://github.com/lexci-lint/turbo-adventure.git","svn_url":"https://github.com/lexci-lint/turbo-adventure","homepage":null,"size":120,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":0,"default_branch":"master","master_branch":"master","permissions":{"admin":false,"push":true,"pull":true}},{"id":39751073,"name":"admin","full_name":"lintci-test/admin","owner":{"login":"lintci-test","id":13514323,"avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","gravatar_id":"","url":"https://api.github.com/users/lintci-test","html_url":"https://github.com/lintci-test","followers_url":"https://api.github.com/users/lintci-test/followers","following_url":"https://api.github.com/users/lintci-test/following{/other_user}","gists_url":"https://api.github.com/users/lintci-test/gists{/gist_id}","starred_url":"https://api.github.com/users/lintci-test/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lintci-test/subscriptions","organizations_url":"https://api.github.com/users/lintci-test/orgs","repos_url":"https://api.github.com/users/lintci-test/repos","events_url":"https://api.github.com/users/lintci-test/events{/privacy}","received_events_url":"https://api.github.com/users/lintci-test/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/lintci-test/admin","description":"","fork":false,"url":"https://api.github.com/repos/lintci-test/admin","forks_url":"https://api.github.com/repos/lintci-test/admin/forks","keys_url":"https://api.github.com/repos/lintci-test/admin/keys{/key_id}","collaborators_url":"https://api.github.com/repos/lintci-test/admin/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/lintci-test/admin/teams","hooks_url":"https://api.github.com/repos/lintci-test/admin/hooks","issue_events_url":"https://api.github.com/repos/lintci-test/admin/issues/events{/number}","events_url":"https://api.github.com/repos/lintci-test/admin/events","assignees_url":"https://api.github.com/repos/lintci-test/admin/assignees{/user}","branches_url":"https://api.github.com/repos/lintci-test/admin/branches{/branch}","tags_url":"https://api.github.com/repos/lintci-test/admin/tags","blobs_url":"https://api.github.com/repos/lintci-test/admin/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/lintci-test/admin/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/lintci-test/admin/git/refs{/sha}","trees_url":"https://api.github.com/repos/lintci-test/admin/git/trees{/sha}","statuses_url":"https://api.github.com/repos/lintci-test/admin/statuses/{sha}","languages_url":"https://api.github.com/repos/lintci-test/admin/languages","stargazers_url":"https://api.github.com/repos/lintci-test/admin/stargazers","contributors_url":"https://api.github.com/repos/lintci-test/admin/contributors","subscribers_url":"https://api.github.com/repos/lintci-test/admin/subscribers","subscription_url":"https://api.github.com/repos/lintci-test/admin/subscription","commits_url":"https://api.github.com/repos/lintci-test/admin/commits{/sha}","git_commits_url":"https://api.github.com/repos/lintci-test/admin/git/commits{/sha}","comments_url":"https://api.github.com/repos/lintci-test/admin/comments{/number}","issue_comment_url":"https://api.github.com/repos/lintci-test/admin/issues/comments{/number}","contents_url":"https://api.github.com/repos/lintci-test/admin/contents/{+path}","compare_url":"https://api.github.com/repos/lintci-test/admin/compare/{base}...{head}","merges_url":"https://api.github.com/repos/lintci-test/admin/merges","archive_url":"https://api.github.com/repos/lintci-test/admin/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/lintci-test/admin/downloads","issues_url":"https://api.github.com/repos/lintci-test/admin/issues{/number}","pulls_url":"https://api.github.com/repos/lintci-test/admin/pulls{/number}","milestones_url":"https://api.github.com/repos/lintci-test/admin/milestones{/number}","notifications_url":"https://api.github.com/repos/lintci-test/admin/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/lintci-test/admin/labels{/name}","releases_url":"https://api.github.com/repos/lintci-test/admin/releases{/id}","created_at":"2015-07-27T02:30:01Z","updated_at":"2015-07-27T02:34:18Z","pushed_at":"2015-07-27T02:30:01Z","git_url":"git://github.com/lintci-test/admin.git","ssh_url":"git@github.com:lintci-test/admin.git","clone_url":"https://github.com/lintci-test/admin.git","svn_url":"https://github.com/lintci-test/admin","homepage":null,"size":120,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":0,"default_branch":"master","master_branch":"master","permissions":{"admin":true,"push":true,"pull":true}}]'
+      string: '[{"name":"Testing Read Access","id":1580679,"slug":"testing-read-access","description":"","permission":"pull","privacy":"secret","url":"https://api.github.com/teams/1580679","members_url":"https://api.github.com/teams/1580679/members{/member}","repositories_url":"https://api.github.com/teams/1580679/repos","members_count":1,"repos_count":1,"organization":{"login":"lintci","id":7980645,"url":"https://api.github.com/orgs/lintci","repos_url":"https://api.github.com/orgs/lintci/repos","events_url":"https://api.github.com/orgs/lintci/events","members_url":"https://api.github.com/orgs/lintci/members{/member}","public_members_url":"https://api.github.com/orgs/lintci/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/7980645?v=3","description":"","name":"LintCI","company":null,"blog":"www.lintci.com","location":"","email":"","public_repos":12,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci","created_at":"2014-06-25T00:23:37Z","updated_at":"2015-11-24T10:31:00Z","type":"Organization"}},{"name":"Testing
+        Admin Access","id":1580701,"slug":"testing-admin-access","description":"","permission":"admin","privacy":"secret","url":"https://api.github.com/teams/1580701","members_url":"https://api.github.com/teams/1580701/members{/member}","repositories_url":"https://api.github.com/teams/1580701/repos","members_count":1,"repos_count":1,"organization":{"login":"lintci","id":7980645,"url":"https://api.github.com/orgs/lintci","repos_url":"https://api.github.com/orgs/lintci/repos","events_url":"https://api.github.com/orgs/lintci/events","members_url":"https://api.github.com/orgs/lintci/members{/member}","public_members_url":"https://api.github.com/orgs/lintci/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/7980645?v=3","description":"","name":"LintCI","company":null,"blog":"www.lintci.com","location":"","email":"","public_repos":12,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci","created_at":"2014-06-25T00:23:37Z","updated_at":"2015-11-24T10:31:00Z","type":"Organization"}},{"name":"read","id":1656965,"slug":"read","description":"","permission":"pull","privacy":"secret","url":"https://api.github.com/teams/1656965","members_url":"https://api.github.com/teams/1656965/members{/member}","repositories_url":"https://api.github.com/teams/1656965/repos","members_count":2,"repos_count":1,"organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null,"public_repos":3,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci-test","created_at":"2015-07-27T02:27:51Z","updated_at":"2015-07-27T02:27:51Z","type":"Organization"}},{"name":"write","id":1656968,"slug":"write","description":"","permission":"push","privacy":"secret","url":"https://api.github.com/teams/1656968","members_url":"https://api.github.com/teams/1656968/members{/member}","repositories_url":"https://api.github.com/teams/1656968/repos","members_count":2,"repos_count":1,"organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null,"public_repos":3,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci-test","created_at":"2015-07-27T02:27:51Z","updated_at":"2015-07-27T02:27:51Z","type":"Organization"}},{"name":"admin","id":1656969,"slug":"admin","description":"","permission":"admin","privacy":"secret","url":"https://api.github.com/teams/1656969","members_url":"https://api.github.com/teams/1656969/members{/member}","repositories_url":"https://api.github.com/teams/1656969/repos","members_count":3,"repos_count":1,"organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null,"public_repos":3,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci-test","created_at":"2015-07-27T02:27:51Z","updated_at":"2015-07-27T02:27:51Z","type":"Organization"}},{"name":"Owners","id":1659318,"slug":"owners","description":null,"permission":"admin","privacy":"secret","url":"https://api.github.com/teams/1659318","members_url":"https://api.github.com/teams/1659318/members{/member}","repositories_url":"https://api.github.com/teams/1659318/repos","members_count":2,"repos_count":2,"organization":{"login":"lexci-lint-org-test","id":13529690,"url":"https://api.github.com/orgs/lexci-lint-org-test","repos_url":"https://api.github.com/orgs/lexci-lint-org-test/repos","events_url":"https://api.github.com/orgs/lexci-lint-org-test/events","members_url":"https://api.github.com/orgs/lexci-lint-org-test/members{/member}","public_members_url":"https://api.github.com/orgs/lexci-lint-org-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13529690?v=3","description":null,"public_repos":2,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lexci-lint-org-test","created_at":"2015-07-28T00:05:15Z","updated_at":"2015-07-28T00:05:15Z","type":"Organization"}}]'
     http_version: 
-  recorded_at: Thu, 27 Aug 2015 01:16:41 GMT
+  recorded_at: Mon, 14 Dec 2015 02:54:26 GMT
 - request:
     method: get
-    uri: https://api.github.com/user/repos?per_page=100
+    uri: https://api.github.com/teams/1656969
     body:
       encoding: US-ASCII
       string: ''
     headers:
       Accept:
-      - application/vnd.github.moondragon+json
+      - application/vnd.github.v3+json
       User-Agent:
-      - Octokit Ruby Gem 4.0.1
+      - Octokit Ruby Gem 4.1.0
       Content-Type:
       - application/json
       Authorization:
-      - token <GITHUB_SERVICE_TOKEN>
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -419,7 +645,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Thu, 27 Aug 2015 01:17:03 GMT
+      - Mon, 14 Dec 2015 03:11:17 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -429,23 +655,26 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4995'
+      - '4986'
       X-Ratelimit-Reset:
-      - '1440640328'
+      - '1450063622'
       Cache-Control:
       - private, max-age=60, s-maxage=60
+      Last-Modified:
+      - Mon, 27 Jul 2015 02:33:08 GMT
       Etag:
-      - W/"2bc95108ad2a2eba2326fd885bdcd6a1"
+      - W/"1527b0b0ae263be9593092493756affe"
       X-Oauth-Scopes:
-      - admin:org, admin:org_hook, admin:public_key, admin:repo_hook, gist, repo,
-        user
+      - repo, user:email
       X-Accepted-Oauth-Scopes:
-      - ''
+      - admin:org, read:org, repo, user, write:org
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
       Vary:
       - Accept, Authorization, Cookie, X-GitHub-OTP
       - Accept-Encoding
       X-Github-Media-Type:
-      - github.moondragon; format=json
+      - github.v3; format=json
       X-Xss-Protection:
       - 1; mode=block
       X-Frame-Options:
@@ -459,17 +688,482 @@ http_interactions:
         X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
       Access-Control-Allow-Origin:
       - "*"
-      X-Github-Request-Id:
-      - 18DA1056:7F25:3C9AD5:55DE650F
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
       X-Content-Type-Options:
       - nosniff
       X-Served-By:
-      - dc1ce2bfb41810a06c705e83b388572d
+      - 173530fed4bbeb1e264b2ed22e8b5c20
+      X-Github-Request-Id:
+      - 18DA1056:14B63:869BA9D:566E3354
     body:
       encoding: ASCII-8BIT
-      string: '[{"id":37778876,"name":"turbo-adventure","full_name":"lexci-lint/turbo-adventure","owner":{"login":"lexci-lint","id":12980159,"avatar_url":"https://avatars.githubusercontent.com/u/12980159?v=3","gravatar_id":"","url":"https://api.github.com/users/lexci-lint","html_url":"https://github.com/lexci-lint","followers_url":"https://api.github.com/users/lexci-lint/followers","following_url":"https://api.github.com/users/lexci-lint/following{/other_user}","gists_url":"https://api.github.com/users/lexci-lint/gists{/gist_id}","starred_url":"https://api.github.com/users/lexci-lint/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lexci-lint/subscriptions","organizations_url":"https://api.github.com/users/lexci-lint/orgs","repos_url":"https://api.github.com/users/lexci-lint/repos","events_url":"https://api.github.com/users/lexci-lint/events{/privacy}","received_events_url":"https://api.github.com/users/lexci-lint/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/lexci-lint/turbo-adventure","description":"","fork":false,"url":"https://api.github.com/repos/lexci-lint/turbo-adventure","forks_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/forks","keys_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/keys{/key_id}","collaborators_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/teams","hooks_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/hooks","issue_events_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/issues/events{/number}","events_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/events","assignees_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/assignees{/user}","branches_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/branches{/branch}","tags_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/tags","blobs_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/git/refs{/sha}","trees_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/git/trees{/sha}","statuses_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/statuses/{sha}","languages_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/languages","stargazers_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/stargazers","contributors_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/contributors","subscribers_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/subscribers","subscription_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/subscription","commits_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/commits{/sha}","git_commits_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/git/commits{/sha}","comments_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/comments{/number}","issue_comment_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/issues/comments{/number}","contents_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/contents/{+path}","compare_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/compare/{base}...{head}","merges_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/merges","archive_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/downloads","issues_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/issues{/number}","pulls_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/pulls{/number}","milestones_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/milestones{/number}","notifications_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/labels{/name}","releases_url":"https://api.github.com/repos/lexci-lint/turbo-adventure/releases{/id}","created_at":"2015-06-20T17:31:26Z","updated_at":"2015-06-20T17:31:26Z","pushed_at":"2015-06-20T17:31:26Z","git_url":"git://github.com/lexci-lint/turbo-adventure.git","ssh_url":"git@github.com:lexci-lint/turbo-adventure.git","clone_url":"https://github.com/lexci-lint/turbo-adventure.git","svn_url":"https://github.com/lexci-lint/turbo-adventure","homepage":null,"size":120,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":0,"default_branch":"master","master_branch":"master","permissions":{"admin":false,"push":true,"pull":true}},{"id":39751073,"name":"admin","full_name":"lintci-test/admin","owner":{"login":"lintci-test","id":13514323,"avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","gravatar_id":"","url":"https://api.github.com/users/lintci-test","html_url":"https://github.com/lintci-test","followers_url":"https://api.github.com/users/lintci-test/followers","following_url":"https://api.github.com/users/lintci-test/following{/other_user}","gists_url":"https://api.github.com/users/lintci-test/gists{/gist_id}","starred_url":"https://api.github.com/users/lintci-test/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lintci-test/subscriptions","organizations_url":"https://api.github.com/users/lintci-test/orgs","repos_url":"https://api.github.com/users/lintci-test/repos","events_url":"https://api.github.com/users/lintci-test/events{/privacy}","received_events_url":"https://api.github.com/users/lintci-test/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/lintci-test/admin","description":"","fork":false,"url":"https://api.github.com/repos/lintci-test/admin","forks_url":"https://api.github.com/repos/lintci-test/admin/forks","keys_url":"https://api.github.com/repos/lintci-test/admin/keys{/key_id}","collaborators_url":"https://api.github.com/repos/lintci-test/admin/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/lintci-test/admin/teams","hooks_url":"https://api.github.com/repos/lintci-test/admin/hooks","issue_events_url":"https://api.github.com/repos/lintci-test/admin/issues/events{/number}","events_url":"https://api.github.com/repos/lintci-test/admin/events","assignees_url":"https://api.github.com/repos/lintci-test/admin/assignees{/user}","branches_url":"https://api.github.com/repos/lintci-test/admin/branches{/branch}","tags_url":"https://api.github.com/repos/lintci-test/admin/tags","blobs_url":"https://api.github.com/repos/lintci-test/admin/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/lintci-test/admin/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/lintci-test/admin/git/refs{/sha}","trees_url":"https://api.github.com/repos/lintci-test/admin/git/trees{/sha}","statuses_url":"https://api.github.com/repos/lintci-test/admin/statuses/{sha}","languages_url":"https://api.github.com/repos/lintci-test/admin/languages","stargazers_url":"https://api.github.com/repos/lintci-test/admin/stargazers","contributors_url":"https://api.github.com/repos/lintci-test/admin/contributors","subscribers_url":"https://api.github.com/repos/lintci-test/admin/subscribers","subscription_url":"https://api.github.com/repos/lintci-test/admin/subscription","commits_url":"https://api.github.com/repos/lintci-test/admin/commits{/sha}","git_commits_url":"https://api.github.com/repos/lintci-test/admin/git/commits{/sha}","comments_url":"https://api.github.com/repos/lintci-test/admin/comments{/number}","issue_comment_url":"https://api.github.com/repos/lintci-test/admin/issues/comments{/number}","contents_url":"https://api.github.com/repos/lintci-test/admin/contents/{+path}","compare_url":"https://api.github.com/repos/lintci-test/admin/compare/{base}...{head}","merges_url":"https://api.github.com/repos/lintci-test/admin/merges","archive_url":"https://api.github.com/repos/lintci-test/admin/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/lintci-test/admin/downloads","issues_url":"https://api.github.com/repos/lintci-test/admin/issues{/number}","pulls_url":"https://api.github.com/repos/lintci-test/admin/pulls{/number}","milestones_url":"https://api.github.com/repos/lintci-test/admin/milestones{/number}","notifications_url":"https://api.github.com/repos/lintci-test/admin/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/lintci-test/admin/labels{/name}","releases_url":"https://api.github.com/repos/lintci-test/admin/releases{/id}","created_at":"2015-07-27T02:30:01Z","updated_at":"2015-07-27T02:34:18Z","pushed_at":"2015-07-27T02:30:01Z","git_url":"git://github.com/lintci-test/admin.git","ssh_url":"git@github.com:lintci-test/admin.git","clone_url":"https://github.com/lintci-test/admin.git","svn_url":"https://github.com/lintci-test/admin","homepage":null,"size":120,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":0,"default_branch":"master","master_branch":"master","permissions":{"admin":true,"push":true,"pull":true}}]'
+      string: '{"name":"admin","id":1656969,"slug":"admin","description":"","permission":"admin","privacy":"secret","url":"https://api.github.com/teams/1656969","members_url":"https://api.github.com/teams/1656969/members{/member}","repositories_url":"https://api.github.com/teams/1656969/repos","members_count":3,"repos_count":1,"organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null,"public_repos":3,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci-test","created_at":"2015-07-27T02:27:51Z","updated_at":"2015-07-27T02:27:51Z","type":"Organization"}}'
     http_version: 
-  recorded_at: Thu, 27 Aug 2015 01:17:03 GMT
+  recorded_at: Mon, 14 Dec 2015 03:11:17 GMT
+- request:
+    method: post
+    uri: https://api.github.com/repos/lintci/guinea_pig/statuses/6dbc62fe88432b6f9489a3d9f00dddf955a44c4e
+    body:
+      encoding: UTF-8
+      string: '{"context":"LintCI","description":"Test","target_url":null,"state":"pending"}'
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Tue, 15 Dec 2015 00:50:18 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 404 Not Found
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4999'
+      X-Ratelimit-Reset:
+      - '1450144218'
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Github-Request-Id:
+      - 18DA1056:1D261:ADF905C:566F63CA
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Not Found","documentation_url":"https://developer.github.com/v3"}'
+    http_version: 
+  recorded_at: Tue, 15 Dec 2015 00:50:18 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/lintci/guinea_pig/commits/6dbc62fe88432b6f9489a3d9f00dddf955a44c4e/status
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Tue, 15 Dec 2015 00:53:00 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4998'
+      X-Ratelimit-Reset:
+      - '1450144218'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - W/"6e284da29383e206dad60bb2beb45af0"
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - repo, repo:status
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Link:
+      - <https://api.github.com/repositories/23446068/status/6dbc62fe88432b6f9489a3d9f00dddf955a44c4e?page=0>;
+        rel="last"
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - 4c8b2d4732c413f4b9aefe394bd65569
+      X-Github-Request-Id:
+      - 18DA1056:14B62:AF76A9F:566F646C
+    body:
+      encoding: ASCII-8BIT
+      string: '{"state":"pending","statuses":[],"sha":"6dbc62fe88432b6f9489a3d9f00dddf955a44c4e","total_count":0,"repository":{"id":23446068,"name":"guinea_pig","full_name":"lintci/guinea_pig","owner":{"login":"lintci","id":7980645,"avatar_url":"https://avatars.githubusercontent.com/u/7980645?v=3","gravatar_id":"","url":"https://api.github.com/users/lintci","html_url":"https://github.com/lintci","followers_url":"https://api.github.com/users/lintci/followers","following_url":"https://api.github.com/users/lintci/following{/other_user}","gists_url":"https://api.github.com/users/lintci/gists{/gist_id}","starred_url":"https://api.github.com/users/lintci/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lintci/subscriptions","organizations_url":"https://api.github.com/users/lintci/orgs","repos_url":"https://api.github.com/users/lintci/repos","events_url":"https://api.github.com/users/lintci/events{/privacy}","received_events_url":"https://api.github.com/users/lintci/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/lintci/guinea_pig","description":"Project
+        to test LintCI against","fork":false,"url":"https://api.github.com/repos/lintci/guinea_pig","forks_url":"https://api.github.com/repos/lintci/guinea_pig/forks","keys_url":"https://api.github.com/repos/lintci/guinea_pig/keys{/key_id}","collaborators_url":"https://api.github.com/repos/lintci/guinea_pig/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/lintci/guinea_pig/teams","hooks_url":"https://api.github.com/repos/lintci/guinea_pig/hooks","issue_events_url":"https://api.github.com/repos/lintci/guinea_pig/issues/events{/number}","events_url":"https://api.github.com/repos/lintci/guinea_pig/events","assignees_url":"https://api.github.com/repos/lintci/guinea_pig/assignees{/user}","branches_url":"https://api.github.com/repos/lintci/guinea_pig/branches{/branch}","tags_url":"https://api.github.com/repos/lintci/guinea_pig/tags","blobs_url":"https://api.github.com/repos/lintci/guinea_pig/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/lintci/guinea_pig/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/lintci/guinea_pig/git/refs{/sha}","trees_url":"https://api.github.com/repos/lintci/guinea_pig/git/trees{/sha}","statuses_url":"https://api.github.com/repos/lintci/guinea_pig/statuses/{sha}","languages_url":"https://api.github.com/repos/lintci/guinea_pig/languages","stargazers_url":"https://api.github.com/repos/lintci/guinea_pig/stargazers","contributors_url":"https://api.github.com/repos/lintci/guinea_pig/contributors","subscribers_url":"https://api.github.com/repos/lintci/guinea_pig/subscribers","subscription_url":"https://api.github.com/repos/lintci/guinea_pig/subscription","commits_url":"https://api.github.com/repos/lintci/guinea_pig/commits{/sha}","git_commits_url":"https://api.github.com/repos/lintci/guinea_pig/git/commits{/sha}","comments_url":"https://api.github.com/repos/lintci/guinea_pig/comments{/number}","issue_comment_url":"https://api.github.com/repos/lintci/guinea_pig/issues/comments{/number}","contents_url":"https://api.github.com/repos/lintci/guinea_pig/contents/{+path}","compare_url":"https://api.github.com/repos/lintci/guinea_pig/compare/{base}...{head}","merges_url":"https://api.github.com/repos/lintci/guinea_pig/merges","archive_url":"https://api.github.com/repos/lintci/guinea_pig/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/lintci/guinea_pig/downloads","issues_url":"https://api.github.com/repos/lintci/guinea_pig/issues{/number}","pulls_url":"https://api.github.com/repos/lintci/guinea_pig/pulls{/number}","milestones_url":"https://api.github.com/repos/lintci/guinea_pig/milestones{/number}","notifications_url":"https://api.github.com/repos/lintci/guinea_pig/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/lintci/guinea_pig/labels{/name}","releases_url":"https://api.github.com/repos/lintci/guinea_pig/releases{/id}"},"commit_url":"https://api.github.com/repos/lintci/guinea_pig/commits/6dbc62fe88432b6f9489a3d9f00dddf955a44c4e","url":"https://api.github.com/repos/lintci/guinea_pig/commits/6dbc62fe88432b6f9489a3d9f00dddf955a44c4e/status"}'
+    http_version: 
+  recorded_at: Tue, 15 Dec 2015 00:53:00 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/lintci/guinea_pig/commits/6dbc62fe88432b6f9489a3d9f00dddf955a44c4e/status
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Tue, 15 Dec 2015 00:53:13 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4997'
+      X-Ratelimit-Reset:
+      - '1450144218'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - W/"6e284da29383e206dad60bb2beb45af0"
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - repo, repo:status
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Link:
+      - <https://api.github.com/repositories/23446068/status/6dbc62fe88432b6f9489a3d9f00dddf955a44c4e?page=0>;
+        rel="last"
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - ef96c2e493b28ffea49b891b085ed2dd
+      X-Github-Request-Id:
+      - 18DA1056:14B63:9B0682D:566F6479
+    body:
+      encoding: ASCII-8BIT
+      string: '{"state":"pending","statuses":[],"sha":"6dbc62fe88432b6f9489a3d9f00dddf955a44c4e","total_count":0,"repository":{"id":23446068,"name":"guinea_pig","full_name":"lintci/guinea_pig","owner":{"login":"lintci","id":7980645,"avatar_url":"https://avatars.githubusercontent.com/u/7980645?v=3","gravatar_id":"","url":"https://api.github.com/users/lintci","html_url":"https://github.com/lintci","followers_url":"https://api.github.com/users/lintci/followers","following_url":"https://api.github.com/users/lintci/following{/other_user}","gists_url":"https://api.github.com/users/lintci/gists{/gist_id}","starred_url":"https://api.github.com/users/lintci/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lintci/subscriptions","organizations_url":"https://api.github.com/users/lintci/orgs","repos_url":"https://api.github.com/users/lintci/repos","events_url":"https://api.github.com/users/lintci/events{/privacy}","received_events_url":"https://api.github.com/users/lintci/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/lintci/guinea_pig","description":"Project
+        to test LintCI against","fork":false,"url":"https://api.github.com/repos/lintci/guinea_pig","forks_url":"https://api.github.com/repos/lintci/guinea_pig/forks","keys_url":"https://api.github.com/repos/lintci/guinea_pig/keys{/key_id}","collaborators_url":"https://api.github.com/repos/lintci/guinea_pig/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/lintci/guinea_pig/teams","hooks_url":"https://api.github.com/repos/lintci/guinea_pig/hooks","issue_events_url":"https://api.github.com/repos/lintci/guinea_pig/issues/events{/number}","events_url":"https://api.github.com/repos/lintci/guinea_pig/events","assignees_url":"https://api.github.com/repos/lintci/guinea_pig/assignees{/user}","branches_url":"https://api.github.com/repos/lintci/guinea_pig/branches{/branch}","tags_url":"https://api.github.com/repos/lintci/guinea_pig/tags","blobs_url":"https://api.github.com/repos/lintci/guinea_pig/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/lintci/guinea_pig/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/lintci/guinea_pig/git/refs{/sha}","trees_url":"https://api.github.com/repos/lintci/guinea_pig/git/trees{/sha}","statuses_url":"https://api.github.com/repos/lintci/guinea_pig/statuses/{sha}","languages_url":"https://api.github.com/repos/lintci/guinea_pig/languages","stargazers_url":"https://api.github.com/repos/lintci/guinea_pig/stargazers","contributors_url":"https://api.github.com/repos/lintci/guinea_pig/contributors","subscribers_url":"https://api.github.com/repos/lintci/guinea_pig/subscribers","subscription_url":"https://api.github.com/repos/lintci/guinea_pig/subscription","commits_url":"https://api.github.com/repos/lintci/guinea_pig/commits{/sha}","git_commits_url":"https://api.github.com/repos/lintci/guinea_pig/git/commits{/sha}","comments_url":"https://api.github.com/repos/lintci/guinea_pig/comments{/number}","issue_comment_url":"https://api.github.com/repos/lintci/guinea_pig/issues/comments{/number}","contents_url":"https://api.github.com/repos/lintci/guinea_pig/contents/{+path}","compare_url":"https://api.github.com/repos/lintci/guinea_pig/compare/{base}...{head}","merges_url":"https://api.github.com/repos/lintci/guinea_pig/merges","archive_url":"https://api.github.com/repos/lintci/guinea_pig/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/lintci/guinea_pig/downloads","issues_url":"https://api.github.com/repos/lintci/guinea_pig/issues{/number}","pulls_url":"https://api.github.com/repos/lintci/guinea_pig/pulls{/number}","milestones_url":"https://api.github.com/repos/lintci/guinea_pig/milestones{/number}","notifications_url":"https://api.github.com/repos/lintci/guinea_pig/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/lintci/guinea_pig/labels{/name}","releases_url":"https://api.github.com/repos/lintci/guinea_pig/releases{/id}"},"commit_url":"https://api.github.com/repos/lintci/guinea_pig/commits/6dbc62fe88432b6f9489a3d9f00dddf955a44c4e","url":"https://api.github.com/repos/lintci/guinea_pig/commits/6dbc62fe88432b6f9489a3d9f00dddf955a44c4e/status"}'
+    http_version: 
+  recorded_at: Tue, 15 Dec 2015 00:53:13 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/lintci-test/admin/teams?per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Thu, 17 Dec 2015 00:08:08 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4999'
+      X-Ratelimit-Reset:
+      - '1450314488'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - W/"c6e1feecf843cf9d178fd656c3e4c769"
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - d594a23ec74671eba905bf91ef329026
+      X-Github-Request-Id:
+      - 18DA1056:14B57:287422D:5671FCE8
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"name":"Owners","id":1656958,"slug":"owners","description":null,"permission":"admin","privacy":"secret","url":"https://api.github.com/teams/1656958","members_url":"https://api.github.com/teams/1656958/members{/member}","repositories_url":"https://api.github.com/teams/1656958/repos"},{"name":"admin","id":1656969,"slug":"admin","description":"","permission":"admin","privacy":"secret","url":"https://api.github.com/teams/1656969","members_url":"https://api.github.com/teams/1656969/members{/member}","repositories_url":"https://api.github.com/teams/1656969/repos"}]'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 00:08:08 GMT
+- request:
+    method: get
+    uri: https://api.github.com/user/teams?per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Thu, 17 Dec 2015 00:08:08 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4998'
+      X-Ratelimit-Reset:
+      - '1450314488'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - W/"cbfe98a11c39fdb686386de5d5b0a897"
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - admin:org, read:org, repo, user, write:org
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - 318e55760cf7cdb40e61175a4d36cd32
+      X-Github-Request-Id:
+      - 18DA1056:14B63:C747C60:5671FCE8
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"name":"read","id":1656965,"slug":"read","description":"","permission":"pull","privacy":"secret","url":"https://api.github.com/teams/1656965","members_url":"https://api.github.com/teams/1656965/members{/member}","repositories_url":"https://api.github.com/teams/1656965/repos","members_count":2,"repos_count":1,"organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null,"public_repos":3,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci-test","created_at":"2015-07-27T02:27:51Z","updated_at":"2015-07-27T02:27:51Z","type":"Organization"}},{"name":"write","id":1656968,"slug":"write","description":"","permission":"push","privacy":"secret","url":"https://api.github.com/teams/1656968","members_url":"https://api.github.com/teams/1656968/members{/member}","repositories_url":"https://api.github.com/teams/1656968/repos","members_count":2,"repos_count":1,"organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null,"public_repos":3,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci-test","created_at":"2015-07-27T02:27:51Z","updated_at":"2015-07-27T02:27:51Z","type":"Organization"}},{"name":"admin","id":1656969,"slug":"admin","description":"","permission":"admin","privacy":"secret","url":"https://api.github.com/teams/1656969","members_url":"https://api.github.com/teams/1656969/members{/member}","repositories_url":"https://api.github.com/teams/1656969/repos","members_count":3,"repos_count":1,"organization":{"login":"lintci-test","id":13514323,"url":"https://api.github.com/orgs/lintci-test","repos_url":"https://api.github.com/orgs/lintci-test/repos","events_url":"https://api.github.com/orgs/lintci-test/events","members_url":"https://api.github.com/orgs/lintci-test/members{/member}","public_members_url":"https://api.github.com/orgs/lintci-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13514323?v=3","description":null,"public_repos":3,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lintci-test","created_at":"2015-07-27T02:27:51Z","updated_at":"2015-07-27T02:27:51Z","type":"Organization"}},{"name":"Owners","id":1659318,"slug":"owners","description":null,"permission":"admin","privacy":"secret","url":"https://api.github.com/teams/1659318","members_url":"https://api.github.com/teams/1659318/members{/member}","repositories_url":"https://api.github.com/teams/1659318/repos","members_count":2,"repos_count":2,"organization":{"login":"lexci-lint-org-test","id":13529690,"url":"https://api.github.com/orgs/lexci-lint-org-test","repos_url":"https://api.github.com/orgs/lexci-lint-org-test/repos","events_url":"https://api.github.com/orgs/lexci-lint-org-test/events","members_url":"https://api.github.com/orgs/lexci-lint-org-test/members{/member}","public_members_url":"https://api.github.com/orgs/lexci-lint-org-test/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/13529690?v=3","description":null,"public_repos":2,"public_gists":0,"followers":0,"following":0,"html_url":"https://github.com/lexci-lint-org-test","created_at":"2015-07-28T00:05:15Z","updated_at":"2015-07-28T00:05:15Z","type":"Organization"}}]'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 00:08:08 GMT
+- request:
+    method: put
+    uri: https://api.github.com/teams/1656969/memberships/luci-lint
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Thu, 17 Dec 2015 00:08:09 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 403 Forbidden
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4997'
+      X-Ratelimit-Reset:
+      - '1450314488'
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - admin:org, repo
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Github-Request-Id:
+      - 18DA1056:14B5D:761E264:5671FCE8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"You must be an organization owner or team maintainer to
+        add a team membership.","documentation_url":"https://developer.github.com/v3"}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 00:08:09 GMT
 recorded_with: VCR 2.9.3

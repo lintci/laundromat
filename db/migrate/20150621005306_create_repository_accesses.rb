@@ -1,15 +1,13 @@
 class CreateRepositoryAccesses < ActiveRecord::Migration
   def change
-    create_table :repository_accesses do |t|
+    create_table :repository_accesses, id: :uuid do |t|
       t.string :access, null: false
-      t.references :user, index: true
-      t.references :repository, index: true
+      t.references :user, index: true, type: :uuid, foreign_key: true
+      t.references :repository, index: true, type: :uuid, foreign_key: true
 
-      t.timestamps null: false
+      t.timestamps null: false, index: true
 
-      t.index [:user_id, :repository_id]
+      t.index [:user_id, :repository_id], unique: true
     end
-    add_foreign_key :repository_accesses, :users
-    add_foreign_key :repository_accesses, :repositories
   end
 end

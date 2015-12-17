@@ -1,17 +1,18 @@
 require 'spec_helper'
 
 describe API::V1::OwnerResource do
-  let(:owner){build(:owner, id: 1)}
+  let(:uuid){generate(:uuid)}
+  let(:owner){build(:owner, id: uuid)}
   subject(:resource){described_class.new(owner)}
 
   describe '#as_json' do
     it 'generates the expected structure' do
       expect(resource.as_json).to eq(
         data: {
-          'id' => '1',
+          'id' => uuid,
           'type' => 'owners',
           'links' => {
-            self: '/api/v1/owners/1'
+            self: "/api/v1/owners/#{uuid}"
           },
           'attributes' => {
             'name' => 'lintci',
@@ -20,8 +21,8 @@ describe API::V1::OwnerResource do
           'relationships' => {
             'repositories' => {
               links: {
-                self: '/api/v1/owners/1/relationships/repositories',
-                related: '/api/v1/owners/1/repositories'
+                self: "/api/v1/owners/#{uuid}/relationships/repositories",
+                related: "/api/v1/owners/#{uuid}/repositories"
               }
             }
           }

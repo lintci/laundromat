@@ -1,6 +1,6 @@
 class CreateSourceFiles < ActiveRecord::Migration
   def change
-    create_table :source_files do |t|
+    create_table :source_files, id: :uuid do |t|
       t.string :name, null: false
       t.string :sha, null: false
       t.string :source_type, null: false
@@ -14,10 +14,9 @@ class CreateSourceFiles < ActiveRecord::Migration
       t.boolean :image, default: false
       t.string :extension, null: false
       t.integer :size, null: false
-      t.references :build, null: false
+      t.references :build, null: false, type: :uuid, foreign_key: true
 
-      t.timestamps
+      t.timestamps null: false, index: true
     end
-    add_foreign_key :source_files, :builds
   end
 end

@@ -4,20 +4,14 @@ module API
     class JSONAPIController < BaseController
       include JSONAPI::ActsAsResourceController
 
+      abstract
+
+      before_action :ensure_valid_access_token!
+
     private
 
       def context
         {current_user: current_user}
-      end
-
-      def setup_request
-        params[:include] = CSV.generate_line(include_relationships) if include_relationships.any?
-
-        super
-      end
-
-      def include_relationships
-        []
       end
     end
   end

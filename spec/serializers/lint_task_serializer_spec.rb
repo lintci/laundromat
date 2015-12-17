@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe LintTaskSerializer do
   describe '#as_json' do
-    let(:task){build(:lint_task, :with_source_files)}
+    let(:build){FactoryGirl.build(:build)}
+    let(:task){FactoryGirl.build(:lint_task, :with_source_files, build: build)}
     subject(:serializer){described_class.new(task)}
 
     it 'generates the expected json' do

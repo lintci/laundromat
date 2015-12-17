@@ -1,38 +1,41 @@
 module Github
   class Repository
-    delegate :name, to: :repository
+    include Virtus.value_object
 
-    def initialize(repository)
-      @repository = repository
-    end
-
-    delegate :name, to: :owner, prefix: true
-
-    def owner
-      Github::Owner.new(repository.owner)
+    values do
+      attribute :name, String
+      attribute :access, String
+      attribute :owner_name, String
     end
 
     def full_name
-      "#{owner.name}/#{name}"
-    end
-
-    def access
-      perms = repository.permissions
-      if perms.admin?
-        RepositoryAccess::ADMIN
-      elsif perms.push?
-        RepositoryAccess::WRITE
-      else
-        RepositoryAccess::READ
-      end
+      "#{owner_name}/#{name}"
     end
 
     def provider
       Provider[:github]
     end
 
-  protected
+    class << self
+      def from_api(api_repository)
+        new(
+          name: api_repository.name,
+          owner_name: api_repository.owner.login,
+          access: access_from_api(api_repository.permissions)
+        )
+      end
 
-    attr_reader :repository
+    private
+
+      def access_from_api(api_permissions)
+        if api_permissions.admin?
+          RepositoryAccess::ADMIN
+        elsif api_permissions.push?
+          RepositoryAccess::WRITE
+        else
+          RepositoryAccess::READ
+        end
+      end
+    end
   end
 end

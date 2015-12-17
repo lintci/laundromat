@@ -1,28 +1,36 @@
+# TODO: Prevent updating status when update in process
+
 module API
   module V1
     class RepositoryResource < BaseResource
+      class << self
+        def records(options)
+          options[:context][:current_user].repositories
+        end
+
+        def creatable_fields
+          []
+        end
+
+        def updatable_fields
+          %i(status)
+        end
+      end
+
       has_one :owner
 
       attributes :name, :provider, :status
 
-      after_save :update_repository_activation
+      after_update :activation_updated
 
       def provider
         model.provider.to_s
       end
 
-      def update_repository_activation
-        UpdateRepositoryActivation.new(current_user, model)
-      end
+    private
 
-      class << self
-        def updatable_fields(_context)
-          [:status]
-        end
-
-        def records(options)
-          options[:context][:current_user].repositories
-        end
+      def activation_updated
+        RepositoryActivationUpdatedWorker.perform_async(model.id)
       end
     end
   end

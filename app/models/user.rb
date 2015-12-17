@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
   validates :username, presence: true
   validates :email, presence: true
 
+  default_scope{order(:created_at)}
+
   class << self
     def upsert_from_provider!(provider_user)
       scope = where(uid: provider_user.uid, provider: provider_user.provider.to_s)

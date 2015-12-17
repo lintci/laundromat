@@ -32,14 +32,15 @@ module Github
     end
 
     def access_token(authorization_code)
-      Github::AccessToken.new(client.exchange_code_for_token(authorization_code))
+      Github::AccessToken.from_api(client.exchange_code_for_token(authorization_code))
+    rescue Octokit::Unauthorized
     end
 
     def user
       user = client.user
       emails = client.emails if user.email.blank?
 
-      Github::User.new(user, emails)
+      Github::User.from_api(user, emails)
     end
 
     def repositories
@@ -47,7 +48,7 @@ module Github
 
       options = {accept: 'application/vnd.github.moondragon+json'} # Return org and user repos
       client.repositories(nil, options).each do |repository|
-        yield Github::Repository.new(repository)
+        yield Github::Repository.from_api(repository)
       end
     end
 
@@ -62,20 +63,21 @@ module Github
       )
     end
 
-    def add_lintci_to_repository(repository)
+    def add_lintci_to_repository(repository, activation)
       if repository.organization?
-        team_api.add_team_membership(repository, SERVICE_USERNAME)
+        team = team_api.add_team_membership(repository, SERVICE_USERNAME)
+        activation.team_id = team.id
       else
         client.add_collaborator(repository.full_name, SERVICE_USERNAME)
       end
 
-      add_deploy_key(repository)
-      add_webhook(repository)
+      activation.deploy_key_id = add_deploy_key(repository, activation)
+      activation.webhook_id = add_webhook(repository)
     end
 
-    def remove_lintci_from_repository(repository)
-      remove_webhook(repository)
-      remove_deploy_key(repository)
+    def remove_lintci_from_repository(repository, activation)
+      remove_webhook(repository, activation)
+      remove_deploy_key(repository, activation)
 
       if repository.organization?
         team_api.remove_membership(repository, SERVICE_USERNAME)
@@ -90,20 +92,18 @@ module Github
 
   private
 
-    def add_deploy_key(repository)
-      # TODO: Store deploy key ID for removing later
-      client.add_deploy_key(repository.full_name, DEPLOY_KEY_NAME, repository.public_key)
+    def add_deploy_key(repository, activation)
+      deploy_key = client.add_deploy_key(repository.full_name, DEPLOY_KEY_NAME, activation.public_key)
+
+      deploy_key.id
     end
 
-    def remove_deploy_key(repository)
-      deploy_key = client.deploy_keys(repository.full_name).find{|key| key.name == DEPLOY_KEY_NAME}
-
-      client.remove_deploy_key(repository.full_name, deploy_key.id)
+    def remove_deploy_key(repository, activation)
+      client.remove_deploy_key(repository.full_name, activation.deploy_key_id)
     end
 
     def add_webhook(repository)
-      # TODO: Store webhook ID for removing later
-      client.create_hook(
+      webhook = client.create_hook(
         repository.full_name,
         'web',
         {
@@ -114,9 +114,12 @@ module Github
         active: true,
         events: ['push', 'pull_request']
       )
+
+      webhook.id
     end
 
-    def remove_webook(repository)
+    def remove_webook(repository, activation)
+      client.remove_hook(repository.full_name, activation.webhook_id)
     end
   end
 end

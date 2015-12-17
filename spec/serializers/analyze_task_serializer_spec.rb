@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe AnalyzeTaskSerializer do
   describe '#as_json' do
-    let(:task){build(:analyze_task)}
+    let(:build){FactoryGirl.build(:build)}
+    let(:task){FactoryGirl.build(:analyze_task, build: build)}
     subject(:serializer){described_class.new(task)}
 
     it 'generates the expected json' do

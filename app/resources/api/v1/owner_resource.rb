@@ -1,6 +1,8 @@
 module API
   module V1
     class OwnerResource < BaseResource
+      readonly
+
       has_many :repositories
 
       attributes :name, :provider
@@ -10,10 +12,6 @@ module API
       end
 
       class << self
-        def updatable_fields(_context)
-          []
-        end
-
         def records(options)
           options[:context][:current_user].owners
         end

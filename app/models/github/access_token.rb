@@ -1,13 +1,19 @@
 module Github
   class AccessToken
-    delegate :access_token, :scope, to: :token
+    include Virtus.value_object
 
-    def initialize(access_token)
-      @token = access_token
+    values do
+      attribute :access_token, String
+      attribute :scope, String
     end
 
-  protected
-
-    attr_reader :token
+    class << self
+      def from_api(api_authorization)
+        new(
+          access_token: api_authorization.access_token,
+          scope: api_authorization.scope
+        )
+      end
+    end
   end
 end

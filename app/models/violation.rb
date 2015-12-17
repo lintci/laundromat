@@ -6,4 +6,6 @@ class Violation < ActiveRecord::Base
 
   validates :line, presence: true
   validates :message, presence: true
+
+  default_scope{order(:created_at)}
 end

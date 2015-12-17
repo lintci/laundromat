@@ -1,12 +1,10 @@
 class CreateTaskResults < ActiveRecord::Migration
   def change
-    create_table :task_results do |t|
-      t.references :task, index: true
-      t.references :violation, index: true
+    create_table :task_results, id: :uuid do |t|
+      t.references :task, index: true, type: :uuid, foreign_key: true
+      t.references :violation, index: true, type: :uuid, foreign_key: true
 
-      t.timestamps null: false
+      t.timestamps null: false, index: true
     end
-    add_foreign_key :task_results, :tasks
-    add_foreign_key :task_results, :violations
   end
 end

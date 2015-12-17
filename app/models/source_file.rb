@@ -18,6 +18,8 @@ class SourceFile < ActiveRecord::Base
   validates :documentation, inclusion: {in: [true, false]}
   validates :image, inclusion: {in: [true, false]}
 
+  default_scope{order(:created_at)}
+
   def add_violations(new_violations)
     violations.push(*new_violations)
   end

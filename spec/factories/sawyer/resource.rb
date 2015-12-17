@@ -6,4 +6,11 @@ FactoryGirl.define do
     skip_create
     initialize_with{new(agent, data)}
   end
+
+  factory :sawyer_resources, class: Array do
+    data []
+
+    skip_create
+    initialize_with{Array(data).map{|resource| build(:sawyer_resource, data: resource)}}
+  end
 end

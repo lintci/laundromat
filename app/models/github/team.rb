@@ -1,23 +1,44 @@
 module Github
   class Team
-    NAME = 'LintCI'
+    SERVICE_NAME = ENV.fetch('SERVICE_TEAM')
 
-    delegate :id, :name, :permission, :privacy, to: :team
+    include Virtus.value_object
 
-    def initialize(team)
-      @team = team
+    values do
+      attribute :id, String
+      attribute :name, String
+      attribute :access, RepositoryAccess::Access
+      attribute :privacy, String
     end
 
     def lintci?
-      name.downcase == NAME.downcase
+      name.downcase == SERVICE_NAME.downcase
     end
 
     def admin?
-      permission == 'admin'
+      access == RepositoryAccess::ADMIN
     end
 
-  protected
+    class << self
+      def from_api(api_team)
+        new(
+          id: api_team.id,
+          name: api_team.name,
+          access: access_from_api(api_team.permission),
+          privacy: api_team.privacy
+        )
+      end
 
-    attr_reader :team
+      def access_from_api(api_permission)
+        case api_permission
+        when 'admin'
+          RepositoryAccess::ADMIN
+        when 'push'
+          RepositoryAccess::WRITE
+        else
+          RepositoryAccess::READ
+        end
+      end
+    end
   end
 end

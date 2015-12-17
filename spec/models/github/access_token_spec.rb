@@ -1,12 +1,22 @@
 require 'spec_helper'
 
 describe Github::AccessToken do
-  subject(:access_token){build(:github_access_token)}
+  describe '.from_api' do
+    let(:api_access_token) do
+      build(
+        :sawyer_resource,
+        data: {
+          'access_token' => '92bc2774bdfc8e24c933758f5313ddb7aacbbe44',
+          'token_type' => 'bearer',
+          'scope' => 'repo,user:email'
+        }
+      )
+    end
+    subject(:provider_access_token){described_class.from_api(api_access_token)}
 
-  it do
-    is_expected.to have_attributes(
-      access_token: '28cc8832046954d4343de2afff2c50edf0f67b38',
-      scope: 'repo,user'
-    )
+    it 'correctly constructs the provider token', :aggregate_failures do
+      expect(subject.access_token).to eq('92bc2774bdfc8e24c933758f5313ddb7aacbbe44')
+      expect(subject.scope).to eq('repo,user:email')
+    end
   end
 end

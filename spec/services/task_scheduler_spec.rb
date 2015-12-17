@@ -25,15 +25,15 @@ describe TaskScheduler do
       expect(job['args']).to match([
         {
           'analyze_task'  =>  {
-            'id' => be_a(Integer),
+            'id' => be_uuid,
             'type' => 'AnalyzeTask',
             'status' => 'scheduled',
             'language' => 'All',
             'tool' => 'Linguist',
             'build' => {
-              'id' => be_a(Integer),
-              'ssh_public_key' => match(/ssh-rsa/),
-              'ssh_private_key' => match(/-----BEGIN RSA PRIVATE KEY-----/),
+              'id' => be_uuid,
+              'ssh_public_key' => be_ssh_public_key,
+              'ssh_private_key' => be_private_key,
               'pull_request' => {
                 'id' => 1,
                 'base_sha' => 'bbf813a806dacf043a592f04a0ed320236caca3a',
@@ -78,15 +78,15 @@ describe TaskScheduler do
       expect(job['args']).to match([
         {
           'lint_task'  =>  {
-            'id' => be_a(Integer),
+            'id' => be_uuid,
             'type' => 'LintTask',
             'status' => 'scheduled',
             'language' => 'Ruby',
             'tool' => 'RuboCop',
             'build' => {
-              'id' => be_a(Integer),
-              'ssh_public_key' => match(/ssh-rsa/),
-              'ssh_private_key' => match(/-----BEGIN RSA PRIVATE KEY-----/),
+              'id' => be_uuid,
+              'ssh_public_key' => be_ssh_public_key,
+              'ssh_private_key' => be_private_key,
               'pull_request' => {
                 'id' => 1,
                 'base_sha' => 'bbf813a806dacf043a592f04a0ed320236caca3a',
@@ -99,7 +99,7 @@ describe TaskScheduler do
             },
             'source_files' => [
               {
-                'id' => be_a(Integer),
+                'id' => be_uuid,
                 'name' => 'bad.rb',
                 'sha' => 'cbc7b6a779837b93563e69511d44cb35051ed712',
                 'source_type' => 'Ruby',
@@ -127,8 +127,9 @@ describe TaskScheduler do
   end
 
   describe '#schedule' do
-    let(:task){create(:lint_task, :queued, :with_source_files)}
-    subject(:scheduler){described_class.new(task.build)}
+    let(:build){create(:build)}
+    let(:task){create(:lint_task, :queued, :with_source_files, build: build)}
+    subject(:scheduler){described_class.new(build)}
 
     it 'schedules the given task' do
       expect do
@@ -139,15 +140,15 @@ describe TaskScheduler do
       expect(job['args']).to match([
         {
           'lint_task'  =>  {
-            'id' => be_a(Integer),
+            'id' => be_uuid,
             'type' => 'LintTask',
             'status' => 'scheduled',
             'language' => 'Ruby',
             'tool' => 'RuboCop',
             'build' => {
-              'id' => be_a(Integer),
-              'ssh_public_key' => match(/ssh-rsa/),
-              'ssh_private_key' => match(/-----BEGIN RSA PRIVATE KEY-----/),
+              'id' => be_uuid,
+              'ssh_public_key' => be_ssh_public_key,
+              'ssh_private_key' => be_private_key,
               'pull_request' => {
                 'id' => 1,
                 'base_sha' => 'bbf813a806dacf043a592f04a0ed320236caca3a',
@@ -160,7 +161,7 @@ describe TaskScheduler do
             },
             'source_files' => [
               {
-                'id' => be_a(Integer),
+                'id' => be_uuid,
                 'name' => 'bad.rb',
                 'sha' => 'cbc7b6a779837b93563e69511d44cb35051ed712',
                 'source_type' => 'Ruby',

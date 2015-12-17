@@ -30,7 +30,7 @@ private
   def notify_channel(repository)
     data = API::V1::RepositoryResource.new(repository).as_json(include: ['owner'])
 
-    Pusher.trigger(channel.name, 'data_updated', data)
+    Pusher.trigger(channel.name, 'data-updated', data)
   end
 
   def channel

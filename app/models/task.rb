@@ -10,10 +10,11 @@ class Task < ActiveRecord::Base
   has_many :task_results
   has_many :violations, through: :task_results
 
-  scope :active, ->{where(status: %w(scheduled running))}
-
   validates :status, presence: true
   validates :type, presence: true
+
+  default_scope{order(:created_at)}
+  scope :active, ->{where(status: %w(scheduled running))}
 
   aasm column: :status do
     state :queued, initial: true

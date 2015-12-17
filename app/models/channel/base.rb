@@ -9,7 +9,7 @@ module Channel
     attr_reader :id
 
     def initialize(id)
-      @id = id.to_i
+      @id = id
     end
 
     def type
