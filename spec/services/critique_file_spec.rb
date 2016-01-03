@@ -13,7 +13,8 @@ describe CritiqueFile do
     subject(:service){described_class}
 
     it 'records the violations and comments on the pull request' do
-      expect_any_instance_of(Payload::PullRequest).to receive(:comment).once.with(
+      expect_any_instance_of(Github::API).to receive(:comment_on_pull_request).once.with(
+        be_a(Payload::PullRequest),
         source_file,
         2,
         contain_exactly(be_a(Violation), be_a(Violation))

@@ -5,7 +5,6 @@ class CreateActivations < ActiveRecord::Migration
       t.text :private_key, null: false
       t.string :deploy_key_id, null: false
       t.string :webhook_id, null: false
-      t.string :team_id
       t.string :provider, null: false
       t.references :repository, null: false, type: :uuid, index: true, foreign_key: true
 

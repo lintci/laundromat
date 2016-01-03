@@ -16,6 +16,8 @@ class Task < ActiveRecord::Base
   default_scope{order(:created_at)}
   scope :active, ->{where(status: %w(scheduled running))}
 
+  delegate :service_api, to: :build
+
   aasm column: :status do
     state :queued, initial: true
     state :scheduled

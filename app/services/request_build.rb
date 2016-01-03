@@ -12,6 +12,8 @@ class RequestBuild < CommandService
     build = create_build
 
     schedule_build_tasks(build)
+
+    mark_pull_request_pending
   end
 
 protected
@@ -20,12 +22,18 @@ protected
 
 private
 
+  delegate :service_api, to: :repository
+
   def create_build
     repository.create_build!(event, event_id, payload)
   end
 
   def schedule_build_tasks(build)
     TaskScheduler.new(build).schedule_analysis
+  end
+
+  def mark_pull_request_pending
+
   end
 
   def repository

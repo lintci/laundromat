@@ -45,10 +45,6 @@ class Payload
       "<PullRequest:#{owner}/#{repo} (#{base_sha[0..6]}...#{head_sha[0..6]})>"
     end
 
-    def comment(source_file, line, violations)
-      Comment.new(self).add(source_file, line, violations)
-    end
-
     def read_attribute_for_serialization(name)
       public_send(name)
     end

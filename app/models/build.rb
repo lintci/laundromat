@@ -11,7 +11,7 @@ class Build < ActiveRecord::Base
 
   default_scope{order(:created_at)}
 
-  delegate :owner, to: :repository
+  delegate :owner, :service_api, to: :repository
   delegate :status, to: :tasks
 
   def create_analyze_task

@@ -1,0 +1,859 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/repos/lexci-lint-org-test/owner/collaborators?per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.ironman-preview+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 02 Jan 2016 21:33:07 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4999'
+      X-Ratelimit-Reset:
+      - '1451773987'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - W/"aaf619c38e506a9fc1287f6a31f4dbb1"
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.ironman-preview; format=json
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - e183f7c661b1bbc2c987b3c4dc7b04e0
+      X-Github-Request-Id:
+      - 6C041A0A:1D261:23D9AC89:56884213
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"login":"blatyo","id":71221,"avatar_url":"https://avatars.githubusercontent.com/u/71221?v=3","gravatar_id":"","url":"https://api.github.com/users/blatyo","html_url":"https://github.com/blatyo","followers_url":"https://api.github.com/users/blatyo/followers","following_url":"https://api.github.com/users/blatyo/following{/other_user}","gists_url":"https://api.github.com/users/blatyo/gists{/gist_id}","starred_url":"https://api.github.com/users/blatyo/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/blatyo/subscriptions","organizations_url":"https://api.github.com/users/blatyo/orgs","repos_url":"https://api.github.com/users/blatyo/repos","events_url":"https://api.github.com/users/blatyo/events{/privacy}","received_events_url":"https://api.github.com/users/blatyo/received_events","type":"User","site_admin":false,"permissions":{"admin":true,"push":true,"pull":true}},{"login":"lexci-lint","id":12980159,"avatar_url":"https://avatars.githubusercontent.com/u/12980159?v=3","gravatar_id":"","url":"https://api.github.com/users/lexci-lint","html_url":"https://github.com/lexci-lint","followers_url":"https://api.github.com/users/lexci-lint/followers","following_url":"https://api.github.com/users/lexci-lint/following{/other_user}","gists_url":"https://api.github.com/users/lexci-lint/gists{/gist_id}","starred_url":"https://api.github.com/users/lexci-lint/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lexci-lint/subscriptions","organizations_url":"https://api.github.com/users/lexci-lint/orgs","repos_url":"https://api.github.com/users/lexci-lint/repos","events_url":"https://api.github.com/users/lexci-lint/events{/privacy}","received_events_url":"https://api.github.com/users/lexci-lint/received_events","type":"User","site_admin":false,"permissions":{"admin":true,"push":true,"pull":true}}]'
+    http_version: 
+  recorded_at: Sat, 02 Jan 2016 21:33:07 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/lexci-lint-org-test/owner/keys?per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 02 Jan 2016 21:33:07 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2'
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4998'
+      X-Ratelimit-Reset:
+      - '1451773987'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - '"539bc4c16be76a19339e7f1dc6284d1a"'
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - d594a23ec74671eba905bf91ef329026
+      X-Github-Request-Id:
+      - 6C041A0A:1D262:22EEE1CF:56884213
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Sat, 02 Jan 2016 21:33:07 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/lexci-lint-org-test/owner/hooks?per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 02 Jan 2016 21:33:07 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2'
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4997'
+      X-Ratelimit-Reset:
+      - '1451773987'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - '"539bc4c16be76a19339e7f1dc6284d1a"'
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - admin:repo_hook, public_repo, read:repo_hook, repo, write:repo_hook
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - dc1ce2bfb41810a06c705e83b388572d
+      X-Github-Request-Id:
+      - 6C041A0A:1D260:1E217263:56884213
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Sat, 02 Jan 2016 21:33:07 GMT
+- request:
+    method: post
+    uri: https://api.github.com/repos/lexci-lint-org-test/owner/keys
+    body:
+      encoding: UTF-8
+      string: '{"title":"LintCI","key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCaztA5SvuiMNd1nuL9B1ysa1BHIj0K8qhahepQKEiNgG6H63lc/7L/K/NQhj8P5W6TKJ84dKoC9nU4YEmwROZWI2wTBxlDLPnH8DcZo2QZJLuS8xWLJdCqWj5vpPdtc43+uiS4odjEtYYrhIAPtxeyvgydTLqZljvpLcjcJI5vM7yd3bY09MKK6hz7pOk8QS63SL1qtLsNcnQujhxK6TwoZW/pJ9sPl3SoWpy1Bv4J8YI/miPXHaasJdbuMu7R9kqzIx9gkhtE7rU49U55AXMnl8yaqsojMY5KHwpjUIgTZDf5LFRpPxSsAKQtL8ikDwbFh898a561cBS+TUh7hEJr
+        LintCI"}'
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 02 Jan 2016 21:33:07 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '568'
+      Status:
+      - 201 Created
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4996'
+      X-Ratelimit-Reset:
+      - '1451773987'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - '"d4bb7afa8eb18de0be0e55c403efcce6"'
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      Location:
+      - https://api.github.com/repos/lexci-lint-org-test/owner/keys/15183559
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - 173530fed4bbeb1e264b2ed22e8b5c20
+      X-Github-Request-Id:
+      - 6C041A0A:1D260:1E21728A:56884213
+    body:
+      encoding: UTF-8
+      string: '{"id":15183559,"key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCaztA5SvuiMNd1nuL9B1ysa1BHIj0K8qhahepQKEiNgG6H63lc/7L/K/NQhj8P5W6TKJ84dKoC9nU4YEmwROZWI2wTBxlDLPnH8DcZo2QZJLuS8xWLJdCqWj5vpPdtc43+uiS4odjEtYYrhIAPtxeyvgydTLqZljvpLcjcJI5vM7yd3bY09MKK6hz7pOk8QS63SL1qtLsNcnQujhxK6TwoZW/pJ9sPl3SoWpy1Bv4J8YI/miPXHaasJdbuMu7R9kqzIx9gkhtE7rU49U55AXMnl8yaqsojMY5KHwpjUIgTZDf5LFRpPxSsAKQtL8ikDwbFh898a561cBS+TUh7hEJr","url":"https://api.github.com/repos/lexci-lint-org-test/owner/keys/15183559","title":"LintCI","verified":true,"created_at":"2016-01-02T21:33:07Z","read_only":false}'
+    http_version: 
+  recorded_at: Sat, 02 Jan 2016 21:33:07 GMT
+- request:
+    method: post
+    uri: https://api.github.com/repos/lexci-lint-org-test/owner/hooks
+    body:
+      encoding: UTF-8
+      string: '{"name":"web","config":{"url":"https://p2s.lintci.com/payloads","secret":"<GITHUB_WEBHOOK_TOKEN>","content_type":"application/x-www-form-urlencoded"},"events":["push","pull_request"],"active":true}'
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 02 Jan 2016 21:33:08 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '583'
+      Status:
+      - 201 Created
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4995'
+      X-Ratelimit-Reset:
+      - '1451773987'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - '"31727d603364ef1ae8b54adc3013d526"'
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - admin:repo_hook, public_repo, repo, write:repo_hook
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      Location:
+      - https://api.github.com/repos/lexci-lint-org-test/owner/hooks/6822261
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - a241e1a8264a6ace03db946c85b92db3
+      X-Github-Request-Id:
+      - 6C041A0A:1D262:22EEE23A:56884214
+    body:
+      encoding: UTF-8
+      string: '{"url":"https://api.github.com/repos/lexci-lint-org-test/owner/hooks/6822261","test_url":"https://api.github.com/repos/lexci-lint-org-test/owner/hooks/6822261/test","ping_url":"https://api.github.com/repos/lexci-lint-org-test/owner/hooks/6822261/pings","id":6822261,"name":"web","active":true,"events":["push","pull_request"],"config":{"url":"https://p2s.lintci.com/payloads","secret":"********","content_type":"application/x-www-form-urlencoded"},"last_response":{"code":null,"status":"unused","message":null},"updated_at":"2016-01-02T21:33:08Z","created_at":"2016-01-02T21:33:08Z"}'
+    http_version: 
+  recorded_at: Sat, 02 Jan 2016 21:33:08 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/lexci-lint-org-test/owner/collaborators?per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.ironman-preview+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 02 Jan 2016 21:33:08 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4994'
+      X-Ratelimit-Reset:
+      - '1451773987'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - W/"aaf619c38e506a9fc1287f6a31f4dbb1"
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.ironman-preview; format=json
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - a30e6f9aa7cf5731b87dfb3b9992202d
+      X-Github-Request-Id:
+      - 6C041A0A:1D261:23D9AD2D:56884214
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"login":"blatyo","id":71221,"avatar_url":"https://avatars.githubusercontent.com/u/71221?v=3","gravatar_id":"","url":"https://api.github.com/users/blatyo","html_url":"https://github.com/blatyo","followers_url":"https://api.github.com/users/blatyo/followers","following_url":"https://api.github.com/users/blatyo/following{/other_user}","gists_url":"https://api.github.com/users/blatyo/gists{/gist_id}","starred_url":"https://api.github.com/users/blatyo/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/blatyo/subscriptions","organizations_url":"https://api.github.com/users/blatyo/orgs","repos_url":"https://api.github.com/users/blatyo/repos","events_url":"https://api.github.com/users/blatyo/events{/privacy}","received_events_url":"https://api.github.com/users/blatyo/received_events","type":"User","site_admin":false,"permissions":{"admin":true,"push":true,"pull":true}},{"login":"lexci-lint","id":12980159,"avatar_url":"https://avatars.githubusercontent.com/u/12980159?v=3","gravatar_id":"","url":"https://api.github.com/users/lexci-lint","html_url":"https://github.com/lexci-lint","followers_url":"https://api.github.com/users/lexci-lint/followers","following_url":"https://api.github.com/users/lexci-lint/following{/other_user}","gists_url":"https://api.github.com/users/lexci-lint/gists{/gist_id}","starred_url":"https://api.github.com/users/lexci-lint/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lexci-lint/subscriptions","organizations_url":"https://api.github.com/users/lexci-lint/orgs","repos_url":"https://api.github.com/users/lexci-lint/repos","events_url":"https://api.github.com/users/lexci-lint/events{/privacy}","received_events_url":"https://api.github.com/users/lexci-lint/received_events","type":"User","site_admin":false,"permissions":{"admin":true,"push":true,"pull":true}}]'
+    http_version: 
+  recorded_at: Sat, 02 Jan 2016 21:33:08 GMT
+- request:
+    method: delete
+    uri: https://api.github.com/repos/lexci-lint-org-test/owner/hooks/6822261
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 02 Jan 2016 21:33:08 GMT
+      Status:
+      - 204 No Content
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4993'
+      X-Ratelimit-Reset:
+      - '1451773987'
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - admin:repo_hook, public_repo, repo
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Accept-Encoding
+      X-Served-By:
+      - 52437fedc85beec8da3449496900fb9a
+      X-Github-Request-Id:
+      - 6C041A0A:1D25B:7945E6B:56884214
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sat, 02 Jan 2016 21:33:08 GMT
+- request:
+    method: delete
+    uri: https://api.github.com/repos/lexci-lint-org-test/owner/keys/15183559
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 02 Jan 2016 21:33:08 GMT
+      Status:
+      - 204 No Content
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4992'
+      X-Ratelimit-Reset:
+      - '1451773987'
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Accept-Encoding
+      X-Served-By:
+      - a7f8a126c9ed3f1c4715a34c0ddc7290
+      X-Github-Request-Id:
+      - 6C041A0A:1D259:5861E2C:56884214
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sat, 02 Jan 2016 21:33:08 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/lexci-lint-org-test/owner/collaborators?per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.ironman-preview+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 02 Jan 2016 21:33:08 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4991'
+      X-Ratelimit-Reset:
+      - '1451773987'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - W/"aaf619c38e506a9fc1287f6a31f4dbb1"
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.ironman-preview; format=json
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - ef96c2e493b28ffea49b891b085ed2dd
+      X-Github-Request-Id:
+      - 6C041A0A:1D25C:94C22CB:56884214
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"login":"blatyo","id":71221,"avatar_url":"https://avatars.githubusercontent.com/u/71221?v=3","gravatar_id":"","url":"https://api.github.com/users/blatyo","html_url":"https://github.com/blatyo","followers_url":"https://api.github.com/users/blatyo/followers","following_url":"https://api.github.com/users/blatyo/following{/other_user}","gists_url":"https://api.github.com/users/blatyo/gists{/gist_id}","starred_url":"https://api.github.com/users/blatyo/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/blatyo/subscriptions","organizations_url":"https://api.github.com/users/blatyo/orgs","repos_url":"https://api.github.com/users/blatyo/repos","events_url":"https://api.github.com/users/blatyo/events{/privacy}","received_events_url":"https://api.github.com/users/blatyo/received_events","type":"User","site_admin":false,"permissions":{"admin":true,"push":true,"pull":true}},{"login":"lexci-lint","id":12980159,"avatar_url":"https://avatars.githubusercontent.com/u/12980159?v=3","gravatar_id":"","url":"https://api.github.com/users/lexci-lint","html_url":"https://github.com/lexci-lint","followers_url":"https://api.github.com/users/lexci-lint/followers","following_url":"https://api.github.com/users/lexci-lint/following{/other_user}","gists_url":"https://api.github.com/users/lexci-lint/gists{/gist_id}","starred_url":"https://api.github.com/users/lexci-lint/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/lexci-lint/subscriptions","organizations_url":"https://api.github.com/users/lexci-lint/orgs","repos_url":"https://api.github.com/users/lexci-lint/repos","events_url":"https://api.github.com/users/lexci-lint/events{/privacy}","received_events_url":"https://api.github.com/users/lexci-lint/received_events","type":"User","site_admin":false,"permissions":{"admin":true,"push":true,"pull":true}}]'
+    http_version: 
+  recorded_at: Sat, 02 Jan 2016 21:33:08 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/lexci-lint-org-test/owner/keys?per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 02 Jan 2016 21:33:08 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2'
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4990'
+      X-Ratelimit-Reset:
+      - '1451773987'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - '"539bc4c16be76a19339e7f1dc6284d1a"'
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - 8a5c38021a5cd7cef7b8f49a296fee40
+      X-Github-Request-Id:
+      - 6C041A0A:1D261:23D9AD8C:56884214
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Sat, 02 Jan 2016 21:33:08 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/lexci-lint-org-test/owner/hooks?per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token a3a3ccd66ce16c71f509080fe78b8a9af32311e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 02 Jan 2016 21:33:08 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2'
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4989'
+      X-Ratelimit-Reset:
+      - '1451773987'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - '"539bc4c16be76a19339e7f1dc6284d1a"'
+      X-Oauth-Scopes:
+      - repo, user:email
+      X-Accepted-Oauth-Scopes:
+      - admin:repo_hook, public_repo, read:repo_hook, repo, write:repo_hook
+      X-Oauth-Client-Id:
+      - "<GITHUB_CLIENT_ID>"
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - 01d096e6cfe28f8aea352e988c332cd3
+      X-Github-Request-Id:
+      - 6C041A0A:1D261:23D9ADA5:56884214
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Sat, 02 Jan 2016 21:33:08 GMT
+recorded_with: VCR 2.9.3

@@ -3,10 +3,11 @@ require 'command_service'
 # Provides feedback on code changes
 class CritiqueFile < CommandService
   def initialize(data)
-    @task = Task.find(data['meta']['task_id'])
+    @task = Task.includes(build: :repository).find(data['meta']['task_id'])
     @source_file = SourceFile.find(data['source_file']['id'])
     @violations = build_violations(data['source_file']['violations'])
     @meta = data['meta']
+    @api = task.repository.provider.service_api
   end
 
   def perform
@@ -19,7 +20,7 @@ class CritiqueFile < CommandService
 
 protected
 
-  attr_reader :task, :source_file, :violations, :meta
+  attr_reader :task, :source_file, :violations, :meta, :api
 
 private
 
@@ -29,7 +30,7 @@ private
 
   def comment_on_pull_request
     violations_by_line do |line, line_violations|
-      pull_request.comment(source_file, line, line_violations)
+      api.comment_on_pull_request(pull_request, source_file, line, line_violations)
     end
   end
 

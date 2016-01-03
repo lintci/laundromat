@@ -8,6 +8,8 @@ module Github
     GITHUB_WEBHOOK_TOKEN = ENV.fetch('GITHUB_WEBHOOK_TOKEN')
     DEPLOY_KEY_NAME = 'LintCI'
 
+    attr_accessor :client, :service_client
+
     class << self
       def service
         new(SERVICE_TOKEN)
@@ -16,15 +18,15 @@ module Github
 
     def initialize(access_token = nil)
       @client = if access_token
-        Octokit::Client.new(access_token: access_token, auto_paginate: true)
+        Github::Client.new(access_token: access_token, auto_paginate: true)
       else
-        Octokit::Client.new(
+        Github::Client.new(
           client_id: CLIENT_ID,
           client_secret: CLIENT_SECRET,
           auto_paginate: true
         )
       end
-      @service_client = Octokit::Client.new(access_token: SERVICE_TOKEN, auto_paginate: true)
+      @service_client = Github::Client.new(access_token: SERVICE_TOKEN, auto_paginate: true)
     end
 
     def team_api
@@ -32,23 +34,21 @@ module Github
     end
 
     def access_token(authorization_code)
-      Github::AccessToken.from_api(client.exchange_code_for_token(authorization_code))
-    rescue Octokit::Unauthorized
+      client.exchange_code_for_token(authorization_code)
     end
 
     def user
       user = client.user
-      emails = client.emails if user.email.blank?
+      user = user.with_email_from_api(client.emails) if user.email.blank?
 
-      Github::User.from_api(user, emails)
+      user
     end
 
     def repositories
       return to_enum(:repositories) unless block_given?
 
-      options = {accept: 'application/vnd.github.moondragon+json'} # Return org and user repos
-      client.repositories(nil, options).each do |repository|
-        yield Github::Repository.from_api(repository)
+      client.repositories.each do |repository|
+        yield repository
       end
     end
 
@@ -64,10 +64,7 @@ module Github
     end
 
     def add_lintci_to_repository(repository, activation)
-      if repository.organization?
-        team = team_api.add_team_membership(repository, SERVICE_USERNAME)
-        activation.team_id = team.id
-      else
+      if repository.private?
         client.add_collaborator(repository.full_name, SERVICE_USERNAME)
       end
 
@@ -79,16 +76,10 @@ module Github
       remove_webhook(repository, activation)
       remove_deploy_key(repository, activation)
 
-      if repository.organization?
-        team_api.remove_membership(repository, SERVICE_USERNAME)
-      else
+      if repository.private?
         client.remove_collaborator(repository.full_name, SERVICE_USERNAME)
       end
     end
-
-  protected
-
-    attr_reader :client, :service_client
 
   private
 
@@ -118,7 +109,7 @@ module Github
       webhook.id
     end
 
-    def remove_webook(repository, activation)
+    def remove_webhook(repository, activation)
       client.remove_hook(repository.full_name, activation.webhook_id)
     end
   end

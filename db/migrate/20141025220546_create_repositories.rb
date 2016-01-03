@@ -5,6 +5,7 @@ class CreateRepositories < ActiveRecord::Migration
       t.string :owner_name, null: false
       t.string :provider, null: false
       t.string :status, null: false
+      t.boolean :private, null: false, default: true
       t.references :owner, null: false, index: true, type: :uuid, foreign_key: true
 
       t.timestamps null: false, index: true

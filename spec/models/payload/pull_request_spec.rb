@@ -17,16 +17,6 @@ describe Payload::PullRequest do
     )
   end
 
-  describe '#comment' do
-    let(:violations){['This is wrong']}
-
-    it 'delegates commenting to PullRequest::Comment' do
-      expect_any_instance_of(Payload::PullRequest::Comment).to receive(:add).with('bad.rb', '1', violations)
-
-      pull_request.comment('bad.rb', '1', violations)
-    end
-  end
-
   describe '#==' do
     context 'when compared to the same pull request' do
       let(:other_pull_request){build(:pull_request)}

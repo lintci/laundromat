@@ -18,6 +18,7 @@ class Repository < ActiveRecord::Base
 
   delegate :organization?, to: :owner
   delegate :public_key, :private_key, to: :activation, allow_nil: true
+  delegate :service_api, to: :provider
 
   aasm column: :status do
     state :inactive, initial: true

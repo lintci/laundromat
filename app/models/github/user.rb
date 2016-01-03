@@ -12,23 +12,17 @@ module Github
       Provider[:github]
     end
 
+    def with_email_from_api(emails)
+      with(email: emails.find(&:primary).email)
+    end
+
     class << self
-      def from_api(user, emails)
+      def from_api(user)
         new(
           uid: user.id,
           username: user.login,
-          email: email_from_api(user, emails)
+          email: user.email
         )
-      end
-
-    private
-
-      def email_from_api(user, emails)
-        if user.email.present?
-          user.email
-        else
-          emails.find(&:primary).email
-        end
       end
     end
   end
