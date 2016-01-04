@@ -20,11 +20,9 @@ gem 'puma'
 gem 'rails_12factor', group: :production
 gem 'newrelic_rpm'
 gem 'sentry-raven', group: :production
-gem 'le'
 gem 'skylight'
 gem 'sidekiq-skylight'
 gem 'sidekiq-notifications'
-gem 'lograge'
 gem 'rack-cors', require: 'rack/cors'
 gem 'virtus'
 gem 'sshkey'

@@ -61,36 +61,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.logger = Rails.logger
-  config.logger.formatter = proc do |severity, timestamp, _, message|
-    data = {severity: severity, timestamp: timestamp}
-
-    if message.is_a? Hash
-      data.merge!(message)
-    else
-      data.merge!(message: message)
-    end
-
-    JSON.dump(data)
-  end
-
-  config.skylight.logger = config.logger
-  Sidekiq::Logging.logger = config.logger
-
-  config.lograge.enabled = true
-  config.lograge.logger = config.logger
-  config.lograge.formatter = Lograge::Formatters::Raw.new
-  config.lograge.custom_options = lambda do |event|
-    params = event.payload[:params].reject do |key|
-      %w(controller action).include?(key)
-    end
-
-    {
-      'params' => params,
-      'timestamp' => Time.stamp,
-      'severity' => 'INFO'
-    }
-  end
+  config.skylight.logger = Rails.logger
+  Sidekiq::Logging.logger = Rails.logger
 
   config.middleware.insert_before 0, 'Rack::Cors', logger: (->{Rails.logger}) do
     allow do
