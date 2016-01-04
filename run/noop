@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo 'noop'
+while true; do sleep 1; done

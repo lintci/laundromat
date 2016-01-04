@@ -27,4 +27,4 @@ ENV SENTRY_DSN=CHANGEME \
     SECRET_KEY_BASE=CHANGEME
 
 
-CMD puma -C config/puma.rb
+CMD run/web
