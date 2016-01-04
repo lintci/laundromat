@@ -8,11 +8,11 @@ module API
           options[:context][:current_user].repositories
         end
 
-        def creatable_fields
+        def creatable_fields(_context)
           []
         end
 
-        def updatable_fields
+        def updatable_fields(_context)
           %i(status)
         end
       end
