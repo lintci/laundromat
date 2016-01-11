@@ -19,7 +19,7 @@ module API
 
       has_one :owner
 
-      attributes :name, :provider, :status
+      attributes :name, :owner_name, :provider, :status
 
       after_update :activation_updated
 
@@ -30,7 +30,7 @@ module API
     private
 
       def activation_updated
-        RepositoryActivationUpdatedWorker.perform_async(model.id)
+        RepositoryActivationUpdatedWorker.perform_async(current_user.id, model.id)
       end
     end
   end

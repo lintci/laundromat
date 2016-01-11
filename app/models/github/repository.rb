@@ -6,6 +6,7 @@ module Github
       attribute :name, String
       attribute :access, String
       attribute :owner_name, String
+      attribute :private, Boolean
     end
 
     def full_name
@@ -21,7 +22,8 @@ module Github
         new(
           name: api_repository.name,
           owner_name: api_repository.owner.login,
-          access: access_from_api(api_repository.permissions)
+          access: access_from_api(api_repository.permissions),
+          private: api_repository.private
         )
       end
 

@@ -39,6 +39,7 @@ gem 'pry-byebug'
 group :development, :test do
   gem 'rspec-rails'
   gem 'dotenv-rails'
+  gem 'pry-rescue'
 end
 
 group :test do

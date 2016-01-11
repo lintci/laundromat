@@ -38,6 +38,7 @@ class Repository < ActiveRecord::Base
       owner.repositories.by_name(provider_repository.name).first_or_create! do |repo|
         repo.owner_name = provider_repository.owner_name
         repo.provider = provider_repository.provider
+        repo.private = provider_repository.private
       end
     end
   end

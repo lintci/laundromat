@@ -1,13 +1,10 @@
 class Activation < ActiveRecord::Base
-  include HasProvider
-
   belongs_to :repository, required: true
 
   validates :public_key, presence: true
   validates :private_key, presence: true
   validates :deploy_key_id, presence: true
   validates :webhook_id, presence: true
-  validates :provider, presence: true
 
   default_scope{order(:created_at)}
 

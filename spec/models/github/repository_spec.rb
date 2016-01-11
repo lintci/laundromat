@@ -14,6 +14,7 @@ describe Github::Repository do
       expect(subject.name).to eq('turbo-adventure')
       expect(subject.access).to eq(RepositoryAccess::ADMIN)
       expect(subject.owner_name).to eq('lexci-lint')
+      expect(subject).to_not be_private
     end
 
     let(:data) do

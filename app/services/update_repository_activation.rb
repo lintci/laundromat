@@ -24,6 +24,7 @@ private
 
   def add_lintci_to_repository
     api.add_lintci_to_repository(repository, repository.build_activation)
+    repository.activation.save!
   end
 
   def remove_lintci_from_repository

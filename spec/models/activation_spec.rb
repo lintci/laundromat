@@ -37,10 +37,5 @@ RSpec.describe Activation, type: :model do
       activation.webhook_id = nil
       expect(activation).to_not be_valid
     end
-
-    it 'requires a provider' do
-      activation.provider = nil
-      expect(activation).to_not be_valid
-    end
   end
 end

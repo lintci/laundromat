@@ -16,6 +16,7 @@ describe API::V1::RepositoryResource do
           },
           'attributes' => {
             'name' => 'guinea_pig',
+            'owner-name' => 'lintci',
             'provider' => 'github',
             'status' => 'inactive'
           },
