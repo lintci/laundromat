@@ -41,8 +41,16 @@ private
   end
 
   def serialize(task)
-    "#{task.type}Serializer".constantize.new(
+    includes = if task.type == 'LintTask'
+      'build.pull_request,source_files'
+    else
+      'build.pull_request'
+    end
+
+    ActiveModel::SerializableResource.new(
       task,
+      serializer: "Msg::V1::#{task.type}Serializer".constantize,
+      include: includes,
       meta: {
         event: build.event,
         event_id: build.event_id,

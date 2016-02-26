@@ -2,8 +2,6 @@ module API
   module V1
     module Auth
       class PushersController < BaseController
-        before_action :ensure_valid_access_token!
-
         def create
           authorize = AuthorizeChannel.new(params[:channel_name], params[:socket_id])
 

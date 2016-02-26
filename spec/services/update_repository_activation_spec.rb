@@ -16,7 +16,12 @@ describe UpdateRepositoryActivation do
           activation.attributes = attributes_for(:activation)
         end
 
-        expect(Pusher).to receive(:trigger).with("private-repository@#{repository.id}", 'data-updated', hash_including(:data))
+        expect(Pusher).to receive(:trigger) do |channel, event, data|
+          expect(channel).to eq("private-repository@#{repository.id}")
+          expect(event).to eq('data-updated')
+          expect(data).to be_json_api_resource('repository').
+                          including('owner', 'activation')
+        end
 
         service.call(user.id, repository.id)
 
@@ -32,7 +37,12 @@ describe UpdateRepositoryActivation do
       it 'deactivates the repository' do
         expect_any_instance_of(Github::API).to receive(:remove_lintci_from_repository).with(be_a(Repository), be_a(Activation))
 
-        expect(Pusher).to receive(:trigger).with("private-repository@#{repository.id}", 'data-updated', hash_including(:data))
+        expect(Pusher).to receive(:trigger) do |channel, event, data|
+          expect(channel).to eq("private-repository@#{repository.id}")
+          expect(event).to eq('data-updated')
+          expect(data).to be_json_api_resource('repository').
+                          including('owner', 'activation')
+        end
 
         service.call(user.id, repository.id)
 

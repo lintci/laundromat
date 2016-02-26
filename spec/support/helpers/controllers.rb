@@ -1,7 +1,18 @@
 module Helpers
   module Controllers
-    def mock_access_token_for(user)
-      request.env['HTTP_AUTHORIZATION'] = "Bearer #{user.active_access_token.access_token}"
+    delegate :current_user, to: :controller
+
+    def stub_auth
+      access_token = build(:access_token)
+      user = access_token.user
+
+      allow(controller).to receive(:access_token).and_return(access_token)
+
+      define_singleton_method(:current_user){user}
+    end
+
+    def current_user
+      raise 'You forgot to call stub_auth which sets up the user'
     end
 
     def json

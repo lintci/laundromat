@@ -3,7 +3,6 @@ FactoryGirl.define do
     association :repository, strategy: :build
     deploy_key_id 13578126
     webhook_id 5787231
-    provider Provider[:github]
 
     public_key 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCofqDGRd4ZdlUUppC6943LJGwK1cc'\
                'j1lr0b+ovoaPjtb2BBydBIGpK5jSF6vXCo38mOKJNFdmJsLM9FwW5uqF3dDj5co4LbrL'\

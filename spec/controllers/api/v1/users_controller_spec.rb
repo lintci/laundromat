@@ -2,17 +2,14 @@ require 'spec_helper'
 
 describe API::V1::UsersController do
   describe 'GET #show' do
-    let(:access_token){create(:access_token)}
-    let(:user){access_token.user}
-
-    it_behaves_like('AuthenticatedRequest'){let(:request){get :show, id: 1}}
+    it_behaves_like('AuthenticatedRequest'){let(:request){get :show}}
 
     it 'responds with user' do
-      mock_access_token_for(user)
+      stub_auth
 
-      get :show, id: user.id
+      get :show
 
-      expect(json).to match_json(API::V1::UserSerializer.new(user))
+      expect(json).to be_json_api_resource('user')
     end
   end
 end

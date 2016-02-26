@@ -2,12 +2,9 @@ module API
   module V1
     # Access token serializer
     class AccessTokenSerializer < ActiveModel::Serializer
-      embed :ids
-      root false
+      belongs_to :user, serializer: API::V1::UserSerializer
 
       attributes :access_token, :expires_in
-
-      has_one :user
     end
   end
 end

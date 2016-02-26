@@ -1,9 +1,9 @@
 module API
   module V1
     # Provides access to a user
-    class UsersController < JSONAPIController
+    class UsersController < BaseController
       def show
-        render json: User.find(params[:id]), serializer: UserSerializer
+        render json: current_user, serializer: UserSerializer
       end
     end
   end

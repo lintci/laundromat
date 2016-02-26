@@ -6,11 +6,11 @@ Rails.application.routes.draw do
         resource :token, only: [:create, :destroy]
       end
 
-      resources :users, only: [:show]
-
-      jsonapi_resources :owners, only: [:index, :show]
-      jsonapi_resources :repositories, only: [:index, :show, :update]
+      resource :user, only: [:show]
+      resources :owners, only: [:index, :show]
+      resources :repositories, only: [:index, :show, :update]
       resources :builds, only: [:index, :show]
+      resources :activations, only: [:create, :destroy]
     end
   end
 

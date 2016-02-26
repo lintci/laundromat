@@ -1,6 +1,12 @@
 class Payload
   # Pull request information from a payload
   class PullRequest
+    class << self
+      def model_name
+        ActiveModel::Name.new(self, Payload, 'PullRequest')
+      end
+    end
+
     def initialize(data)
       @data = data
     end

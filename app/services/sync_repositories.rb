@@ -28,7 +28,11 @@ private
   end
 
   def notify_channel(repository)
-    data = API::V1::RepositoryResource.new(repository).as_json(include: ['owner'])
+    data = ActiveModel::SerializableResource.new(
+      repository,
+      serializer: API::V1::RepositorySerializer,
+      include: :owner
+    ).as_json
 
     Pusher.trigger(channel.name, 'data-updated', data)
   end

@@ -16,4 +16,8 @@ class Owner < ActiveRecord::Base
       find_or_create_by!(name: provider_repository.owner_name, provider: provider_repository.provider.to_s)
     end
   end
+
+  def user_repositories(user)
+    repositories.for_user(user)
+  end
 end

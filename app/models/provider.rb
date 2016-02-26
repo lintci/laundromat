@@ -20,13 +20,15 @@ module Provider
       providers[provider.abbr] = provider
     end
 
+  protected
+
+    attr_accessor :providers
+
   private
 
     def key(provider)
       provider.to_s.underscore
     end
-
-    attr_accessor :providers
   end
 
   register(Provider::Github.new)

@@ -42,7 +42,7 @@ private
 
   def notify_status
     channel = Channel::Repository.new(repository.id)
-    data = API::V1::RepositoryResource.new(repository).as_json(include: ['owner'])
+    data = ActiveModel::SerializableResource.new(repository, serializer: API::V1::RepositorySerializer, include: ['owner', 'activation']).as_json
 
     Pusher.trigger(channel.name, 'data-updated', data)
   end

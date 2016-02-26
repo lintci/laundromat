@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.3'
+ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
@@ -9,7 +9,7 @@ gem 'rails-api'
 gem 'pg'
 gem 'sidekiq'
 gem 'aasm'
-gem 'active_model_serializers', '~> 0.8.0'
+gem 'active_model_serializers', '~> 0.10.0.rc4'
 gem 'jsonapi-resources'
 gem 'octokit'
 gem 'stamped'
@@ -49,6 +49,7 @@ group :test do
   gem 'webmock'
   gem 'simplecov'
   gem 'timecop'
+  gem 'json-schema'
 end
 
 group :development do

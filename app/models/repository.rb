@@ -7,6 +7,8 @@ class Repository < ActiveRecord::Base
   has_one :activation
   has_many :builds
   has_many :tasks, through: :builds
+  has_many :repository_accesses
+  has_many :users, through: :repository_accesses
 
   validates :name, presence: true
   validates :owner_name, presence: true
@@ -15,6 +17,7 @@ class Repository < ActiveRecord::Base
 
   default_scope{order(:created_at)}
   scope :by_name, ->(name){where(name: name)}
+  scope :for_user, ->(user){joins(:repository_accesses).where(repository_accesses: {user_id: user})}
 
   delegate :organization?, to: :owner
   delegate :public_key, :private_key, to: :activation, allow_nil: true
@@ -28,7 +31,7 @@ class Repository < ActiveRecord::Base
 
     event(:activate){transitions from: :inactive, to: :activating}
     event(:activated){transitions from: :activating, to: :active}
-    event(:deactive){transitions from: :active, to: :deactivating}
+    event(:deactivate){transitions from: :active, to: :deactivating}
     event(:deactivated){transitions from: :deactivating, to: :inactive}
   end
 

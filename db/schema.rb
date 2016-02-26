@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20151115190201) do
     t.text     "private_key",   null: false
     t.string   "deploy_key_id", null: false
     t.string   "webhook_id",    null: false
-    t.string   "provider",      null: false
     t.uuid     "repository_id", null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

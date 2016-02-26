@@ -1,6 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe Repository, type: :model do
+  describe '.for_user' do
+    let!(:user){create(:user)}
+    let!(:accessible_repo){create(:repository)}
+    let!(:inaccessible_repo){create(:repository)}
+    let!(:repo_access){create(:repository_access, user: user, repository: accessible_repo)}
+
+    it 'returns all repositories accessible by a user', :aggregate_failures do
+      repositories = described_class.for_user(user)
+
+      expect(repositories.size).to eq(1)
+      expect(repositories.first).to eq(accessible_repo)
+    end
+  end
+
   describe '#valid?' do
     subject(:repository){build(:repository)}
 
